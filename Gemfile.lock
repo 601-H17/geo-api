@@ -110,6 +110,8 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (12.0.0)
     rdoc (4.3.0)
+    responders (2.3.0)
+      railties (>= 4.2.0, < 5.1)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -157,6 +159,7 @@ DEPENDENCIES
   pg
   rails (= 4.2.0)
   rails_12factor
+  responders (~> 2.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
