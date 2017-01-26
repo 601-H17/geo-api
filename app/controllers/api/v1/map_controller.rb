@@ -1,4 +1,4 @@
-class MapController < ApplicationController
+class Api::V1::MapController < ApplicationController
 
   respond_to :json
 
