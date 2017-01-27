@@ -10,7 +10,7 @@
   ],
   "authorizations": null,
   "info": {
-    "title": "Some title",
+    "title": "GeoAPI",
     "description": "Rails API documention with Swagger UI.",
     "termsOfServiceUrl": "http://someurl.com/",
     "contact": "an.email@example.com"

@@ -9,7 +9,7 @@ $ cd the_project/
 
 2. When you're in, restore all the dependencies:
 ```bash
-$ bundle install
+$ bundle install --without production
 ```
 
 3. Migrate the db:
