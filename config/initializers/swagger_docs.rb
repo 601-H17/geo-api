@@ -4,10 +4,9 @@ Swagger::Docs::Config.register_apis({
         # the extension used for the API
         :api_extension_type => :json,
         # the output location where your .json files are written to
-        :api_file_path => "public",
+        :api_file_path => "public/",
         # the URL base path to your API
         :base_path => "https://csf-geo-app.herokuapp.com", #"http://localhost:3000",
-        :host => "https://csf-geo-app.herokuapp.com/",
         # if you want to delete all .json files at each generation
         :clean_directory => true,
         # add custom attributes to api-docs
@@ -15,7 +14,7 @@ Swagger::Docs::Config.register_apis({
             :info => {
                 "title" => "GeoAPI",
                 "description" => "Rails API documention with Swagger UI.",
-                "termsOfServiceUrl" => "http://someurl.com/",
+                "termsOfServiceUrl" => "http://fredlaberge.com",
                 "contact" => "an.email@example.com"
             }
         }
