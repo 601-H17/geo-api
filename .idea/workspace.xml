@@ -2,32 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fc4b743-dd82-42a2-ab72-3ef483811663" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/api/api/swagger-ui/images/logo_small.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/api/api/swagger-ui/images/pet_store_api.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/api/api/swagger-ui/images/throbber.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/api/api/swagger-ui/images/wordnik_api.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/initializers/swagger_docs.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/api/api/swagger-ui/css/highlight.default.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/api/api/swagger-ui/css/screen.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/api/api/swagger-ui/lib/backbone-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/api/api/swagger-ui/lib/handlebars-1.0.0.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/api/api/swagger-ui/lib/highlight.7.3.pack.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/api/api/swagger-ui/lib/jquery-1.8.0.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/api/api/swagger-ui/lib/jquery.ba-bbq.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/api/api/swagger-ui/lib/jquery.slideto.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/api/api/swagger-ui/lib/jquery.wiggle.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/api/api/swagger-ui/lib/shred.bundle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/api/api/swagger-ui/lib/shred/content.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/api/api/swagger-ui/lib/swagger.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/api/api/swagger-ui/lib/underscore-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/api/api/swagger-ui/swagger-ui.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/api/api/swagger-ui/swagger-ui.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/api/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/geo_api.iml" afterPath="$PROJECT_DIR$/.idea/geo_api.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/api/v1/map_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/api/v1/map_controller.rb" />
     </list>
     <ignored path="geo_api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,11 +38,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="swagger_docs.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="swagger_docs.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/initializers/swagger_docs.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="2" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
+            <state relative-caret-position="120">
+              <caret line="8" column="39" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -640,12 +625,12 @@
       <option name="presentableId" value="Default" />
       <updated>1485453313306</updated>
       <workItem from="1485453314560" duration="4014000" />
-      <workItem from="1485458223631" duration="7818000" />
+      <workItem from="1485458223631" duration="8377000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11832000" />
+    <option name="totallyTimeSpent" value="12391000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1415" height="873" extended-state="0" />
@@ -829,8 +814,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/swagger_docs.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="2" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
+        <state relative-caret-position="120">
+          <caret line="8" column="39" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
