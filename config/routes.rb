@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   resources :admins
 
+  get 'login', to: 'logins#new'
+  post 'login', to: 'logins#create'
+  delete 'logout', to: 'logins#destroy'
+
   namespace :api, defaults: { format: :json } do
 
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do

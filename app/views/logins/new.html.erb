@@ -1,4 +1,6 @@
-<%= form_for(:session, :html => {class: 'form-horizontal', role: 'form'}, url: login_path) do |f| %>
+<h1 align="center">Login</h1>
+
+<%= form_for(:logins, :html => {class: 'form-horizontal', role: 'form'}, url: login_path) do |f| %>
 
     <div class="form-group">
       <div class="control-label col-sm-2 col-sm-offset-2">
@@ -20,7 +22,6 @@
 
     <div class="form-group">
       <div class="col-sm-offset-4 col-sm-10">
-        <%= link_to 'Cancel', root_path, class: 'btn btn-danger btn-sm' %>
         <%= f.submit 'Log in', class: 'btn btn-primary btn-sm' %>
       </div>
     </div>
