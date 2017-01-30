@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
   before_action :set_admin, only: [:show, :edit, :update, :destroy]
-  before_action :require_admin
+  before_action :require_master_admin, only: [:new, :edit]
 
   # GET /admins
   # GET /admins.json
