@@ -45,12 +45,6 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
-### RubyMine Patch ###
-# Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
+## macOS users files:
 
-# *.iml
-# modules.xml
-# .idea/misc.xml
-# *.ipr
-
-# End of https://www.gitignore.io/api/rubymine
+.DS_Store
