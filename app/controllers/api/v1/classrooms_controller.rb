@@ -1,4 +1,4 @@
-class ClassroomsController < ApplicationController
+class Api::V1::ClassroomsController < ApplicationController
 
   # GET (all)
 
