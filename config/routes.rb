@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
       resources :map, only: [:index]
 
+      resources :classrooms, only: [:index, :show]
+
     end
 
   end
