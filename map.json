@@ -1,34 +1,1922 @@
 {
   "type": "FeatureCollection",
   "generator": "JOSM",
+  "bbox": [
+  ],
   "features": [
     {
       "type": "Feature",
       "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2471",
+        "addr:street": "Rue Monseigneur-Laflèche",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28909770000,
+          46.78572890000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "http://en.wikipedia.org/wiki/Quebec_Autoroute_740",
+        "is_in:state": "QC",
+        "name": "A 740 (Québec)",
+        "network": "CA:QC:A",
+        "ref": "740",
+        "route": "road",
+        "symbol": "http://upload.wikimedia.org/wikipedia/commons/9/96/Quebec_Autoroute_740.svg",
+        "type": "route"
+      },
+      "geometry": {
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "traffic_signals",
+        "source": "Bing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28920890000,
+          46.77029540000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "emergency": "fire_hydrant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28694420000,
+          46.78448460000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2431",
+        "addr:street": "Rue Jean-Durand",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28594480000,
+          46.78859060000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "secondary",
+        "name": "Chemin Sainte-Foy",
+        "source": "NRCan-CanVec-8.0"
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2496",
+        "addr:street": "Rue Monseigneur-Laflèche",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.29056590000,
+          46.78490300000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "amenity": "parking",
+        "parking": "surface"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
           [
-            -71.28761491588,
-            46.78643485693
-          ],
-          [
-            -71.28760016373,
-            46.78635037505
-          ],
-          [
-            -71.28745264224,
-            46.78636414928
-          ],
-          [
-            -71.28747275880,
-            46.78644587630
-          ],
-          [
-            -71.28761491588,
-            46.78643485693
           ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:interpolation": "odd",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "830",
+        "addr:street": "Autoroute Robert-Bourassa",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28901180000,
+          46.78572370000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:interpolation": "odd",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "motorway",
+        "lanes": "3",
+        "layer": "-1",
+        "name": "Autoroute Robert-Bourassa",
+        "name:en": "Autoroute Robert-Bourassa",
+        "name:fr": "Autoroute Robert-Bourassa",
+        "oneway": "yes",
+        "ref": "740",
+        "source": "NRCan-CanVec-8.0",
+        "surface": "asphalt",
+        "tunnel": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "residential",
+        "name": "Carré de Bayonne",
+        "source": "NRCan-CanVec-8.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2430",
+        "addr:street": "Rue Jean-Durand",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.29040860000,
+          46.78939050000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "created_by": "Potlatch 0.10c",
+        "highway": "service"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "amenity": "parking",
+        "source": "Bing"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "landuse": "industrial",
+        "name": "Parc industriel Jean-Talon (secteur sud)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:interpolation": "even",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bicycle": "permissive",
+        "highway": "footway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2386",
+        "addr:street": "Chemin Sainte-Foy",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28393950000,
+          46.78545110000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "guidepost": "overhead"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.29111310000,
+          46.78799820000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:interpolation": "even",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "motorway",
+        "lanes": "3",
+        "layer": "-1",
+        "name": "Autoroute Robert-Bourassa",
+        "name:en": "Autoroute Robert-Bourassa",
+        "name:fr": "Autoroute Robert-Bourassa",
+        "oneway": "yes",
+        "ref": "740",
+        "source": "NRCan-CanVec-8.0",
+        "surface": "asphalt",
+        "tunnel": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "foot": "yes",
+        "highway": "footway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "residential",
+        "name": "Rue Monseigneur-Laflèche",
+        "source": "NRCan-CanVec-8.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "landuse": "residential"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "814",
+        "addr:street": "Autoroute Robert-Bourassa",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28767190000,
+          46.78421630000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2473",
+        "addr:street": "Rue Jean-Durand",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.29074190000,
+          46.78932770000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2370",
+        "addr:street": "Rue Nicolas-Pinel",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28563410000,
+          46.78866320000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "landuse": "residential",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "7 (Pointe-de-Sainte-Foy - Vieux Québec)",
+        "network": "rtc",
+        "operator": "Réseau de Transport de la Capitale",
+        "ref": "7",
+        "route": "bus",
+        "type": "route"
+      },
+      "geometry": {
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "motorway",
+        "name": "Autoroute Robert-Bourassa",
+        "oneway": "yes",
+        "ref": "740"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2468",
+        "addr:street": "Rue Monseigneur-Laflèche",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28936250000,
+          46.78580230000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2545",
+        "addr:street": "Carré de Bayonne",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.29064100000,
+          46.78486140000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "created_by": "Potlatch 0.10c",
+        "highway": "steps"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2505",
+        "addr:street": "Rue Monseigneur-Laflèche",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.29032130000,
+          46.78471930000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "service",
+        "sidewalk": "no"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:interpolation": "odd",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "service",
+        "oneway": "yes",
+        "sidewalk": "no"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building": "yes",
+        "building:levels": "4"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "bus_stop",
+        "name": "Cégep de Sainte-Foy / 1417"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28625360000,
+          46.78466390000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2525",
+        "addr:street": "Rue Monseigneur-Laflèche",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.29079550000,
+          46.78398640000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "amenity": "parking",
+        "parking": "surface"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "motorway_link",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "noexit": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.29057420000,
+          46.78802100000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "695",
+        "addr:street": "Rue de l'Horizon",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28970180000,
+          46.78526440000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "residential",
+        "name": "Rue de l'Horizon",
+        "source": "NRCan-CanVec-8.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building": "school",
+        "building:levels": "3"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -71.28698160000,
+              46.78505340000
+            ],
+            [
+              -71.28676170000,
+              46.78506540000
+            ],
+            [
+              -71.28680490000,
+              46.78543550000
+            ],
+            [
+              -71.28684490000,
+              46.78574740000
+            ],
+            [
+              -71.28702260000,
+              46.78573660000
+            ],
+            [
+              -71.28700180000,
+              46.78557480000
+            ],
+            [
+              -71.28696630000,
+              46.78533530000
+            ],
+            [
+              -71.28702300000,
+              46.78533140000
+            ],
+            [
+              -71.28698160000,
+              46.78505340000
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:interpolation": "even",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building": "house"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2496",
+        "addr:street": "Carré de Bayonne",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28945560000,
+          46.78580330000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:interpolation": "odd",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sainte-Foy Centre--Saint-Émile",
+        "network": "RTC",
+        "operator": "Réseau de Transport de la Capitale",
+        "ref": "382",
+        "route": "bus",
+        "type": "route"
+      },
+      "geometry": {
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "residential",
+        "name": "Rue Nicolas-Pinel",
+        "source": "NRCan-CanVec-8.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:interpolation": "odd",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building": "yes",
+        "building:levels": "2"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "amenity": "parking"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "motorway",
+        "name": "Autoroute Robert-Bourassa",
+        "name:en": "Autoroute Robert-Bourassa",
+        "name:fr": "Autoroute Robert-Bourassa",
+        "oneway": "yes",
+        "ref": "740",
+        "source": "NRCan-CanVec-8.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrier": "entrance",
+        "bicycle": "no",
+        "foot": "yes",
+        "local": "201"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28751982254,
+          46.78605979172
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building": "house"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "motorway",
+        "name": "Autoroute Robert-Bourassa",
+        "name:en": "Autoroute Robert-Bourassa",
+        "name:fr": "Autoroute Robert-Bourassa",
+        "oneway": "yes",
+        "ref": "740",
+        "source": "NRCan-CanVec-8.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2484",
+        "addr:street": "Rue Monseigneur-Laflèche",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28998590000,
+          46.78538490000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "name": "Momento"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28823500000,
+          46.78461530000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "traffic_signals",
+        "source:traffic_signals": "Replaced data (myself)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28709900000,
+          46.78428730000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building": "house"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2391",
+        "addr:street": "Rue Nicolas-Pinel",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28585570000,
+          46.78856940000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "entrance": "yes",
+        "name": "Margelis (numéro 4)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28618220000,
+          46.78663980000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building": "house"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "attribution": "Natural Resources Canada",
+        "building": "school",
+        "building:levels": "6",
+        "canvec:CODE": "2010252",
+        "canvec:UUID": "9b3e0bba1af14f6583df5ea5614804ca",
+        "name": "Pavillon Montcalm",
+        "source": "CanVec_Import_2009",
+        "website": "http://www.pavillon-montcalm.com"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "traffic_signals",
+        "source:traffic_signals": "Replaced data (myself)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28740750000,
+          46.78416970000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "landuse": "residential",
+        "source": "NRCan-CanVec-7.0",
+        "type": "multipolygon"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:interpolation": "even",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "amenity": "parking",
+        "parking": "surface"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2490",
+        "addr:street": "Rue Monseigneur-Laflèche",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.29007830000,
+          46.78532230000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "amenity": "parking",
+        "parking": "surface"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building": "school",
+        "source:geometry": "Bing"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -71.28809010000,
+              46.78705290000
+            ],
+            [
+              -71.28808600000,
+              46.78701980000
+            ],
+            [
+              -71.28790110000,
+              46.78703650000
+            ],
+            [
+              -71.28786290000,
+              46.78682770000
+            ],
+            [
+              -71.28779880000,
+              46.78683450000
+            ],
+            [
+              -71.28777610000,
+              46.78668880000
+            ],
+            [
+              -71.28791660000,
+              46.78667750000
+            ],
+            [
+              -71.28793650000,
+              46.78681500000
+            ],
+            [
+              -71.28865890000,
+              46.78674990000
+            ],
+            [
+              -71.28864380000,
+              46.78668320000
+            ],
+            [
+              -71.28870370000,
+              46.78668170000
+            ],
+            [
+              -71.28864890000,
+              46.78632640000
+            ],
+            [
+              -71.28857360000,
+              46.78633370000
+            ],
+            [
+              -71.28856740000,
+              46.78626730000
+            ],
+            [
+              -71.28851160000,
+              46.78627720000
+            ],
+            [
+              -71.28851160000,
+              46.78616820000
+            ],
+            [
+              -71.28823680000,
+              46.78618950000
+            ],
+            [
+              -71.28824710000,
+              46.78629130000
+            ],
+            [
+              -71.28784220000,
+              46.78632950000
+            ],
+            [
+              -71.28787110000,
+              46.78646960000
+            ],
+            [
+              -71.28791450000,
+              46.78647800000
+            ],
+            [
+              -71.28794340000,
+              46.78659260000
+            ],
+            [
+              -71.28777470000,
+              46.78660230000
+            ],
+            [
+              -71.28769809689,
+              46.78617073341
+            ],
+            [
+              -71.28764990000,
+              46.78589920000
+            ],
+            [
+              -71.28749487175,
+              46.78591309702
+            ],
+            [
+              -71.28690320000,
+              46.78596980000
+            ],
+            [
+              -71.28700080000,
+              46.78644570000
+            ],
+            [
+              -71.28709560000,
+              46.78643500000
+            ],
+            [
+              -71.28712760000,
+              46.78663330000
+            ],
+            [
+              -71.28679780000,
+              46.78666320000
+            ],
+            [
+              -71.28677300000,
+              46.78598460000
+            ],
+            [
+              -71.28641930000,
+              46.78597020000
+            ],
+            [
+              -71.28604020000,
+              46.78606220000
+            ],
+            [
+              -71.28626630000,
+              46.78663700000
+            ],
+            [
+              -71.28618220000,
+              46.78663980000
+            ],
+            [
+              -71.28581220000,
+              46.78662910000
+            ],
+            [
+              -71.28578760000,
+              46.78683990000
+            ],
+            [
+              -71.28590100000,
+              46.78701290000
+            ],
+            [
+              -71.28626100000,
+              46.78691740000
+            ],
+            [
+              -71.28632400000,
+              46.78724620000
+            ],
+            [
+              -71.28658120000,
+              46.78722140000
+            ],
+            [
+              -71.28666290000,
+              46.78762710000
+            ],
+            [
+              -71.28718640000,
+              46.78757420000
+            ],
+            [
+              -71.28699620000,
+              46.78673520000
+            ],
+            [
+              -71.28715210000,
+              46.78671620000
+            ],
+            [
+              -71.28721300000,
+              46.78696240000
+            ],
+            [
+              -71.28778640000,
+              46.78688400000
+            ],
+            [
+              -71.28785050000,
+              46.78724480000
+            ],
+            [
+              -71.28811290000,
+              46.78722870000
+            ],
+            [
+              -71.28810510000,
+              46.78711120000
+            ],
+            [
+              -71.28824420000,
+              46.78709610000
+            ],
+            [
+              -71.28826240000,
+              46.78721690000
+            ],
+            [
+              -71.28869930000,
+              46.78718040000
+            ],
+            [
+              -71.28864000000,
+              46.78688070000
+            ],
+            [
+              -71.28823070000,
+              46.78691340000
+            ],
+            [
+              -71.28822870000,
+              46.78703880000
+            ],
+            [
+              -71.28809010000,
+              46.78705290000
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "restriction": "no_left_turn",
+        "type": "restriction"
+      },
+      "geometry": {
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2410",
+        "addr:postcode": "G1V 1T3",
+        "addr:street": "Chemin Sainte-Foy",
+        "amenity": "college",
+        "name": "Cégep de Sainte-Foy",
+        "phone": "+1 418 6596600",
+        "source:geometry": "Bing",
+        "website": "http://cegep-ste-foy.qc.ca",
+        "wikidata": "Q3010010",
+        "wikimedia_commons": "Category:Cégep de Sainte-Foy",
+        "wikipedia": "fr:Cégep de Sainte-Foy"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "residential",
+        "name": "Rue Jean-Durand",
+        "source": "NRCan-CanVec-8.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:interpolation": "odd",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:interpolation": "even",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:interpolation": "odd",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:interpolation": "even",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "attribution": "GeoBase®",
+        "geobase:acquisitionTechnique": "GPS",
+        "geobase:datasetName": "NRN:Québec",
+        "geobase:uuid": "8c9ae8dd97c74c54b998e245acedd528",
+        "highway": "service",
+        "is_in": "Québec,Canada",
+        "lanes": "2",
+        "source": "Geobase_Import_2009"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Réseau de Transport de la Capitale",
+        "operator": "Réseau de Transport de la Capitale",
+        "ref": "RTC",
+        "type": "network"
+      },
+      "geometry": {
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "amenity": "parking"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2440",
+        "addr:street": "Chemin Sainte-Foy",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28580450000,
+          46.78481860000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2435",
+        "addr:street": "Chemin Sainte-Foy",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28569700000,
+          46.78465630000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "residential",
+        "name": "Place de Prével",
+        "source": "NRCan-CanVec-8.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2377",
+        "addr:street": "Chemin Sainte-Foy",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28207430000,
+          46.78573140000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "service"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "amenity": "parking",
+        "source": "Bing"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:interpolation": "odd",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2445",
+        "addr:street": "Chemin Sainte-Foy",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28581340000,
+          46.78461680000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "residential",
+        "name": "Rue Monseigneur-Laflèche",
+        "source": "NRCan-CanVec-8.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:interpolation": "odd",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "traffic_signals",
+        "source:traffic_signals": "Replaced data (myself)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28591620000,
+          46.78309900000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "amenity": "parking",
+        "parking": "surface"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "secondary",
+        "name": "Chemin Sainte-Foy",
+        "source": "NRCan-CanVec-8.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "service",
+        "oneway": "yes",
+        "sidewalk": "no"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "landuse": "residential",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "emergency": "fire_hydrant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28577660000,
+          46.78478370000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2509",
+        "addr:street": "Carré de Bayonne",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28964240000,
+          46.78567950000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "710",
+        "addr:street": "Rue de l'Horizon",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28988670000,
+          46.78513920000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2495",
+        "addr:street": "Rue Monseigneur-Laflèche",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.29032340000,
+          46.78480850000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2360",
+        "addr:street": "Rue Nicolas-Pinel",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28182350000,
+          46.78772370000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2495",
+        "addr:street": "Rue Monseigneur-Laflèche",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28998080000,
+          46.78513780000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "service"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "emergency": "fire_hydrant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28517550000,
+          46.78504240000
         ]
       }
     },
@@ -40,252 +1928,28 @@
         "type": "LineString",
         "coordinates": [
           [
-            -71.28718257732,
-            46.78757471810
+            -71.28754057052,
+            46.78618409977
           ],
           [
-            -71.28666625208,
-            46.78762843636
+            -71.28769809689,
+            46.78617073341
           ],
           [
-            -71.28657908029,
-            46.78722164551
+            -71.28764990000,
+            46.78589920000
           ],
           [
-            -71.28632292933,
-            46.78724643872
+            -71.28749487175,
+            46.78591309702
           ],
           [
-            -71.28625989741,
-            46.78691953475
+            -71.28751982254,
+            46.78605979172
           ],
           [
-            -71.28590182251,
-            46.78701136191
-          ],
-          [
-            -71.28578648752,
-            46.78684194068
-          ],
-          [
-            -71.28581196851,
-            46.78663073731
-          ],
-          [
-            -71.28626526183,
-            46.78663716526
-          ],
-          [
-            -71.28604129738,
-            46.78606232066
-          ],
-          [
-            -71.28641680664,
-            46.78596957360
-          ],
-          [
-            -71.28677488155,
-            46.78598518450
-          ],
-          [
-            -71.28680036253,
-            46.78666563184
-          ],
-          [
-            -71.28712893314,
-            46.78663165559
-          ],
-          [
-            -71.28709406442,
-            46.78643698046
-          ],
-          [
-            -71.28700018710,
-            46.78644616326
-          ],
-          [
-            -71.28698838538,
-            46.78638959716
-          ],
-          [
-            -71.28697799015,
-            46.78633977233
-          ],
-          [
-            -71.28697013127,
-            46.78630210438
-          ],
-          [
-            -71.28695875200,
-            46.78624756294
-          ],
-          [
-            -71.28694914969,
-            46.78620153853
-          ],
-          [
-            -71.28693887683,
-            46.78615230009
-          ],
-          [
-            -71.28690094537,
-            46.78597049189
-          ],
-          [
-            -71.28698704694,
-            46.78596271516
-          ],
-          [
-            -71.28765330500,
-            46.78590253849
-          ],
-          [
-            -71.28777266330,
-            46.78660227071
-          ],
-          [
-            -71.28794030136,
-            46.78659216965
-          ],
-          [
-            -71.28791616148,
-            46.78647830307
-          ],
-          [
-            -71.28786788172,
-            46.78647003855
-          ],
-          [
-            -71.28784642405,
-            46.78633045980
-          ],
-          [
-            -71.28825143761,
-            46.78629372849
-          ],
-          [
-            -71.28823936767,
-            46.78619179897
-          ],
-          [
-            -71.28850892967,
-            46.78616976014
-          ],
-          [
-            -71.28851295299,
-            46.78627995424
-          ],
-          [
-            -71.28856257385,
-            46.78626893484
-          ],
-          [
-            -71.28857330269,
-            46.78633505121
-          ],
-          [
-            -71.28864840454,
-            46.78632770495
-          ],
-          [
-            -71.28870204872,
-            46.78668216082
-          ],
-          [
-            -71.28864438123,
-            46.78668399737
-          ],
-          [
-            -71.28865913338,
-            46.78674919496
-          ],
-          [
-            -71.28793091363,
-            46.78681806556
-          ],
-          [
-            -71.28791750259,
-            46.78667665116
-          ],
-          [
-            -71.28777534551,
-            46.78668858875
-          ],
-          [
-            -71.28779948539,
-            46.78683183967
-          ],
-          [
-            -71.28785849399,
-            46.78682541175
-          ],
-          [
-            -71.28789604491,
-            46.78703385954
-          ],
-          [
-            -71.28808782286,
-            46.78701457586
-          ],
-          [
-            -71.28809184617,
-            46.78705038840
-          ],
-          [
-            -71.28822595662,
-            46.78703936916
-          ],
-          [
-            -71.28823132104,
-            46.78691264771
-          ],
-          [
-            -71.28863499350,
-            46.78687958989
-          ],
-          [
-            -71.28869802541,
-            46.78718078261
-          ],
-          [
-            -71.28825814313,
-            46.78721567678
-          ],
-          [
-            -71.28824473209,
-            46.78709446535
-          ],
-          [
-            -71.28810659832,
-            46.78711466728
-          ],
-          [
-            -71.28811196274,
-            46.78722761425
-          ],
-          [
-            -71.28784776515,
-            46.78724506132
-          ],
-          [
-            -71.28779009766,
-            46.78688234471
-          ],
-          [
-            -71.28721878714,
-            46.78696498921
-          ],
-          [
-            -71.28715039081,
-            46.78671889186
-          ],
-          [
-            -71.28699750489,
-            46.78673542082
-          ],
-          [
-            -71.28718257732,
-            46.78757471810
+            -71.28754057052,
+            46.78618409977
           ]
         ]
       }
@@ -293,17 +1957,24 @@
     {
       "type": "Feature",
       "properties": {
+        "highway": "service"
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "natural": "wood",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
           [
-            -71.28704816152,
-            46.78623355484
-          ],
-          [
-            -71.28695875200,
-            46.78624756294
           ]
         ]
       }
@@ -311,41 +1982,13 @@
     {
       "type": "Feature",
       "properties": {
+        "building": "yes",
+        "building:levels": "4"
       },
       "geometry": {
-        "type": "LineString",
+        "type": "Polygon",
         "coordinates": [
           [
-            -71.28709406442,
-            46.78643698046
-          ],
-          [
-            -71.28708026966,
-            46.78637584697
-          ],
-          [
-            -71.28706944473,
-            46.78632787469
-          ],
-          [
-            -71.28706053920,
-            46.78628840845
-          ],
-          [
-            -71.28704816152,
-            46.78623355484
-          ],
-          [
-            -71.28703808862,
-            46.78618891515
-          ],
-          [
-            -71.28702728351,
-            46.78614103051
-          ],
-          [
-            -71.28698704694,
-            46.78596271516
           ]
         ]
       }
@@ -353,17 +1996,97 @@
     {
       "type": "Feature",
       "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2406",
+        "addr:street": "Rue Jean-Durand",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28596110000,
+          46.78878140000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "foot": "yes",
+        "highway": "footway",
+        "surface": "paved"
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bench": "yes",
+        "covered": "no",
+        "highway": "bus_stop",
+        "name": "Cégep de Sainte-Foy / 1752",
+        "network": "RTC",
+        "operator": "RTC",
+        "shelter": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28473300000,
+          46.78496270000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2475",
+        "addr:street": "Rue Monseigneur-Laflèche",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28927520000,
+          46.78561380000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building": "school",
+        "building:levels": "6"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
           [
-            -71.28706944473,
-            46.78632787469
-          ],
-          [
-            -71.28697799015,
-            46.78633977233
+            [
+              -71.28725330000,
+              46.78576330000
+            ],
+            [
+              -71.28723560000,
+              46.78567900000
+            ],
+            [
+              -71.28800230000,
+              46.78560380000
+            ],
+            [
+              -71.28801990000,
+              46.78568820000
+            ],
+            [
+              -71.28725330000,
+              46.78576330000
+            ]
           ]
         ]
       }
@@ -371,17 +2094,61 @@
     {
       "type": "Feature",
       "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2478",
+        "addr:street": "Rue Monseigneur-Laflèche",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28964290000,
+          46.78561670000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "motorway",
+        "lanes": "3",
+        "name": "Autoroute Robert-Bourassa",
+        "name:en": "Autoroute Robert-Bourassa",
+        "name:fr": "Autoroute Robert-Bourassa",
+        "oneway": "yes",
+        "ref": "740",
+        "source": "NRCan-CanVec-8.0"
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "http://www.transportportneuf.com",
+        "from": "Portneuf",
+        "name": "Navette Portneuf-Québec",
+        "network": "CTRP",
+        "operator": "CTRP",
+        "route": "bus",
+        "to": "Québec",
+        "type": "route"
+      },
+      "geometry": {
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building": "house"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
           [
-            -71.28703808862,
-            46.78618891515
-          ],
-          [
-            -71.28694914969,
-            46.78620153853
           ]
         ]
       }
@@ -389,17 +2156,12 @@
     {
       "type": "Feature",
       "properties": {
+        "building": "house"
       },
       "geometry": {
-        "type": "LineString",
+        "type": "Polygon",
         "coordinates": [
           [
-            -71.28697013127,
-            46.78630210438
-          ],
-          [
-            -71.28706053920,
-            46.78628840845
           ]
         ]
       }
@@ -407,17 +2169,44 @@
     {
       "type": "Feature",
       "properties": {
+        "from": "Fossambault-sur-le-Lac",
+        "name": "14",
+        "network": "Transport Collectif de la Jacques-Cartier",
+        "operator": "Transport Collectif de la Jacques-Cartier",
+        "public_transport:version": "2",
+        "ref": "14",
+        "route": "bus",
+        "to": "Québec",
+        "type": "route",
+        "via": "Sainte-Catherine-de-la-Jacques-Cartier"
       },
       "geometry": {
-        "type": "LineString",
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrier": "entrance",
+        "bicycle": "yes",
+        "foot": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28823740000,
+          46.78296640000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
         "coordinates": [
           [
-            -71.28698838538,
-            46.78638959716
-          ],
-          [
-            -71.28708026966,
-            46.78637584697
           ]
         ]
       }
@@ -425,17 +2214,116 @@
     {
       "type": "Feature",
       "properties": {
+        "highway": "turning_circle",
+        "source": "Bing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28482930000,
+          46.78454260000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "motorway_link",
+        "oneway": "yes"
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "capacity": "6",
+        "covered": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28813610000,
+          46.78461870000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "motorway",
+        "lanes": "3",
+        "name": "Autoroute Robert-Bourassa",
+        "name:en": "Autoroute Robert-Bourassa",
+        "name:fr": "Autoroute Robert-Bourassa",
+        "oneway": "yes",
+        "ref": "740",
+        "source": "NRCan-CanVec-8.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2552",
+        "addr:street": "Carré de Bayonne",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.29064470000,
+          46.78468150000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:interpolation": "even",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2386",
+        "addr:street": "Chemin Sainte-Foy",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28240180000,
+          46.78584890000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
           [
-            -71.28702728351,
-            46.78614103051
-          ],
-          [
-            -71.28693887683,
-            46.78615230009
           ]
         ]
       }
@@ -443,29 +2331,17 @@
     {
       "type": "Feature",
       "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2480",
+        "addr:street": "Chemin Sainte-Foy",
+        "building": "yes",
+        "building:levels": "3",
+        "name": "Carrefour Ste-Foy"
       },
       "geometry": {
-        "type": "LineString",
+        "type": "Polygon",
         "coordinates": [
           [
-            -71.28761357478,
-            46.78615110746
-          ],
-          [
-            -71.28747812322,
-            46.78603907652
-          ],
-          [
-            -71.28721124342,
-            46.78604642282
-          ],
-          [
-            -71.28716430477,
-            46.78609876517
-          ],
-          [
-            -71.28715223483,
-            46.78615753546
           ]
         ]
       }
@@ -473,43 +2349,313 @@
     {
       "type": "Feature",
       "properties": {
+        "landuse": "commercial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building": "house"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2465",
+        "addr:street": "Chemin Sainte-Foy",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28691140000,
+          46.78425860000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "722",
+        "addr:street": "Rue de l'Horizon",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28939790000,
+          46.78482200000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:interpolation": "even",
+        "source": "NRCan-CanVec-7.0"
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2468",
+        "addr:street": "Rue Monseigneur-Laflèche",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28926090000,
+          46.78586820000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
           [
-            -71.28745264224,
-            46.78636414928
-          ],
-          [
-            -71.28738692811,
-            46.78614927089
-          ],
-          [
-            -71.28729036859,
-            46.78615845375
-          ],
-          [
-            -71.28736211319,
-            46.78637986262
-          ],
-          [
-            -71.28738558701,
-            46.78645230426
-          ],
-          [
-            -71.28726488760,
-            46.78646332362
-          ],
-          [
-            -71.28723404220,
-            46.78639812569
-          ],
-          [
-            -71.28736211319,
-            46.78637986262
           ]
         ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "created_by": "Potlatch 0.10c",
+        "highway": "steps"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "2371",
+        "addr:street": "Rue Nicolas-Pinel",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28171370000,
+          46.78756040000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building": "house"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Transport Collectif de la Jacques-Cartier",
+        "operator": "Transport Collectif de la Jacques-Cartier",
+        "type": "network"
+      },
+      "geometry": {
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building": "school",
+        "building:levels": "3"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -71.28717470000,
+              46.78509820000
+            ],
+            [
+              -71.28725950000,
+              46.78560560000
+            ],
+            [
+              -71.28753130000,
+              46.78558420000
+            ],
+            [
+              -71.28744280000,
+              46.78505500000
+            ],
+            [
+              -71.28732330000,
+              46.78506440000
+            ],
+            [
+              -71.28732700000,
+              46.78508630000
+            ],
+            [
+              -71.28717470000,
+              46.78509820000
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "amenity": "college",
+        "name": "CEGEP Champlain – St. Lawrence",
+        "wikidata": "Q536501",
+        "wikipedia": "fr:Collège régional Champlain St. Lawrence"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:interpolation": "even",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Québec",
+        "addr:housenumber": "715",
+        "addr:street": "Rue de l'Horizon",
+        "source": "NRCan-CanVec-7.0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28922150000,
+          46.78495280000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "leisure": "swimming_pool"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "residential",
+        "name": "Rue Monseigneur-Laflèche",
+        "source": "NRCan-CanVec-8.0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cégep de Sainte-Foy",
+        "site": "school",
+        "type": "site"
+      },
+      "geometry": {
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "motorway_link",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "highway": "motorway",
+        "lanes": "3",
+        "name": "Autoroute Robert-Bourassa",
+        "oneway": "yes",
+        "ref": "740"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "12",
+        "network": "Transport Collectif de la Jacques-Cartier",
+        "operator": "Transport Collectif de la Jacques-Cartier",
+        "public_transport:version": "2",
+        "route": "bus",
+        "type": "route"
+      },
+      "geometry": {
       }
     }
   ]
