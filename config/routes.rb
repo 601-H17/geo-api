@@ -2,6 +2,8 @@ require 'api_constraints'
 
 Rails.application.routes.draw do
 
+  root 'logins#new'
+
   resources :admins
 
   get 'login', to: 'logins#new'
