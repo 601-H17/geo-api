@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post 'login', to: 'logins#create'
   delete 'logout', to: 'logins#destroy'
 
+  get 'map', to: 'map#display'
+
   namespace :api, defaults: { format: :json } do
 
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do

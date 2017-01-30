@@ -3,7 +3,9 @@ class LoginsController < ApplicationController
   # GET /login
 
   def new
-
+    if logged_in?
+      redirect_to admins_path
+    end
   end
 
   # POST /login
