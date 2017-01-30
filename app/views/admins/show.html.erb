@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @admin.username %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @admin.email %>
+</p>
+
+<p>
+  <strong>Master admin:</strong>
+  <%= @admin.master_admin %>
+</p>
+
+<% if current_admin.master_admin? || @admin.id == current_admin.id %>
+<%= link_to 'Edit', edit_admin_path(@admin) %> |
+<% end %>
+<%= link_to 'Back', admins_path %>

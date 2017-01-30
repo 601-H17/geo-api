@@ -8,7 +8,16 @@
 </head>
 <body>
 
-<%= yield %>
+
+  <% if logged_in? %>
+    <%= render 'layouts/navigation' %>
+  <% end %>
+
+  <%= render 'layouts/messages' %>
+
+  <div class="container">
+    <%= yield %>
+  </div>
 
 </body>
 </html>
