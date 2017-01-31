@@ -1,1 +1,8 @@
 language: ruby
+
+install:
+  - bundle install --without production
+
+script:
+  - rake db:migrate
+
