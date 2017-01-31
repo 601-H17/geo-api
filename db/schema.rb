@@ -22,4 +22,11 @@ ActiveRecord::Schema.define(version: 20170130190918) do
     t.string   "password_digest"
   end
 
+  create_table "classrooms", force: :cascade do |t|
+    t.string   "name",        default: ""
+    t.string   "description", default: ""
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
 end

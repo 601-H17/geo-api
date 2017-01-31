@@ -1,0 +1,14 @@
+language: ruby
+
+rvm:
+  - 2.2
+  - jruby
+
+install:
+  - bundle install --without production
+
+script:
+  - rake db:migrate
+
+notifications:
+  slack: 601-h17-eq2:IHWU1zoJHu7FadwBnn4BIetn
