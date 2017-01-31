@@ -1,5 +1,6 @@
 class AdminsController < ApplicationController
   before_action :set_admin, only: [:show, :edit, :update, :destroy]
+  before_action :require_master_admin, only: [:new]
 
   # GET /admins
   # GET /admins.json
@@ -19,6 +20,9 @@ class AdminsController < ApplicationController
 
   # GET /admins/1/edit
   def edit
+    if @admin != current_admin
+      require_master_admin
+    end
   end
 
   # POST /admins
@@ -28,11 +32,11 @@ class AdminsController < ApplicationController
 
     respond_to do |format|
       if @admin.save
-        format.html { redirect_to @admin, notice: 'Admin was successfully created.' }
-        format.json { render :show, status: :created, location: @admin }
+        format.html { redirect_to admins_path, notice: 'Admin was successfully created.' }
+        #format.json { render :show, status: :created, location: @admin }
       else
         format.html { render :new }
-        format.json { render json: @admin.errors, status: :unprocessable_entity }
+        #format.json { render json: @admin.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -42,11 +46,11 @@ class AdminsController < ApplicationController
   def update
     respond_to do |format|
       if @admin.update(admin_params)
-        format.html { redirect_to @admin, notice: 'Admin was successfully updated.' }
-        format.json { render :show, status: :ok, location: @admin }
+        format.html { redirect_to admins_path, notice: 'Admin was successfully updated.' }
+        #format.json { render :show, status: :ok, location: @admin }
       else
         format.html { render :edit }
-        format.json { render json: @admin.errors, status: :unprocessable_entity }
+        #format.json { render json: @admin.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -56,8 +60,8 @@ class AdminsController < ApplicationController
   def destroy
     @admin.destroy
     respond_to do |format|
-      format.html { redirect_to admins_url, notice: 'Admin was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to admins_path, notice: 'Admin was successfully destroyed.' }
+      #format.json { head :no_content }
     end
   end
 

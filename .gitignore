@@ -23,7 +23,7 @@
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff:
-.idea/
+.idea/*
 
 ## File-based project format:
 *.iws
@@ -45,12 +45,7 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
-### RubyMine Patch ###
-# Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
-
-# *.iml
-# modules.xml
-# .idea/misc.xml
-# *.ipr
+## macOS users files:
 
 # End of https://www.gitignore.io/api/rubymine
+.DS_Store

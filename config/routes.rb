@@ -2,6 +2,8 @@ require 'api_constraints'
 
 Rails.application.routes.draw do
 
+  root 'logins#new'
+
   resources :admins
 
   get 'login', to: 'logins#new'
@@ -15,6 +17,8 @@ Rails.application.routes.draw do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
 
       resources :map, only: [:index]
+
+      resources :classrooms, only: [:index, :show]
 
     end
 
