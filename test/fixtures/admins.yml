@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  username: MyString
-  email: MyString
-  master_admin: false
+  username: masterAdmin
+  email: master.admin@admin.com
+  master_admin: true
 
 two:
-  username: MyString
-  email: MyString
+  username: notAMasterAdmin
+  email: nomaster.admin@admin.com
   master_admin: false

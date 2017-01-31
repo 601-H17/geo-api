@@ -1,7 +1,10 @@
 require 'test_helper'
 
 class AdminTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  test "valid admin" do
+    admin = Admin.new(username: "an admin", email: "admin@admin.com")
+    assert admin.valid?
+  end
+
 end
