@@ -2,7 +2,8 @@ require 'test_helper'
 
 class AdminsControllerTest < ActionController::TestCase
   setup do
-    @admin = admins(:one)
+    @master_admin = admins(:one)
+    @no_master_admin = admins(:two)
   end
 
   # test "should get index" do
@@ -18,10 +19,10 @@ class AdminsControllerTest < ActionController::TestCase
 
   test "should create admin" do
     assert_difference('Admin.count') do
-      post :create, admin: { email: @admin.email, master_admin: @admin.master_admin, username: @admin.username }
+      post :create, master_admin: {email: @master_admin.email, master_admin: @master_admin.master_admin, username: @master_admin.username }
     end
 
-    assert_redirected_to admin_path(assigns(:admin))
+    assert_redirected_to admin_path(assigns(:master_admin))
   end
 
   # test "should show admin" do
@@ -30,18 +31,18 @@ class AdminsControllerTest < ActionController::TestCase
   # end
 
   test "should get edit" do
-    get :edit, id: @admin
+    get :edit, id: @master_admin
     assert_response :success
   end
 
   test "should update admin" do
-    patch :update, id: @admin, admin: { email: @admin.email, master_admin: @admin.master_admin, username: @admin.username }
-    assert_redirected_to admin_path(assigns(:admin))
+    patch :update, id: @master_admin, master_admin: {email: @master_admin.email, master_admin: @master_admin.master_admin, username: @master_admin.username }
+    assert_redirected_to admin_path(assigns(:master_admin))
   end
 
   test "should destroy admin" do
     assert_difference('Admin.count', -1) do
-      delete :destroy, id: @admin
+      delete :destroy, id: @master_admin
     end
 
     assert_redirected_to admins_path
