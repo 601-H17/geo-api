@@ -17,7 +17,12 @@ $ bundle install --without production
 $ rake db:migrate
 ```
 
-4. If everything's good, start the server locally:
+4. (Optional) Seed the db:
+```bash
+$ rake db:seed
+```
+
+5. If everything's good, start the server locally:
 ```bash
 $ rails server
 ```
@@ -28,6 +33,17 @@ $ rails s
     
 Then in a browser window, go to [localhost:3000](http://localhost:3000) for the admin web app or [localhost:3000/api](http://localhost:3000/api) for the API.
 You can use [Postman](https://www.getpostman.com) too to call the API.
+
+### Tests
+
+To run the tests:
+```bash
+$ rake test
+```
+Or to run a specific test file:
+```bash
+$ rake test test/path/to/file.rb
+```
 
 ### Routes
 
