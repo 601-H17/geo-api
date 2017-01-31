@@ -1,13 +1,16 @@
 language: ruby
-
 rvm:
-  - 2.2
-
+- 2.2
 install:
-  - bundle install --without production
-
+- bundle install --without production
 script:
-  - rake db:migrate
-
+- rake test test/models/admin_test.rb
 notifications:
   slack: 601-h17-eq2:IHWU1zoJHu7FadwBnn4BIetn
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: FQ84r/N7dMvbub3vdL/A0R8cxSCrvzF4SBBI1W0wny2m+c+DyPUtBfBMlLSkvjx56tZpZ7tV1i8ebfRNY21neyGoxXnXSaLGUVJebZq0s6+K+SihQQ292Aoox71ndtYQStu5TOZCGY0yxym6iGtEtAjPDp0fUVrESFVF5gpVR6IdzbQ2zefQqv+/XRSd7q/lQTu84qJJOsoq7f49aZq74K0tooGhUMWWNn0+Gz+njZbTuUmWcw829/p+haTsioH+2CQEy1KtJ6jeqUrCiKZGBcMUgZS2rMh+WS0UrSJb8HC3A3VtxDu/3MSpQ+mNVQs2s37pK6/8xW7ElLdepYpRryJWLml5eQtioj0ZuzcVD3U6oU/8t9vmrGDzXwx+WH6FH8NN6UcGsJnDtfyK0eDULqVIi2rfgy4Pw1CO90FS6zoTh4Sufngk8EpQUXjClIIdMvj5lwM1lO+XOnXLXfqKSUk+sdvNYCRdpeTJA37muqWz2jugdjKvPZ6ZFecmmn36bHVG4luIf0htij4xkKUKyVoIxoodcw0GteO40f+0ilV0FiihvP+WVAZULyNPYK1Osd0IxObxfZQdDayGa6bgM2owMxQK4/N1ohwdAiBrtUOMc4N7gmWR/3BSTPZIX8/gVifgR7q+YNqzG4VRfAruD1q/czHzltINV9YGj1HTeBE=
+  app: csf-geo-app
+  run: "rake db:migrate"
