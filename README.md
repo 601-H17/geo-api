@@ -1,4 +1,4 @@
-# Geo API
+# Geo API [![Build Status](https://travis-ci.org/601-H17/geo-api.svg?branch=master)](https://travis-ci.org/601-H17/geo-api)
 
 To install Ruby on Rails, follow this [guide](http://www.installrails.com).
  
