@@ -28,6 +28,6 @@
 
 <br>
 
-<% if current_admin&.master_admin? %>
+<% if current_admin && current_admin.master_admin? %>
 <%= link_to 'New Admin', new_admin_path %>
 <% end %>
