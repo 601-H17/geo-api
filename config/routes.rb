@@ -20,8 +20,6 @@ Rails.application.routes.draw do
 
       resources :corridors, only: :index
 
-      resources :classrooms, only: [:index, :show]
-
     end
 
   end
