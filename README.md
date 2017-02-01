@@ -36,13 +36,20 @@ You can use [Postman](https://www.getpostman.com) too to call the API.
 
 ### Tests
 
-To run the tests:
+#### Unit tests
+To run unit tests:
 ```bash
 $ rake test
 ```
-Or to run a specific test file:
+Or to run a specific test unit file:
 ```bash
 $ rake test test/path/to/file.rb
+```
+
+#### Integration tests
+To run integration tests:
+```bash
+$ rake cucumber
 ```
 
 ### Routes
