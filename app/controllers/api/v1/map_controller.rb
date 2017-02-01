@@ -8,11 +8,10 @@ class Api::V1::MapController < ApplicationController
     summary "Fetch the map infos"
     response :ok, "Success", :Map
     response :unauthorized
-    response :not_acceptable
   end
 
   def index
-    file = File.read('map.json')
+    file = File.read('json_files/map.json')
     hash = JSON.parse file
     render json: hash, status: 200
   end

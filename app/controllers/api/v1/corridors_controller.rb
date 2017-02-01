@@ -2,11 +2,18 @@ class Api::V1::CorridorsController < ApplicationController
 
   respond_to :json
 
+  swagger_controller :corridors, 'Corridors'
+
+  swagger_api :index do
+    summary "Fetch the corridors infos"
+    response :ok, "Success", :Corridors
+    response :unauthorized
+  end
+
   def index
-    #file = File.read('corridors.json')
-    #hash = JSON.parse file
-    #render json: hash, status: 200
-    render json: { 'This is' => 'some corridors' }, status: 200
+    file = File.read('json_files/corridors.json')
+    hash = JSON.parse file
+    render json: hash, status: 200
   end
 
 end
