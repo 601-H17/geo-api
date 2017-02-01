@@ -8,3 +8,6 @@
 
 Admin.create(username: "Master admin", email: "master@admin.com", password: "admin")
 Admin.create(username: "NoMaster admin", email: "nomaster@admin.com", password: "admin")
+
+Classroom.create(name: "G-165", description: "A beautiful classroom really clean...")
+Classroom.create(name: "G-164", description: "Really not nice, much classroom, wow")
