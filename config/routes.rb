@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
       resources :corridors, only: :index
 
+      get :path, to: 'path#find'
+
     end
 
   end
