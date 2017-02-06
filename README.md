@@ -70,3 +70,13 @@ Or:
 ```bash
 $ rails c
 ```
+
+
+
+
+
+### YO !!!!
+
+docker build -t rails-node-api -f ./Dockerfile .
+
+docker run -it -p 3000:3000 --rm -v $PWD/:/app mwallasch/docker-ruby-node:latest
