@@ -5,6 +5,7 @@ install:
 - bundle install --without production
 script:
 - rake test test/models/admin_test.rb
+- cucumber
 notifications:
   slack: 601-h17-eq2:IHWU1zoJHu7FadwBnn4BIetn
 
