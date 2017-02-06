@@ -1,7 +1,9 @@
 # Geo API [![Build Status](https://travis-ci.org/601-H17/geo-api.svg?branch=master)](https://travis-ci.org/601-H17/geo-api)
 
-To install Ruby on Rails, follow this [guide](http://www.installrails.com).
+### Install Ruby on Rails locally (Docker installation below)
  
+Follow this [guide](http://www.installrails.com).
+
 1. Next on a terminal, you need to go in the project directory:
 ```bash
 $ cd the_project/
@@ -30,8 +32,33 @@ Or:
 ```bash
 $ rails s
 ```
+
+### Running Rails on a docker container
+
+####Install [Docker](https://www.docker.com/products/docker) (for Linux and macOS) or [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
+Docker works also for Windows, but Hyper-V is required and not compatible with Virtual Box.
+
+1. In a terminal (Docker Toolbox terminal for Windows), go in the project folder 
+
+```bash
+$ cd the_project
+```
+
+2. Build the Docker image...
+
+```bash
+$ docker build -t rails-node-api -f ./Dockerfile .
+```
+
+2. ...and run it.
+
+```bash
+$ docker run -it -p 3000:3000 --rm -v $PWD/:/app rails-node-api
+```
+
+## View the server in action
     
-Then in a browser window, go to [localhost:3000](http://localhost:3000) for the admin web app or [localhost:3000/api](http://localhost:3000/api) for the API.
+In a browser window, go to [localhost:3000](http://localhost:3000) for the admin web app or [localhost:3000/api](http://localhost:3000/api) for the API. If your using Docker ToolBox, use the IP address that shows up when you open the toolbox.
 You can use [Postman](https://www.getpostman.com) too to call the API.
 
 ### Tests
@@ -70,13 +97,3 @@ Or:
 ```bash
 $ rails c
 ```
-
-
-
-
-
-### YO !!!!
-
-docker build -t rails-node-api -f ./Dockerfile .
-
-docker run -it -p 3000:3000 --rm -v $PWD/:/app mwallasch/docker-ruby-node:latest
