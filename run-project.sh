@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Add pathfinder-api
 
 git clone https://github.com/601-H17/pathfinder-api.git
@@ -9,6 +10,9 @@ cd ../app
 
 # Install dependencies
 bundle install --without production
+
+# Reset db
+rake db:reset
 
 # Migrate db
 rake db:migrate
