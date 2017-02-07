@@ -76,7 +76,7 @@ $ rake test test/path/to/file.rb
 #### Integration tests
 To run integration tests:
 ```bash
-$ rake cucumber
+$ cucumber
 ```
 
 ### Routes
