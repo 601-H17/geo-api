@@ -60,13 +60,13 @@
               z++;
 
               map.on('click', function (e) {
-                  var features = map.queryRenderedFeatures(e.point, {layers: [j]});
+                  var features = map.queryRenderedFeatures(e.symbol, {layers: [i.toString()]});
 
                   if (!features.length) {
                       return;
                   }
                   var feature = features[0];
-                  console.log(features.properties.ref);
+                  console.log(features);
 
                   var popup = new mapboxgl.Popup()
                       .setLngLat(gon.map_room[i].geometry.coordinates)
@@ -74,10 +74,10 @@
                       .addTo(map);
               });
 
-              map.on('mousemove', function (e) {
-                  var features = map.queryRenderedFeatures(e.point, {layers: [j]});
-                  map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
-              });
+//              map.on('mousemove', function (e) {
+//                  var features = map.queryRenderedFeatures(e.point, {layers: [j]});
+//                  map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
+//              });
           }
 
       });
