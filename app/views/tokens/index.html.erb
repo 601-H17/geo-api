@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Tokens</h1>
+
+  <ul>
+    <% @tokens.each do |token| %>
+      <li><%= token.access_token %></li>
+    <% end %>
+  </ul>
+</div>

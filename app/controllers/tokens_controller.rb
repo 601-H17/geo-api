@@ -4,6 +4,7 @@ class TokensController < ApplicationController
   # GET /tokens
 
   def index
+    @tokens = ApiKey.all
   end
 
 end
