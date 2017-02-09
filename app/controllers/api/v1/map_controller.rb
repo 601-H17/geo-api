@@ -16,6 +16,12 @@ class Api::V1::MapController < ApplicationController
     render json: hash, status: 200
   end
 
+  def map2
+    file = File.read('json_files/map2.json')
+    hash = JSON.parse file
+    render json: hash, status: 200
+  end
+
   private
   def restrict_access
     authenticate_or_request_with_http_token do |token, options|
