@@ -31,6 +31,9 @@ gem 'bcrypt', '~> 3.1.7'
 # API consumption
 gem 'httparty'
 
+# Your Rails variables in your JS
+gem 'gon'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

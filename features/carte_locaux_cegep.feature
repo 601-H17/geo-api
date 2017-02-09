@@ -4,5 +4,5 @@ Feature: Carte des locaux du cégep
   Afin de pouvoir valider celle-ci
 
   Scenario: L'utilisateur voit la carte du cégep
-    When Les locaux sur affichés dessus
+    When Les locaux sur affichés
     Then Valide la carte

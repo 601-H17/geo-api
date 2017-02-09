@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Add pathfinder-api
 
 git clone https://github.com/601-H17/pathfinder-api.git
