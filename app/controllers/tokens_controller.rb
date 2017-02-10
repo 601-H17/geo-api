@@ -12,8 +12,8 @@ class TokensController < ApplicationController
   def create
     @token = ApiKey.new(token_params)
     if @token.save
-      flash[:success] = "Token was successfully generated: <b>#{@token.access_token}</b>"
-      redirect_to token_path(@token)
+      flash[:success] = "Token was successfully generated: #{@token.access_token}"
+      redirect_to tokens_path(@token)
     else
       render 'new'
     end

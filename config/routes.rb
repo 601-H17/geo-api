@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get 'map', to: 'map#display'
 
-  resources :tokens
+  resources :tokens, except: :show
 
   namespace :api, defaults: { format: :json } do
 
