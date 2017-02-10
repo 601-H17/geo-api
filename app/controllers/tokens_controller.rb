@@ -7,4 +7,10 @@ class TokensController < ApplicationController
     @tokens = ApiKey.all
   end
 
+  # GET /tokens/new
+
+  def new
+    @token = ApiKey.new
+  end
+
 end
