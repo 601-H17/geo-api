@@ -23,7 +23,7 @@
           <tr>
             <th>Id</th>
             <th>Name</th>
-            <th>Token</th>
+            <th>Created at</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -33,9 +33,12 @@
             <tr class="token-actions">
               <td><%= token.id %></td>
               <td><%= token.name %></td>
-              <td><%= token.access_token %></td>
+              <td><%= token.created_at %></td>
               <td>
-                <button type="button" class="btn btn-danger btn-xs">Revoke</button>
+                <div class="row">
+                  <button type="button" class="btn btn-primary btn-xs" onclick="alert('<%= token.access_token %>')">Show</button>
+                  <button type="button" class="btn btn-danger btn-xs">Revoke</button>
+                </div>
               </td>
             </tr>
           <% end %>
