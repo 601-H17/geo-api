@@ -3,5 +3,33 @@
 
 .listing {
   list-style: none;
-  padding-left: 0;
+  //padding-left: 0;
+}
+
+h1.view-header {
+  margin-bottom: 1em;
+}
+
+.list-view {
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  margin: 0;
+  padding: 0;
+}
+
+.tokens-table {
+  display: table;
+}
+
+.tokens-table thead tr + .tokens-table tbody tr {
+  height: 200px;
+}
+
+.token-actions button {
+  display: none;
+}
+
+.token-actions:hover button {
+  display: block;
 }
