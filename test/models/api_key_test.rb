@@ -33,11 +33,11 @@ class ApiKeyTest < ActiveSupport::TestCase
     assert_match "Name is too short (minimum is 3 characters)", api_key.errors.full_messages[0]
   end
 
-  test "api key should be invalid with name too long (more than 30)" do
-    api_key = ApiKey.new(name: "a" * 31)
+  test "api key should be invalid with name too long (more than 15)" do
+    api_key = ApiKey.new(name: "a" * 16)
 
     assert_not api_key.valid?, api_key.errors.full_messages
-    assert_match "Name is too long (maximum is 30 characters)", api_key.errors.full_messages[0]
+    assert_match "Name is too long (maximum is 15 characters)", api_key.errors.full_messages[0]
   end
 
 end

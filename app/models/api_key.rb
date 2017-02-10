@@ -1,6 +1,6 @@
 class ApiKey < ActiveRecord::Base
 
-  validates :name, presence: true, uniqueness: {case_sensitive: false}, length: {minimum: 3, maximum: 30}
+  validates :name, presence: true, uniqueness: {case_sensitive: false}, length: {minimum: 3, maximum: 15}
 
   before_create :generate_access_token
 
