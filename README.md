@@ -43,11 +43,12 @@ Docker works also for Windows, but Hyper-V is required and not compatible with V
 ```bash
 $ cd the_project
 ```
+######*Note:* Make sure the ending lines sequences of the dockerfiles are in LF.
 
 2. Build the Docker image...
 
 ```bash
-$ docker build -t rails-node-api -f ./Dockerfile .
+$ docker build -t rails-node-api -f ./docker/Dockerfile .
 ```
 
 2. ...and run it.
@@ -63,7 +64,7 @@ You can use [Postman](https://www.getpostman.com) too to call the API.
 
 ### Tests
 
-#### Unit tests
+#### **Unit tests for non-docker users**
 To run unit tests:
 ```bash
 $ rake test
@@ -73,7 +74,17 @@ Or to run a specific test unit file:
 $ rake test test/path/to/file.rb
 ```
 
-#### Integration tests
+#### **Unit tests for docker users**
+
+Repeat the steps for creating the docker server image, but use the dockerfile named "test" when building it.
+Be sure the names aren't the same.
+
+To run unit tests: 
+```bash
+$ docker run -it --rm -v $PWD/:/app your_image_name
+```
+
+#### **Integration tests**
 To run integration tests:
 ```bash
 $ cucumber
