@@ -1,14 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.listing {
-  list-style: none;
-  //padding-left: 0;
-}
-
 h1.view-header {
   margin-bottom: 1em;
 }
+
+/* Tokens index view */
 
 .list-view {
   overflow-x: auto;
@@ -26,10 +23,18 @@ h1.view-header {
   height: 200px;
 }
 
+.tokens-table-header {
+  margin: 0;
+}
+
 .token-actions button {
   display: none;
 }
 
 .token-actions:hover button {
   display: block;
+}
+
+.tokens-count {
+  color: #227722;
 }

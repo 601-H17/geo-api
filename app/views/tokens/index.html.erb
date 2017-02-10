@@ -8,7 +8,12 @@
   <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
 
     <div class="panel panel-default">
-      <div class="panel-heading">API keys</div>
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-xs-10 text-left"><h4 class="tokens-table-header">API keys</h4></div>
+          <div class="col-xs-2 text-right"><span class="badge"><%= @tokens.count %></span></div>
+        </div>
+      </div>
       <div class="panel-body">
         <p>Here are all your tokens for the API.</p>
       </div>
