@@ -37,6 +37,9 @@
               <td>
                 <div class="row">
                   <button type="button" class="btn btn-primary btn-xs token-action" onclick="alert('<%= token.access_token %>')">Show</button>
+                  <%= button_tag(:type => 'button', class: 'btn btn-xs btn-success token-action') do %>
+                      <% link_to 'Update', edit_token_path(token), class: 'link-no-style' %>
+                  <% end %>
                   <%= button_tag(:type => 'button', class: 'btn btn-xs btn-danger token-action') do %>
                     <% link_to 'Revoke', tokens_path, method: :delete, data: {confirm: 'Are you sure you want to delete this token ?'}, class: 'link-no-style' %>
                   <% end %>

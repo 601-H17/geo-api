@@ -1,5 +1,6 @@
 class TokensController < ApplicationController
   before_action :require_admin
+  before_action :get_admin, only: [:edit, :update]
 
   # GET /tokens
 
@@ -13,9 +14,19 @@ class TokensController < ApplicationController
     @token = ApiKey.new(token_params)
     if @token.save
       flash[:success] = "Token was successfully generated: #{@token.access_token}"
-      redirect_to tokens_path(@token)
+      redirect_to tokens_path
     else
       render 'new'
+    end
+  end
+
+  # PUT PATCH /token/:id
+
+  def update
+    if @token.update(token_params)
+      redirect_to tokens_path, notice: "Token was successfully updated"
+    else
+      render :edit
     end
   end
 
@@ -25,11 +36,19 @@ class TokensController < ApplicationController
     @token = ApiKey.new
   end
 
-  # /tokens/:id
+  # GET /token/:id/edit
+
+  def edit
+
+  end
 
   private
     def token_params
       params.require(:api_key).permit(:name)
+    end
+
+    def get_admin
+      @token = ApiKey.find(params[:id])
     end
 
 end
