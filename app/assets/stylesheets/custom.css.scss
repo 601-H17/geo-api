@@ -34,3 +34,13 @@ h1.view-header {
 .token-actions:hover button {
   display: inline-block;
 }
+
+.link-no-style {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link-no-style:hover {
+  color: inherit;
+  text-decoration: none;
+}
