@@ -24,9 +24,10 @@ class TokensController < ApplicationController
 
   def update
     if @token.update(token_params)
-      redirect_to tokens_path, notice: "Token was successfully updated"
+      flash[:success] = "Token was successfully updated"
+      redirect_to tokens_path
     else
-      render :edit
+      render 'edit'
     end
   end
 
