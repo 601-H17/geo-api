@@ -1,7 +1,5 @@
 class UploadController < ApplicationController
 
-
-
   def show
     # mapUploader.retrieve_from_store!('test.json')
   end
