@@ -1,6 +1,6 @@
 class TokensController < ApplicationController
   before_action :require_admin
-  before_action :get_admin, only: [:edit, :update]
+  before_action :get_admin, only: [:edit, :update, :destroy]
 
   # GET /tokens
 
@@ -29,6 +29,15 @@ class TokensController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  # DELETE /token/:id
+
+  def destroy
+    key_name = @token.name
+    @token.destroy
+    flash[:danger] = "#{key_name} was successfully revoked"
+    redirect_to tokens_path
   end
 
   # GET /tokens/new

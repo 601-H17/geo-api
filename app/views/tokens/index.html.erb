@@ -41,7 +41,7 @@
                       <% link_to 'Update', edit_token_path(token), class: 'link-no-style' %>
                   <% end %>
                   <%= button_tag(:type => 'button', class: 'btn btn-xs btn-danger token-action') do %>
-                    <% link_to 'Revoke', tokens_path, method: :delete, data: {confirm: 'Are you sure you want to delete this token ?'}, class: 'link-no-style' %>
+                    <% link_to 'Revoke', token_path(token), method: :delete, data: {confirm: 'Are you sure you want to delete this token ?'}, class: 'link-no-style' %>
                   <% end %>
                 </div>
               </td>
