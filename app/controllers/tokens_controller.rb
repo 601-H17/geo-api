@@ -1,6 +1,6 @@
 class TokensController < ApplicationController
   before_action :require_admin
-  before_action :get_admin, only: [:edit, :update, :destroy]
+  before_action :get_token, only: [:edit, :update, :destroy]
 
   # GET /tokens
 
@@ -57,7 +57,7 @@ class TokensController < ApplicationController
       params.require(:api_key).permit(:name)
     end
 
-    def get_admin
+    def get_token
       @token = ApiKey.find(params[:id])
     end
 
