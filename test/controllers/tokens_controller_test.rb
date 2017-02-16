@@ -86,4 +86,21 @@ class TokensControllerTest < ActionController::TestCase
     end
   end
 
+  # New (GET)
+
+  test "should get new" do
+    get :new
+    assert_response :success
+    assert_template :new
+  end
+
+  # Edit (GET)
+
+  test "should get edit" do
+    get :edit, id: @api_key1.id
+    assert_response :success
+    assert_template :edit
+    assert_match @api_key1.name, @response.body
+  end
+
 end
