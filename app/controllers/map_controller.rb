@@ -1,9 +1,7 @@
 class MapController < ApplicationController
+  before_action :require_admin
 
   def display
-    # if logged_in?
-    #   redirect_to admins_path
-    # end
     map = File.open("json_files/map.json", "rb").read
 
     map_json = JSON.parse(map)
