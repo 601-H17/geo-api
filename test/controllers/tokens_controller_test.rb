@@ -38,15 +38,16 @@ class TokensControllerTest < ActionController::TestCase
 
     assert_response :redirect
     assert_redirected_to tokens_path
+    assert_not_nil ApiKey.find_by_name(api_key_name)
   end
 
   test "should not create with invalid name admin" do
-    initial_token_count = ApiKey.count
     api_key_name = "my not so valid api token"
 
-    post :create, api_key: { name: api_key_name }
+    assert_no_difference('ApiKey.count') do
+      post :create, api_key: { name: api_key_name }
+    end
 
-    assert_equal ApiKey.count, initial_token_count
     assert_template :new
   end
 
@@ -67,6 +68,22 @@ class TokensControllerTest < ActionController::TestCase
     put :update , id: @api_key1, api_key: { name: new_apikey_name }
 
     assert_template :edit
+  end
+
+  # Destroy (DELETE)
+
+  test "should destroy token" do
+    new_token = ApiKey.create!(name: "valid key")
+
+    assert_difference('ApiKey.count', -1) do
+      delete :destroy, id: new_token, api_key: new_token
+    end
+
+    assert_response :redirect
+    assert_redirected_to tokens_path
+    assert_raises ActiveRecord::RecordNotFound do
+      ApiKey.find(new_token.id)
+    end
   end
 
 end
