@@ -19,8 +19,8 @@ h1.view-header {
   display: table;
 }
 
-.tokens-table thead tr + .tokens-table tbody tr {
-  height: 200px;
+.tokens-table tbody tr {
+  //height: 200px;
 }
 
 .tokens-table-header {

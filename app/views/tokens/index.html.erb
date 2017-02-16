@@ -34,7 +34,7 @@
               <td><%= token.id %></td>
               <td><%= token.name %></td>
               <td><%= token.created_at %></td>
-              <td>
+              <td width="30%">
                 <div class="row">
                   <button type="button" class="btn btn-primary btn-xs token-action" onclick="alert('<%= token.access_token %>')">Show</button>
                   <%= button_tag(:type => 'button', class: 'btn btn-xs btn-success token-action') do %>
@@ -45,7 +45,6 @@
                   <% end %>
                 </div>
               </td>
-            </tr>
           <% end %>
         </tbody>
       </table>
