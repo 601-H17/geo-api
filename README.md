@@ -1,4 +1,4 @@
-# Geo API [![Build Status](https://travis-ci.org/601-H17/geo-api.svg?branch=master)](https://travis-ci.org/601-H17/geo-api)
+# Geo-API [![Build Status](https://travis-ci.org/601-H17/geo-api.svg?branch=master)](https://travis-ci.org/601-H17/geo-api)
 
 ### Install Ruby on Rails locally (Docker installation below)
  
@@ -43,11 +43,12 @@ Docker works also for Windows, but Hyper-V is required and not compatible with V
 ```bash
 $ cd the_project
 ```
+######*Note:* Make sure the ending lines sequences of the dockerfiles are in LF.
 
 2. Build the Docker image...
 
 ```bash
-$ docker build -t rails-node-api -f ./Dockerfile .
+$ docker build -t rails-node-api -f ./docker/Dockerfile .
 ```
 
 2. ...and run it.
@@ -63,7 +64,8 @@ You can use [Postman](https://www.getpostman.com) too to call the API.
 
 ### Tests
 
-#### Unit tests
+#### **Unit and integration tests for non-docker users**
+
 To run unit tests:
 ```bash
 $ rake test
@@ -72,12 +74,24 @@ Or to run a specific test unit file:
 ```bash
 $ rake test test/path/to/file.rb
 ```
-
-#### Integration tests
 To run integration tests:
 ```bash
 $ cucumber
 ```
+
+#### **Unit and integration tests for docker users**
+
+1. Build the Docker image...
+```bash
+$ docker build -t rails-node-api-tests -f ./docker/test .
+```
+
+2. To run unit and integration tests: 
+```bash
+$ docker run -it --rm -v $PWD/:/app rails-node-api-tests
+```
+
+*Note: You do not need to re-build the docker if no changes to the dockerfile or any gems were updated.*
 
 ### Routes
 

@@ -1,4 +1,5 @@
 class AdminsController < ApplicationController
+  before_action :require_admin
   before_action :set_admin, only: [:show, :edit, :update, :destroy]
   before_action :require_master_admin, only: [:new]
 
@@ -73,6 +74,6 @@ class AdminsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_params
-      params.require(:admin).permit(:username, :email, :master_admin)
+      params.require(:admin).permit(:username, :email, :master_admin, :password)
     end
 end
