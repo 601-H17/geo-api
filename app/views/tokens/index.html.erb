@@ -1,8 +1,8 @@
 <div class="container">
   <h1 class="page-header view-header">Tokens</h1>
 
-  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
-    <%= link_to 'Generate new', new_token_path, class: 'btn btn-primary' %>
+  <div  class="col-xs-12 col-sm-4 col-md-4 col-lg-3 tokens-actions">
+    <%= link_to 'Generate new', new_token_path, class: 'btn btn-primary col-xs-12' %>
   </div>
 
   <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
@@ -20,17 +20,17 @@
 
       <table class="table tokens-table">
         <thead>
-          <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Created at</th>
-            <th>Actions</th>
-          </tr>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Created at</th>
+          <th>Actions</th>
+        </tr>
         </thead>
 
         <tbody>
-          <% @tokens.each do |token| %>
-            <tr class="token-actions">
+        <% @tokens.each do |token| %>
+            <tr class="token-data token-row">
               <td><%= token.id %></td>
               <td><%= token.name %></td>
               <td><%= token.created_at %></td>
@@ -41,11 +41,11 @@
                       <% link_to 'Update', edit_token_path(token), class: 'link-no-style' %>
                   <% end %>
                   <%= button_tag(:type => 'button', class: 'btn btn-xs btn-danger token-action') do %>
-                    <% link_to 'Revoke', token_path(token), method: :delete, data: {confirm: 'Are you sure you want to delete this token ?'}, class: 'link-no-style' %>
+                      <% link_to 'Revoke', token_path(token), method: :delete, data: {confirm: 'Are you sure you want to delete this token ?'}, class: 'link-no-style' %>
                   <% end %>
                 </div>
               </td>
-          <% end %>
+        <% end %>
         </tbody>
       </table>
     </div>

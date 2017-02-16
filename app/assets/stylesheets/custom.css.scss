@@ -7,6 +7,10 @@ h1.view-header {
 
 /* Tokens index view */
 
+.tokens-actions {
+  margin-bottom: 5%;
+}
+
 .list-view {
   overflow-x: auto;
   overflow-y: hidden;
@@ -27,11 +31,11 @@ h1.view-header {
   margin: 0;
 }
 
-.token-actions button {
+.token-data button {
   display: none;
 }
 
-.token-actions:hover button {
+.token-data:hover button {
   display: inline-block;
 }
 
@@ -43,4 +47,8 @@ h1.view-header {
 .link-no-style:hover {
   color: inherit;
   text-decoration: none;
+}
+
+.token-row:hover {
+  background-color: #F7F7F7;
 }
