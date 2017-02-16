@@ -43,7 +43,7 @@ class AdminsControllerTest < ActionController::TestCase
 
   test "should update admin" do
     patch :update, id: @master_admin, admin: {email: @master_admin.email, master_admin: @master_admin.master_admin, username: @master_admin.username}
-    assert_response :success
+    assert_response :redirect
   end
 
   test "should destroy admin" do
