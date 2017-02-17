@@ -1,4 +1,8 @@
 language: ruby
+cache:
+  skip_bundle_clean: true
+  directories:
+    - vendor/bundle
 rvm:
   - 2.2
 install:
@@ -11,7 +15,6 @@ notifications:
 branches:
   only:
     - master
-cache: bundler
 
 deploy:
   provider: heroku
