@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170217182146) do
+ActiveRecord::Schema.define(version: 20170217182945) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "username"
@@ -46,5 +46,15 @@ ActiveRecord::Schema.define(version: 20170217182146) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
+
+  create_table "stairs", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "floor"
+    t.integer  "point_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "stairs", ["point_id"], name: "index_stairs_on_point_id"
 
 end
