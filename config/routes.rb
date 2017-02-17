@@ -12,16 +12,12 @@ Rails.application.routes.draw do
 
   get 'map', to: 'map#display'
 
-<<<<<<< HEAD
   get 'upload', to: 'upload#show'
   post 'upload', to: 'upload#upload'
 
-  namespace :api, defaults: {format: :json} do
-=======
   resources :tokens, except: :show
 
-  namespace :api, defaults: { format: :json } do
->>>>>>> master
+  namespace :api, defaults: {format: :json} do
 
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
 

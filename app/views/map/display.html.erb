@@ -25,89 +25,77 @@
   <div id='map'>
     <div class="header">
       <h1>MAP</h1>
-      <button class="btn btn-default">Floor 1</button>
-      <button class="btn btn-default">Floor 2</button>
+      <button onclick="getFloorOne()" class="btn btn-default">Floor 1</button>
+      <button onclick="getFloorTwo()" class="btn btn-default">Floor 2</button>
       <button class="btn btn-default">Floor 3</button>
     </div>
     <br>
   </div>
 
   <script>
-      mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGxhYjciLCJhIjoiY2l5a2R6OTNyMDAxMzJxcGZ0N3BiZHg4NCJ9.yy7iToUoptoBI9Sh3CHkbg';
+      loadMap(gon.map_floor_1);
+      function getFloorOne() {
+          console.log(gon.map_floor_1);
+          loadMap(gon.map_floor_1);
+      }
 
-      var bounds = [
-          [-71.2912, 46.7840], // Southwest coordinates
-          [-71.2845, 46.7886]  // Northeast coordinates
-      ];
+      function getFloorTwo() {
+          console.log(gon.map_floor_2);
+          loadMap(gon.map_floor_2);
+      }
 
-      var map = new mapboxgl.Map({
-          container: 'map',
-          style: 'mapbox://styles/mapbox/streets-v9',
-          center: [-71.28739276585, 46.78642133499],
-          zoom: 18,
-          maxBounds: bounds
-      });
+      function loadMap(map_json) {
+          mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGxhYjciLCJhIjoiY2l5a2R6OTNyMDAxMzJxcGZ0N3BiZHg4NCJ9.yy7iToUoptoBI9Sh3CHkbg';
 
-      map_json = gon.map_floor_1;
+          var bounds = [
+              [-71.2912, 46.7840], // Southwest coordinates
+              [-71.2845, 46.7886]  // Northeast coordinates
+          ];
 
-      map.on('load', function () {
-          j = map_json.length;
-          z = (map_json.length) * 2;
+          var map = new mapboxgl.Map({
+              container: 'map',
+              style: 'mapbox://styles/mapbox/streets-v9',
+              center: [-71.28739276585, 46.78642133499],
+              zoom: 18,
+              maxBounds: bounds
+          });
 
-          for (i = 0; i < map_json.length; i++) {
+          map.on('load', function () {
+              j = map_json.length;
+              z = (map_json.length) * 2;
 
-              map.addLayer({
-                  "id": i.toString(),
-                  "type": "line",
-                  "source": {
-                      "type": "geojson",
-                      "data": map_json[i]
-                  }
-              });
-              map.addLayer({
-                  "id": j.toString(),
-                  "type": "symbol",
-                  "source": {
-                      "type": "geojson",
-                      "data": map_json[i]
-                  }
-              });
-              map.addLayer({
-                  "id": z.toString(),
-                  "type": "circle",
-                  "source": j.toString(),
-                  "paint": {
-                      "circle-radius": 6,
-                      "circle-color": "#B42222"
-                  },
-                  "filter": ["==", "$type", "Point"]
-              });
-              j++;
-              z++;
-              // https://www.mapbox.com/mapbox-gl-js/example/popup-on-click/
-          }
+              for (i = 0; i < map_json.length; i++) {
 
-//          map.on('mousemove', function (e) {
-//              var features = map.queryRenderedFeatures(e.point, {layers: ["1"]});
-//              console.log(features);
-//              map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
-//          });
-
-//          map.on('click', function (e) {
-//              var features = map.queryRenderedFeatures(e.point, {layers: ["1"]});
-//
-//              if (!features.length) {
-//                  return;
-//              }
-//              var feature = features[0];
-//              console.log(feature);
-//
-//              var popup = new mapboxgl.Popup()
-//                  .setLngLat(map_json[0].geometry.coordinates)
-//                  .setHTML(map_json[0].properties.ref)
-//                  .addTo(map);
-//          });
-
-      });
+                  map.addLayer({
+                      "id": i.toString(),
+                      "type": "line",
+                      "source": {
+                          "type": "geojson",
+                          "data": map_json[i]
+                      }
+                  });
+                  map.addLayer({
+                      "id": j.toString(),
+                      "type": "symbol",
+                      "source": {
+                          "type": "geojson",
+                          "data": map_json[i]
+                      }
+                  });
+                  map.addLayer({
+                      "id": z.toString(),
+                      "type": "circle",
+                      "source": j.toString(),
+                      "paint": {
+                          "circle-radius": 6,
+                          "circle-color": "#B42222"
+                      },
+                      "filter": ["==", "$type", "Point"]
+                  });
+                  j++;
+                  z++;
+              }
+          });
+      }
   </script>
 </div>
