@@ -12,9 +12,12 @@ Rails.application.routes.draw do
 
   get 'map', to: 'map#display'
 
+  get 'upload', to: 'upload#show'
+  post 'upload', to: 'upload#upload'
+
   resources :tokens, except: :show
 
-  namespace :api, defaults: { format: :json } do
+  namespace :api, defaults: {format: :json} do
 
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
 
@@ -22,6 +25,7 @@ Rails.application.routes.draw do
       get 'map2', to: 'map#map2'
 
       resources :classrooms, only: [:index, :show]
+      get '/classroom/:name', to: 'classrooms#show_by_name'
 
       resources :corridors, only: :index
 

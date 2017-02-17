@@ -1,5 +1,7 @@
 class Api::V1::ClassroomsController < ApplicationController
 
+  before_filter :restrict_access
+
   respond_to :json
 
   # GET (all)
@@ -16,10 +18,19 @@ class Api::V1::ClassroomsController < ApplicationController
 
   # GET (by :wing)
 
-
-private
-  def recipe_params
-    params.require(:classroom).permit(:name, :description)
+  def show_by_name
+    name = params[:name]
+    begin
+      classroom = Classroom.find_by_name!(params[:name])
+      render json: classroom, status: 200
+    rescue ActiveRecord::RecordNotFound
+      render json: { error: "Classroom #{name} not found"}, status: 404
+    end
   end
+
+  private
+    def recipe_params
+      params.require(:classroom).permit(:name, :description, :floor)
+    end
 
 end
