@@ -31,6 +31,9 @@ gem 'bcrypt', '~> 3.1.7'
 # API consumption
 gem 'httparty'
 
+# Other params than id
+gem 'friendly_id', '~> 5.1.0'
+
 # Your Rails variables in your JS
 gem 'gon'
 

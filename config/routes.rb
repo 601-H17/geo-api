@@ -22,6 +22,7 @@ Rails.application.routes.draw do
       get 'map2', to: 'map#map2'
 
       resources :classrooms, only: [:index, :show]
+      get '/classroom/:name', to: 'classrooms#show_by_name'
 
       resources :corridors, only: :index
 
