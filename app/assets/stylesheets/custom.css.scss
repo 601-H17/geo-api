@@ -1,2 +1,54 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+h1.view-header {
+  margin-bottom: 1em;
+}
+
+/* Tokens index view */
+
+.tokens-actions {
+  margin-bottom: 5%;
+}
+
+.list-view {
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  margin: 0;
+  padding: 0;
+}
+
+.tokens-table {
+  display: table;
+}
+
+.tokens-table tbody tr {
+  //height: 200px;
+}
+
+.tokens-table-header {
+  margin: 0;
+}
+
+.token-data button {
+  display: none;
+}
+
+.token-data:hover button {
+  display: inline-block;
+}
+
+.link-no-style {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link-no-style:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.token-row:hover {
+  background-color: #F7F7F7;
+}

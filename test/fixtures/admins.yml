@@ -4,6 +4,7 @@ one:
   username: masterAdmin
   email: master.admin@admin.com
   master_admin: true
+  password_digest: hello
 
 two:
   username: notAMasterAdmin

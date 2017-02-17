@@ -1,9 +1,14 @@
 class MapController < ApplicationController
+  before_action :require_admin
 
   def display
+<<<<<<< HEAD
     if !logged_in?
       redirect_to admins_path
     end
+=======
+    map = File.open("json_files/map.json", "rb").read
+>>>>>>> master
 
     map1 = File.open("json_files/map.json", "rb").read
     map_json1 = JSON.parse(map1)
