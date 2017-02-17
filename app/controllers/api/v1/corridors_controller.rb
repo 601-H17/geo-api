@@ -17,7 +17,7 @@ class Api::V1::CorridorsController < ApplicationController
   end
 
   def create
-
+    hash = parse('json_files/corridors.json')
   end
 
 end
