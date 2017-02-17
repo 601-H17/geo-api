@@ -1,7 +1,11 @@
 # Geo-API [![Build Status](https://travis-ci.org/601-H17/geo-api.svg?branch=master)](https://travis-ci.org/601-H17/geo-api)
 
+`ruby version : 2.3.3`
+
+`rails version : 4.2.0`
+
 ### Install Ruby on Rails locally (Docker installation below)
- gredfv
+
 Follow this [guide](http://www.installrails.com). 
 
 For macOS user, on the 'Install RVM and Ruby' step when using `rvm use`, write instead `rvm use ruby-2.3.3@rails4.2.0 --install --default`.
