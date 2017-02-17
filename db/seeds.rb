@@ -9,5 +9,8 @@
 Admin.create(username: "Master admin", email: "master@admin.com", password: "admin", master_admin: true)
 Admin.create(username: "NoMaster admin", email: "nomaster@admin.com", password: "admin", master_admin: false)
 
-Classroom.create(name: "G-165", description: "A beautiful classroom really clean...")
-Classroom.create(name: "G-164", description: "Really not nice, much classroom, wow")
+point165 = Point.create(lat: -71.28741894110, lng: 46.78601674403)
+point164 = Point.create(lat: -71.28730301717, lng: 46.78602796227)
+
+Classroom.create(name: "G-165", description: "A beautiful classroom really clean...", floor: 1, point: point165)
+Classroom.create(name: "G-164", description: "Really not nice, much classroom, wow", floor: 1, point: point164)
