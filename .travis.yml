@@ -1,5 +1,6 @@
 language: ruby
 cache:
+  bundler: true
   skip_bundle_clean: true
   directories:
     - vendor/bundle
