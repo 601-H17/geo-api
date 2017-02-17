@@ -4,7 +4,7 @@ module ClassroomsHelper
     Classroom.new(name: name, description: "Random description").valid?
   end
 
-  def updateDB
+  def update_db
 
   end
 
