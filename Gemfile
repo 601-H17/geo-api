@@ -36,6 +36,8 @@ gem 'friendly_id', '~> 5.1.0'
 
 # Your Rails variables in your JS
 gem 'gon'
+# Upload file
+gem 'carrierwave', '~> 1.0'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
