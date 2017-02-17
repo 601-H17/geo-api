@@ -16,4 +16,8 @@ class Api::V1::CorridorsController < ApplicationController
     render json: hash, status: 200
   end
 
+  def create
+
+  end
+
 end
