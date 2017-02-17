@@ -13,9 +13,19 @@ module CorridorsHelper
   def update_or_insert(name, lat, lng)
     puts "#{name}, #{lat}, #{lng}"
     floor = name[2..-3]
-    #classroom = Classroom.new(name: name, floor: )
-    #puts classroom.valid?
-    #puts classroom.errors.full_messages
+    point = Point.create(lat: lat, lng: lng)
+
+    classroom = Classroom.where(name: name).first
+    if classroom.present?
+      Classroom.update(id: classroom.id, {floor: floor, point: point})
+    else
+      classroom = Classroom.new(name: name, floor: floor.to_i, point: point)
+      if classroom.valid?
+        classroom.save
+      end
+    end
+
+    puts Classroom.all
   end
 
 end
