@@ -1,14 +1,18 @@
 # Geo-API [![Build Status](https://travis-ci.org/601-H17/geo-api.svg?branch=master)](https://travis-ci.org/601-H17/geo-api)
 
 ### Install Ruby on Rails locally (Docker installation below)
- 
-Follow this [guide](http://www.installrails.com).
+ gredfv
+Follow this [guide](http://www.installrails.com). 
+
+For macOS user, on the 'Install RVM and Ruby' step when using `rvm use`, write instead `rvm use ruby-2.3.3@rails4.2.0 --install --default`.
+
+For Linux user, when installing `rvm` and `ruby`, write instead `rvm gemset use ruby-2.3.3@rails4.2.0 --install --default`.
 
 1. Next on a terminal, you need to go in the project directory:
 ```bash
 $ cd the_project/
 ```
-
+njnjihl
 2. When you're in, restore all the dependencies:
 ```bash
 $ bundle install --without production
