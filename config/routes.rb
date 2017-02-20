@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
       resources :classrooms, only: [:index, :show]
       get '/classroom/:name', to: 'classrooms#show_by_name'
+      get '/classroom_search/:query', to: 'classrooms#search_by_name'
 
       resources :corridors, only: :index
 
