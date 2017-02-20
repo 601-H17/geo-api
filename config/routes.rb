@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get 'map', to: 'map#display'
 
-  get 'upload', to: 'upload#show'
+  get 'upload', to: 'upload#upload'
   post 'upload', to: 'upload#upload'
 
   resources :tokens, except: :show

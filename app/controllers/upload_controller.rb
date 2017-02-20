@@ -5,10 +5,12 @@ class UploadController < ApplicationController
   end
 
   def upload
-    mapUploader = MapUploader.new
-    map_file = params[:map]
-    mapUploader.store!(map_file)
-    flash[:success] = "Successfully upload the file"
+    if params[:map].present?
+      mapUploader = MapUploader.new
+      map_file = params[:map]
+      mapUploader.store!(map_file)
+      flash[:success] = "Successfully upload the file"
+    end
   end
 
 end
