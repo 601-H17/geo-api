@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="panel-body">
-        <p>Here are all your map.</p>
+        <p>Here are all your maps.</p>
       </div>
 
       <table class="table tokens-table">
@@ -36,7 +36,9 @@
               <td><%= map.created_at %></td>
               <td width="30%">
                 <div class="row">
-                  <button type="button" class="btn btn-primary btn-xs token-action" onclick="alert('<%= map.map %>')">Show</button>
+                  <%= button_tag(:type => 'button', class: 'btn btn-primary btn-xs token-action') do %>
+                      <% link_to 'Make the new map', edit_upload_path(map), class: 'link-no-style' %>
+                  <% end %>
                   <%= button_tag(:type => 'button', class: 'btn btn-xs btn-success token-action') do %>
                       <% link_to 'Rename', edit_upload_path(map), class: 'link-no-style' %>
                   <% end %>

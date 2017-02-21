@@ -49,7 +49,7 @@ class UploadController < ApplicationController
   # GET /upload/:id/edit
 
   def edit
-
+    puts @map.map.current_path
   end
 
   private

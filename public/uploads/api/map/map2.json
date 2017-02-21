@@ -1,0 +1,20 @@
+{
+  "type": "FeatureCollection",
+  "generator": "JOSM",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "entrance": "yes",
+        "ref": "G-151"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28722332201,
+          46.78621173677
+        ]
+      }
+    }
+  ]
+}

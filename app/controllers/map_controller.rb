@@ -1,18 +1,24 @@
 class MapController < ApplicationController
   before_action :require_admin
 
+  PATH_TO_FLOOR_1 = "public/uploads/api/map/map.json"
+  PATH_TO_FLOOR_2 = "public/uploads/api/map/map2.json"
+
   def display
+    gon.map_floor_1 = get_json_features_from_map(PATH_TO_FLOOR_1)
+    gon.map_floor_2 = get_json_features_from_map(PATH_TO_FLOOR_2)
+  end
 
-    map1 = File.open("json_files/map.json", "rb").read
-    map_json1 = JSON.parse(map1)
-    map_json1 = map_json1['features']
-    gon.map_floor_1 = map_json1
-
-    map2 = File.open("json_files/map2.json", "rb").read
-    map_json2 = JSON.parse(map2)
-    map_json2 = map_json2['features']
-    gon.map_floor_2 = map_json2
-
+  private
+  def get_json_features_from_map(path_to_file)
+    begin
+      map = File.open(path_to_file, "rb").read
+      map_json = JSON.parse(map)
+      map_json = map_json['features']
+      return map_json
+    rescue => ex
+      logger.error ex.message
+    end
   end
 end
 

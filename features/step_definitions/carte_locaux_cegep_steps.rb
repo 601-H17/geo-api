@@ -11,5 +11,5 @@ When(/^Les locaux sur affichés$/) do
 end
 
 Then(/^Valide la carte$/) do
-  expect(page).to have_content("MAP")
+  expect(page).to have_content("map")
 end
