@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="panel-body">
-        <p>Here are all your maps.</p>
+        <p>Here are all your maps. For the moment, the map for the first floor need to be named map.json, and the map for the second floor map2.json.</p>
       </div>
 
       <table class="table tokens-table">
@@ -37,7 +37,7 @@
               <td width="30%">
                 <div class="row">
                   <%= button_tag(:type => 'button', class: 'btn btn-primary btn-xs token-action') do %>
-                      <% link_to 'Make the new map', edit_upload_path(map), class: 'link-no-style' %>
+                      <% link_to 'Make the new map', upload_index_path(map), class: 'link-no-style' %>
                   <% end %>
                   <%= button_tag(:type => 'button', class: 'btn btn-xs btn-success token-action') do %>
                       <% link_to 'Rename', edit_upload_path(map), class: 'link-no-style' %>
