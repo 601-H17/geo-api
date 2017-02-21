@@ -14,7 +14,7 @@ class UploadController < ApplicationController
     @map = Map.new(map_params)
     if @map.save
       flash[:success] = "Map was successfully upload"
-      redirect_to maps_path
+      redirect_to upload_index_path
     else
       render 'new'
     end
@@ -23,27 +23,27 @@ class UploadController < ApplicationController
   # PUT PATCH /upload/:id
 
   def update
-    # if @token.update(token_params)
-    #   flash[:success] = "Token was successfully updated"
-    #   redirect_to tokens_path
-    # else
-    #   render 'edit'
-    # end
+    if @map.update(map_params)
+      flash[:success] = "Map was successfully updated"
+      redirect_to upload_index_path
+    else
+      render 'edit'
+    end
   end
 
   # DELETE /upload/:id
 
   def destroy
-    # key_name = @token.name
-    # @token.destroy
-    # flash[:danger] = "#{key_name} was successfully revoked"
-    # redirect_to tokens_path
+    key_name = @map.name
+    @map.destroy
+    flash[:danger] = "#{key_name} was successfully destroyed"
+    redirect_to upload_index_path
   end
 
   # GET /upload/new
 
   def new
-    # @token = ApiKey.new
+    @map = Map.new
   end
 
   # GET /upload/:id/edit

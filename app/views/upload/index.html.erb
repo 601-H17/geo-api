@@ -38,10 +38,10 @@
                 <div class="row">
                   <button type="button" class="btn btn-primary btn-xs token-action" onclick="alert('<%= map.map %>')">Show</button>
                   <%= button_tag(:type => 'button', class: 'btn btn-xs btn-success token-action') do %>
-                      <% link_to 'Update', edit_upload_path(map), class: 'link-no-style' %>
+                      <% link_to 'Rename', edit_upload_path(map), class: 'link-no-style' %>
                   <% end %>
                   <%= button_tag(:type => 'button', class: 'btn btn-xs btn-danger token-action') do %>
-                      <% link_to 'Revoke', upload_path(map), method: :delete, data: {confirm: 'Are you sure you want to delete this map ?'}, class: 'link-no-style' %>
+                      <% link_to 'Delete', upload_path(map), method: :delete, data: {confirm: 'Are you sure you want to delete this map ?'}, class: 'link-no-style' %>
                   <% end %>
                 </div>
               </td>
