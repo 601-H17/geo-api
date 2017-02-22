@@ -78,14 +78,4 @@ class Api::V1::ClassroomsControllerTest < ActionController::TestCase
     assert_match "Classroom #{query} not found", @response.body.to_s
   end
 
-=begin
-  test "should get error 404 with name and token" do
-    name = "MyString"
-    get :show_by_name, name: name
-
-    assert_response :not_found
-    assert_match "Classroom #{name} not found", @response.body.to_s
-  end
-=end
-
 end

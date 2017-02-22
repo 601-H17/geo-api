@@ -12,8 +12,10 @@ class Api::V1::CorridorsController < ApplicationController
 
   def index
     file = File.read('json_files/corridors.json')
-    hash = JSON.parse file
-    render json: hash, status: 200
+    json = JSON.parse file
+    status = 200
+
+    render json: json, status: status
   end
 
   def create
