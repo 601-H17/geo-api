@@ -7,7 +7,8 @@ class Api::V1::ClassroomsController < ApplicationController
   # GET (all)
 
   def index
-    render json: Classroom.all, status: 200
+    classrooms = Classroom.all
+    render json: classrooms.to_json(include: { point: {only: [:lat, :lng]} }, except: :point_id), status: 200
   end
 
   # GET (by :id)
