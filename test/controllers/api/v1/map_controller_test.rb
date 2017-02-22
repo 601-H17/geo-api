@@ -6,7 +6,9 @@ class Api::V1::MapControllerTest < ActionController::TestCase
 
   test "should get map with token" do
     @request.headers["Authorization"] = "Token token=#{@token.access_token}"
+
     get :index
+
     assert_response :success
     assert_includes request.headers["Authorization"], @token.access_token
   end
