@@ -28,6 +28,21 @@ class Api::V1::ClassroomsController < ApplicationController
     end
   end
 
+  def search_by_name
+    name = params[:query].downcase
+    ary = Array.new
+    begin
+      Classroom.all.each do |classname|
+        if classname.name.downcase.start_with?(name)
+          ary.push(classname)
+        end
+      end
+      render json: ary, status: 200
+    rescue ActiveRecord::RecordNotFound
+      render json: { error: "Classroom #{name} not found"}, status: 404
+    end
+  end
+
   private
     def recipe_params
       params.require(:classroom).permit(:name, :description, :floor)
