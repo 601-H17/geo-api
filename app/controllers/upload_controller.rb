@@ -54,7 +54,7 @@ class UploadController < ApplicationController
 
   private
   def map_params
-    params.require(:map).permit(:map, :name)
+    params.require(:map).permit(:map, :name, :floor, :currentMap)
   end
 
   def get_map

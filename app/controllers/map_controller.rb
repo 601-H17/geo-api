@@ -1,8 +1,11 @@
 class MapController < ApplicationController
   before_action :require_admin
 
-  PATH_TO_FLOOR_1 = "public/uploads/api/map/map.json"
-  PATH_TO_FLOOR_2 = "public/uploads/api/map/map2.json"
+  m1 = Map.where(floor: 1, currentMap: 1)
+  PATH_TO_FLOOR_1 = "public" + m1[0].map.url
+
+  m2 = Map.where(floor: 2, currentMap: 1)
+  PATH_TO_FLOOR_2 = "public" + m2[0].map.url
 
   def display
     gon.map_floor_1 = get_json_features_from_map(PATH_TO_FLOOR_1)

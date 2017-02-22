@@ -10,20 +10,20 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <div class="row">
-          <div class="col-xs-10 text-left"><h4 class="tokens-table-header">Map list</h4></div>
+          <div class="col-xs-10 text-left"><h4 class="tokens-table-header">Maps list</h4></div>
           <div class="col-xs-2 text-right"><span class="badge"><%= @maps.count %></span></div>
         </div>
       </div>
       <div class="panel-body">
-        <p>Here are all your maps. For the moment, the map for the first floor need to be named map.json, and the map for the second floor map2.json.</p>
+        <p>Here are all your maps.</p>
       </div>
 
       <table class="table tokens-table">
         <thead>
         <tr>
-          <th>Id</th>
           <th>Name</th>
-          <th>Created at</th>
+          <th>Floor</th>
+          <th>Current Map</th>
           <th>Actions</th>
         </tr>
         </thead>
@@ -31,16 +31,16 @@
         <tbody>
         <% @maps.each do |map| %>
             <tr class="token-data token-row">
-              <td><%= map.id %></td>
               <td><%= map.name %></td>
-              <td><%= map.created_at %></td>
+              <td><%= map.floor %></td>
+              <td><%= map.currentMap %></td>
               <td width="30%">
                 <div class="row">
                   <%= button_tag(:type => 'button', class: 'btn btn-primary btn-xs token-action') do %>
-                      <% link_to 'Make the new map', upload_index_path(map), class: 'link-no-style' %>
+                      <% link_to 'TODO', upload_index_path(map), class: 'link-no-style' %>
                   <% end %>
                   <%= button_tag(:type => 'button', class: 'btn btn-xs btn-success token-action') do %>
-                      <% link_to 'Rename', edit_upload_path(map), class: 'link-no-style' %>
+                      <% link_to 'Modify', edit_upload_path(map), class: 'link-no-style' %>
                   <% end %>
                   <%= button_tag(:type => 'button', class: 'btn btn-xs btn-danger token-action') do %>
                       <% link_to 'Delete', upload_path(map), method: :delete, data: {confirm: 'Are you sure you want to delete this map ?'}, class: 'link-no-style' %>
@@ -51,6 +51,7 @@
         </tbody>
       </table>
     </div>
+
 
   </div>
 </div>
