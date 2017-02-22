@@ -40,6 +40,7 @@ class UploadController < ApplicationController
     redirect_to upload_index_path
   end
 
+
   # GET /upload/new
 
   def new
@@ -49,7 +50,6 @@ class UploadController < ApplicationController
   # GET /upload/:id/edit
 
   def edit
-    puts @map.map.current_path
   end
 
   private
