@@ -7,6 +7,7 @@ class Classroom < ActiveRecord::Base
 
   # TODO: ! To test ! #
   validates :floor, presence: true
+  validates :point, presence: true
 
   belongs_to :point
 

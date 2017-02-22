@@ -2,15 +2,19 @@ require 'test_helper'
 
 class ClassroomTest < ActiveSupport::TestCase
 
+  setup do
+    @point = points(:one)
+  end
+
   test "classroom should have name and description" do
-    classroom = Classroom.new(name: "G-164", description: "A description")
+    classroom = Classroom.new(name: "G-164", description: "A description", floor: 1, point: @point)
     assert classroom.valid?, classroom.errors.full_messages
   end
 
   # name validations
 
   test "classroom should be invalid with name not present" do
-    classroom = Classroom.new(name: "", description: "A description")
+    classroom = Classroom.new(name: "", description: "A description", floor: 1, point: @point)
 
     assert_not classroom.valid?, classroom.errors.full_messages
     assert_match "Name can't be blank", classroom.errors.full_messages[0]
