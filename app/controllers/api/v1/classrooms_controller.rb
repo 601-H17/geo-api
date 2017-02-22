@@ -14,7 +14,7 @@ class Api::V1::ClassroomsController < ApplicationController
   # GET (by :id)
 
   def show
-    render json: Classroom.find_by(params[:id])
+    render json: Classroom.find_by(params[:id]).to_json(include: { point: {only: [:lat, :lng]} }, except: :point_id)
   end
 
   # GET (by :wing)
@@ -22,7 +22,7 @@ class Api::V1::ClassroomsController < ApplicationController
   def show_by_name
     name = params[:name]
     begin
-      classroom = Classroom.find_by_name!(params[:name])
+      classroom = Classroom.find_by_name!(params[:name]).to_json(include: { point: {only: [:lat, :lng]} }, except: :point_id)
       render json: classroom, status: 200
     rescue ActiveRecord::RecordNotFound
       render json: { error: "Classroom #{name} not found"}, status: 404
