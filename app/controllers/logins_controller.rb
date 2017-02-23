@@ -14,10 +14,10 @@ class LoginsController < ApplicationController
     admin = Admin.find_by(email: params[:logins][:email].downcase)
     if admin && admin.authenticate(params[:logins][:password])
       session[:admin_id] = admin.id
-      flash[:success] = "Successfully logged in"
+      flash[:success] = "Connecté avec succès."
       redirect_to admin_path(admin)
     else
-      flash.now[:danger] = "Something wrong with your login infos"
+      flash.now[:danger] = "Une erreur est survenue."
       render 'new'
     end
   end
@@ -26,7 +26,7 @@ class LoginsController < ApplicationController
 
   def destroy
     session[:admin_id] = nil
-    flash[:success] = "You have logged out"
+    flash[:success] = "Vous êtes déconnecté."
     redirect_to login_path
   end
 

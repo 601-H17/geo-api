@@ -6,25 +6,34 @@
 
         <div class="form-group">
           <div class="control-label col-sm-2">
-            <%= f.label :name %>
+            <%= f.label :nom %>
           </div>
           <div class="col-sm-8">
-            <%= f.text_field :name, class: 'form-control', placeholder: 'Map name', autofocus: true %>
+            <%= f.text_field :name, class: 'form-control', placeholder: 'nom de la carte', autofocus: true %>
           </div>
         </div>
 
         <div class="form-group">
           <div class="control-label col-sm-2">
-            <%= f.label :currentMap %>
+            <%= f.label :Étage %>
           </div>
           <div class="col-sm-8">
-            <%= f.number_field :currentMap, class: 'form-control', placeholder: 'Floor' %>
+            <%= f.number_field :floor, class: 'form-control', placeholder: 'étage' %>
           </div>
         </div>
 
         <div class="form-group">
           <div class="control-label col-sm-2">
-            <%= f.label :map %>
+            <%= f.label :carte_actuelle %>
+          </div>
+          <div class="col-sm-8">
+            <%= f.check_box :currentMap %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :carte %>
           </div>
           <div class="col-sm-8">
             <%= f.file_field :map %>
@@ -33,8 +42,8 @@
 
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
-            <%= link_to 'Cancel', upload_index_path, class: 'btn btn-danger btn-sm' %>
-            <%= f.submit (@map.new_record? ? 'Accept' : 'Update'), class: 'btn btn-primary btn-sm' %>
+            <%= link_to 'Annuler', upload_index_path, class: 'btn btn-danger btn-sm' %>
+            <%= f.submit (@map.new_record? ? 'Téléverser' : 'Mettre à jour'), class: 'btn btn-primary btn-sm' %>
           </div>
         </div>
 

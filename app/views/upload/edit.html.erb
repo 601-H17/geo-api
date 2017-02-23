@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="page-header view-header">Update Map</h1>
+  <h1 class="page-header view-header">Mettre à jour la carte</h1>
 
   <%= render 'shared/errors', obj: @map %>
 
@@ -9,15 +9,34 @@
 
           <div class="form-group">
             <div class="control-label col-sm-2">
-              <%= f.label :name %>
+              <%= f.label :nom %>
             </div>
             <div class="col-sm-8">
               <%= f.text_field :name, class: 'form-control', placeholder: 'Map name', autofocus: true %>
             </div>
           </div>
+
+          <div class="form-group">
+            <div class="control-label col-sm-2">
+              <%= f.label :Étage %>
+            </div>
+            <div class="col-sm-8">
+              <%= f.number_field :floor, class: 'form-control', placeholder: 'étage' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="control-label col-sm-2">
+              <%= f.label :carte_actuelle %>
+            </div>
+            <div class="col-sm-8">
+              <%= f.check_box :currentMap %>
+            </div>
+          </div>
+
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-              <%= link_to 'Cancel', upload_index_path, class: 'btn btn-danger btn-sm' %>
+              <%= link_to 'Annuler', upload_index_path, class: 'btn btn-danger btn-sm' %>
               <%= f.submit class: 'btn btn-primary btn-sm' %>
             </div>
           </div>

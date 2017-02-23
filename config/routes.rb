@@ -16,6 +16,9 @@ Rails.application.routes.draw do
 
   resources :upload, except: :show
 
+  get '/upload/:id', to: 'upload#make_current_map'
+
+
   namespace :api, defaults: {format: :json} do
 
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do

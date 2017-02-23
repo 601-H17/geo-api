@@ -1,6 +1,6 @@
 class UploadController < ApplicationController
   before_action :require_admin
-  before_action :get_map, only: [:edit, :update, :destroy]
+  before_action :get_map, only: [:edit, :update, :destroy, :make_current_map]
 
   # GET /upload
 
@@ -13,7 +13,7 @@ class UploadController < ApplicationController
   def create
     @map = Map.new(map_params)
     if @map.save
-      flash[:success] = "Map was successfully upload"
+      flash[:success] = "La carte a été téléversée avec succès."
       redirect_to upload_index_path
     else
       render 'new'
@@ -24,7 +24,7 @@ class UploadController < ApplicationController
 
   def update
     if @map.update(map_params)
-      flash[:success] = "Map was successfully updated"
+      flash[:success] = "La carte a été mise à jour avec succès."
       redirect_to upload_index_path
     else
       render 'edit'
@@ -36,7 +36,7 @@ class UploadController < ApplicationController
   def destroy
     key_name = @map.name
     @map.destroy
-    flash[:danger] = "#{key_name} was successfully destroyed"
+    flash[:danger] = "#{key_name} a bien été détruite."
     redirect_to upload_index_path
   end
 
@@ -50,6 +50,17 @@ class UploadController < ApplicationController
   # GET /upload/:id/edit
 
   def edit
+  end
+
+  def make_current_map
+    # @map.currentMap = true
+    if @map.currentMap
+      flash[:warning] = "La carte #{@map.name} est déjà utilisée pour l'étage #{@map.floor}."
+      redirect_to upload_index_path
+    elsif @map.update({currentMap: true})
+      flash[:success] = "La carte #{@map.name} a bien été mise la carte actuelle pour l'étage #{@map.floor}."
+      redirect_to upload_index_path
+    end
   end
 
   private
