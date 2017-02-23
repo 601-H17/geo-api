@@ -4,7 +4,16 @@ class Api::V1::ClassroomsController < ApplicationController
 
   respond_to :json
 
+  swagger_controller :classrooms, 'Classrooms'
+
   # GET (all)
+
+  swagger_api :index do
+    summary "Fetch the classrooms infos in an array"
+    param :header, 'Authorization', :string, :required
+    response :ok, "Success", :Map
+    response :unauthorized, '(Unauthorized) Token is not present or token is invalid.'
+  end
 
   def index
     classrooms = Classroom.all
@@ -13,11 +22,35 @@ class Api::V1::ClassroomsController < ApplicationController
 
   # GET (by :id)
 
+  swagger_api :show do
+    summary "Fetch the classroom infos from an id"
+    param :header, 'Authorization', :string, :required
+    param :path, :id, :integer, :required
+    response :ok, "Success", :Map
+    response :unauthorized, '(Unauthorized) Token is not present or token is invalid.'
+    response :not_found
+  end
+
   def show
-    render json: Classroom.find_by(params[:id]).to_json(include: { point: {only: [:lat, :lng]} }, except: :point_id)
+    id = params[:id]
+    begin
+      classroom = Classroom.find(id).to_json(include: { point: {only: [:lat, :lng]} }, except: :point_id)
+      render json: classroom, status: 200
+    rescue ActiveRecord::RecordNotFound
+      render json: { error: "Classroom with id <#{id}> not found" }, status: 404
+    end
   end
 
   # GET (by :name)
+
+  swagger_api :show_by_name do
+    summary "Fetch the classroom infos from a name"
+    param :header, 'Authorization', :string, :required
+    param :path, :name, :string, :required
+    response :ok, "Success", :Map
+    response :unauthorized, '(Unauthorized) Token is not present or token is invalid.'
+    response :not_found
+  end
 
   def show_by_name
     name = params[:name]
@@ -27,6 +60,17 @@ class Api::V1::ClassroomsController < ApplicationController
     rescue ActiveRecord::RecordNotFound
       render json: { error: "Classroom #{name} not found"}, status: 404
     end
+  end
+
+  # GET (by query, return array of classrooms)
+
+  swagger_api :search_by_name do
+    summary "Fetch the classroom infos from a query and return all relevant classrooms"
+    param :header, 'Authorization', :string, :required
+    param :path, :query, :string, :required
+    response :ok, "Success", :Map
+    response :unauthorized, '(Unauthorized) Token is not present or token is invalid.'
+    response :not_found
   end
 
   def search_by_name
@@ -43,7 +87,7 @@ class Api::V1::ClassroomsController < ApplicationController
     if classrooms_found.any?
       render json: classrooms_found, status: 200
     else
-      render json: { error: "Classroom #{query} not found"}, status: 404
+      render json: { error: "Classroom(s) #{query} not found"}, status: 404
     end
 
   end
