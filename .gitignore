@@ -51,3 +51,4 @@ fabric.properties
 .DS_Store
 .idea/
 .byebug_history
+coverage/
