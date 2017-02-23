@@ -53,7 +53,6 @@ class UploadController < ApplicationController
   end
 
   def make_current_map
-    # @map.currentMap = true
     if @map.currentMap
       flash[:warning] = "La carte #{@map.name} est déjà utilisée pour l'étage #{@map.floor}."
       redirect_to upload_index_path
