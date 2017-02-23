@@ -4,8 +4,20 @@
   "basePath": "http://localhost:3000",
   "apis": [
     {
+      "path": "/api/v1/map.{format}",
+      "description": "Map"
+    },
+    {
+      "path": "/api/v1/classrooms.{format}",
+      "description": "Classrooms"
+    },
+    {
       "path": "/api/v1/corridors.{format}",
       "description": "Corridors"
+    },
+    {
+      "path": "/api/v1/path.{format}",
+      "description": "Pathfinder"
     }
   ],
   "authorizations": null,

@@ -6,33 +6,25 @@ class Api::V1::PathController < ApplicationController
 
   before_action :restrict_access
 
-  # rescue_from Errno::ECONNREFUSED, :with => :refused
-
   PATHFINDER_API_URL = ENV['PATHFINDER_URL']
 
   respond_to :json
 
+  swagger_controller :path, 'Pathfinder'
+
+  swagger_api :find do
+    summary "Fetch a path from a local to another"
+    param :header, 'Authorization', :string, :required
+    param :query, :localA, :string, :required, "Start local"
+    param :query, :localB, :string, :required, "End local"
+    response :ok, "Success"
+    response :unauthorized, '(Unauthorized) Token is not present or token is invalid.'
+    response :not_found
+  end
+
   def find
     local_a = params[:localA]
     local_b = params[:localB]
-
-=begin
-    msg = ""
-
-    if validate local_a
-      msg += "#{local_a} is ok -- "
-    else
-      msg += "#{local_a} is not ok\n"
-    end
-
-    if validate local_b
-      msg += "#{local_b} is ok"
-    else
-      msg += "#{local_b} is not ok\n"
-    end
-
-    render json: { msg: msg }, status: 200
-=end
 
     if validate(local_a) && validate(local_b)
 
@@ -44,7 +36,7 @@ class Api::V1::PathController < ApplicationController
       end
 
     else
-      render json: { error: "Local not valid, it should begin with a capital letter followed by a '-' followed by 3 numbers (e.g. G-164)" }, status: 404
+      render json: { error: "Local (#{local_a} or #{local_b}) not valid, it should begin with a capital letter followed by a '-' followed by 3 numbers (e.g. G-164)" }, status: 404
     end
   end
 

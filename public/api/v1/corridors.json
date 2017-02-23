@@ -9,6 +9,15 @@
       "operations": [
         {
           "summary": "Fetch the corridors infos",
+          "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authorization",
+              "type": "string",
+              "description": null,
+              "required": true
+            }
+          ],
           "responseMessages": [
             {
               "code": 200,
@@ -18,7 +27,7 @@
             {
               "code": 401,
               "responseModel": null,
-              "message": "Unauthorized"
+              "message": "(Unauthorized) Token is not present or token is invalid."
             }
           ],
           "nickname": "Api::V1::Corridors#index",

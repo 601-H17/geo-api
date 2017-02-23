@@ -37,6 +37,16 @@ class Api::V1::ClassroomsControllerTest < ActionController::TestCase
     assert_match @classroom.to_json(include: { point: {only: [:lat, :lng]} }, except: :point_id).to_s, @response.body.to_s
   end
 
+  test "should not get classroom by id with invalid id" do
+    invalid_id = 100000000
+
+    get :show, id: invalid_id
+
+    assert_response :not_found
+    assert_includes request.headers["Authorization"], @token.access_token
+    assert_match "Classroom with id \\u003c#{invalid_id}\\u003e not found", @response.body
+  end
+
   # Show by name (GET by name)
 
   test "should get classroom by name with token" do

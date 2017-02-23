@@ -56,5 +56,5 @@ coverage/
 
 # Swagger docs
 
-public/api/
+public/api/v1
 public/api-docs.json

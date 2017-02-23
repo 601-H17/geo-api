@@ -8,8 +8,9 @@ class Api::V1::CorridorsController < ApplicationController
 
   swagger_api :index do
     summary "Fetch the corridors infos"
+    param :header, 'Authorization', :string, :required
     response :ok, "Success", :Corridors
-    response :unauthorized
+    response :unauthorized, '(Unauthorized) Token is not present or token is invalid.'
   end
 
   def index
