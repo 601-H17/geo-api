@@ -94,7 +94,7 @@ class Api::V1::ClassroomsControllerTest < ActionController::TestCase
 
     assert_response :not_found
     assert_includes request.headers["Authorization"], @token.access_token
-    assert_match "Classroom #{query} not found", @response.body.to_s
+    assert_match "Classroom(s) #{query} not found", @response.body.to_s
   end
 
 end

@@ -46,7 +46,7 @@ class Api::V1::PathControllerTest < ActionController::TestCase
 
     assert_response :not_found
     assert_includes request.headers["Authorization"], @token.access_token
-    assert_match "Local not valid, it should begin with a capital letter followed by a '-' followed by 3 numbers (e.g. G-164)", @response.body
+    assert_match "Local (#{local_a} or #{local_b}) not valid, it should begin with a capital letter followed by a '-' followed by 3 numbers (e.g. G-164)", @response.body
   end
 
   test "should not get path with pathfinderAPI response not successful" do
@@ -59,7 +59,7 @@ class Api::V1::PathControllerTest < ActionController::TestCase
 
     assert_response :error
     assert_includes request.headers["Authorization"], @token.access_token
-    assert_match "Server could not fulfilled the request, path finding is unavailable. Try it later.", @response.body
+    assert_equal "Server could not fulfilled the request, path finding is unavailable. Try it later.", JSON.parse(@response.body)['error']
   end
 
 end
