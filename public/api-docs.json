@@ -1,11 +1,11 @@
 {
   "apiVersion": "1.0",
   "swaggerVersion": "1.2",
-  "basePath": "https://csf-geo-app.herokuapp.com",
+  "basePath": "http://localhost:3000",
   "apis": [
     {
-      "path": "/api/v1/map.{format}",
-      "description": "Map"
+      "path": "/api/v1/corridors.{format}",
+      "description": "Corridors"
     }
   ],
   "authorizations": null,

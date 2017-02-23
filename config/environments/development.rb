@@ -40,4 +40,5 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   ENV['PATHFINDER_URL'] = 'http://localhost:8080/api/pathfinder'
+  ENV['SWAGGER_URL'] = 'http://localhost:3000/'
 end
