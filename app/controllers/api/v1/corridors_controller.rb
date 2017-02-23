@@ -1,4 +1,5 @@
 class Api::V1::CorridorsController < ApplicationController
+
   before_action :restrict_access
 
   respond_to :json

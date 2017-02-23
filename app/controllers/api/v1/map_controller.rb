@@ -1,5 +1,7 @@
 class Api::V1::MapController < ApplicationController
-  before_filter :restrict_access
+
+  before_action :restrict_access
+
   respond_to :json
 
   swagger_controller :map, 'Map'

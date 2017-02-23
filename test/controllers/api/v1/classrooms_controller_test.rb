@@ -1,3 +1,5 @@
+require 'test_helper'
+
 class Api::V1::ClassroomsControllerTest < ActionController::TestCase
 
   setup do
@@ -12,6 +14,7 @@ class Api::V1::ClassroomsControllerTest < ActionController::TestCase
     get :index
 
     assert_response :unauthorized
+    assert_nil request.headers["Authorization"]
   end
 
   # Index (GET)
@@ -30,6 +33,7 @@ class Api::V1::ClassroomsControllerTest < ActionController::TestCase
     get :show, id: @classroom.id
 
     assert_response :success
+    assert_includes request.headers["Authorization"], @token.access_token
     assert_match @classroom.to_json(include: { point: {only: [:lat, :lng]} }, except: :point_id).to_s, @response.body.to_s
   end
 
@@ -39,6 +43,7 @@ class Api::V1::ClassroomsControllerTest < ActionController::TestCase
     get :show_by_name, name: "MyString1"
 
     assert_response :success
+    assert_includes request.headers["Authorization"], @token.access_token
     assert_match @classroom.to_json(include: { point: {only: [:lat, :lng]} }, except: :point_id).to_s, @response.body.to_s
   end
 
@@ -48,6 +53,7 @@ class Api::V1::ClassroomsControllerTest < ActionController::TestCase
     get :show_by_name, name: name
 
     assert_response :not_found
+    assert_includes request.headers["Authorization"], @token.access_token
     assert_match "Classroom #{name} not found", @response.body.to_s
   end
 
@@ -58,6 +64,7 @@ class Api::V1::ClassroomsControllerTest < ActionController::TestCase
 
     classrooms = JSON.parse @response.body
     assert_response :success
+    assert_includes request.headers["Authorization"], @token.access_token
     assert_equal 2, classrooms.count
   end
 
@@ -66,6 +73,7 @@ class Api::V1::ClassroomsControllerTest < ActionController::TestCase
 
     classrooms = JSON.parse @response.body
     assert_response :success
+    assert_includes request.headers["Authorization"], @token.access_token
     assert_equal 2, classrooms.count
   end
 
@@ -75,6 +83,7 @@ class Api::V1::ClassroomsControllerTest < ActionController::TestCase
     get :search_by_name, query: query
 
     assert_response :not_found
+    assert_includes request.headers["Authorization"], @token.access_token
     assert_match "Classroom #{query} not found", @response.body.to_s
   end
 
