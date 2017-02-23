@@ -17,5 +17,11 @@
 
   <%= yield %>
 
+  <% if Rails.env.production? %>
+    <%= 'PROD' %>
+  <% elsif Rails.env.development? %>
+    <%= 'DEV' %>
+  <% end %>
+
 </body>
 </html>
