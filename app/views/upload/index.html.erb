@@ -1,0 +1,57 @@
+<div class="container">
+  <h1 class="page-header view-header">Carte</h1>
+
+  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 tokens-actions">
+    <%= link_to 'Téléverser une nouvelle carte', new_upload_path, class: 'btn btn-primary col-xs-12' %>
+  </div>
+
+  <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-xs-10 text-left"><h4 class="tokens-table-header">Liste des cartes</h4></div>
+          <div class="col-xs-2 text-right"><span class="badge"><%= @maps.count %></span></div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <p>Voici la liste de tout les cartes disponibles.</p>
+      </div>
+
+      <table class="table tokens-table">
+        <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Étage</th>
+          <th>Carte actuelle</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% @maps.each do |map| %>
+            <tr class="token-data token-row">
+              <td><%= map.name %></td>
+              <td><%= map.floor %></td>
+              <td><%= map.currentMap ? 'Oui' : 'Non' %></td>
+              <td width="30%">
+                <div class="row">
+                  <%= button_tag(:type => 'button', class: 'btn btn-primary btn-xs token-action') do %>
+                      <% link_to 'Carte actuelle', upload_path(map), class: 'link-no-style' %>
+                  <% end %>
+                  <%= button_tag(:type => 'button', class: 'btn btn-xs btn-success token-action') do %>
+                      <% link_to 'Modifier', edit_upload_path(map), class: 'link-no-style' %>
+                  <% end %>
+                  <%= button_tag(:type => 'button', class: 'btn btn-xs btn-danger token-action') do %>
+                      <% link_to 'Effacer', upload_path(map), method: :delete, data: {confirm: 'Voulez-vous vraiment supprimer cette carte?'}, class: 'link-no-style' %>
+                  <% end %>
+                </div>
+              </td>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+</div>
