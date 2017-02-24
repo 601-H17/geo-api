@@ -8,6 +8,7 @@ cache:
 rvm:
   - 2.2
 install:
+  - bundle package
   - bundle install --without production 
 script:
   - rake test

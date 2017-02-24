@@ -58,3 +58,4 @@ coverage/
 
 public/api/v1
 public/api-docs.json
+vendor/cache
