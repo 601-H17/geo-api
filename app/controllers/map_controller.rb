@@ -24,8 +24,7 @@ class MapController < ApplicationController
 
   def get_json_features_from_map(path_to_file)
     begin
-      map = File.open(path_to_file, "rb").read
-      map_json = JSON.parse(map)
+      map_json = parse(path_to_file)
       map_json = map_json['features']
       return map_json
     rescue => ex

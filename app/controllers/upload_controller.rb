@@ -54,6 +54,9 @@ class UploadController < ApplicationController
 
   def make_current_map
     if @map.currentMap
+      map_url = @map.map.url
+      map_json = parse(map_url)
+      feed_db(map_json)
       flash[:warning] = "La carte #{@map.name} est déjà utilisée pour l'étage #{@map.floor}."
       redirect_to upload_index_path
     elsif @map.update({currentMap: true})
