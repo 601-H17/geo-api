@@ -4,7 +4,7 @@ cache:
   bundler: true
   skip_bundle_clean: true
   directories:
-    - vendor/bundle
+    - vendor/cache
 rvm:
   - 2.2
 install:
