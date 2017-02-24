@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   get '/upload/:id', to: 'upload#make_current_map'
 
+  resources :classrooms
 
   namespace :api, defaults: {format: :json} do
 
