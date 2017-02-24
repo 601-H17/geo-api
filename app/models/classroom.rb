@@ -1,5 +1,6 @@
 class Classroom < ActiveRecord::Base
 
+  #YM: meme regex que dans classrooms_helper ? Duplication
   REGEX_NAME = /[A-Z]-[0-9]{3}/
 
   validates :name, presence: true, uniqueness: {case_sensitive: false}, length: {minimum: 5, maximum: 5}, format: {with: REGEX_NAME}

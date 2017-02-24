@@ -1,5 +1,6 @@
 class Admin < ActiveRecord::Base
 
+  #YM: est-ce qu'il ya des tests pour ce regex ?
   REGEX_EMAIL = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
 
   before_save { self.email = email.downcase }

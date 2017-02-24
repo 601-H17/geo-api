@@ -1,3 +1,4 @@
+#YM:applicationHelper.. trop général comme nom... ici dans cette classe il est question d'update et d'insert ??
 module ApplicationHelper
 
   def parse(filepath)

@@ -5,6 +5,8 @@ class MapController < ApplicationController
   def display
     gon.map_floor_1 = []
     gon.map_floor_2 = []
+
+    #YM:éviter la répétition
     m1 = Map.where(floor: 1, currentMap: true)
     m2 = Map.where(floor: 2, currentMap: true)
 

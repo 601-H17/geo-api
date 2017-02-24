@@ -13,6 +13,7 @@ class Api::V1::MapController < ApplicationController
     response :unauthorized, '(Unauthorized) Token is not present or token is invalid.'
   end
 
+  #YM: éviter la répétition.. 
   def index
     m1 = Map.where(floor: 1, currentMap: true)
     floor_1 = m1.where(floor: 1).first

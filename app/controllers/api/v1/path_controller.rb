@@ -23,7 +23,7 @@ class Api::V1::PathController < ApplicationController
   end
 
   def find
-    local_a = params[:localA]
+    local_a = params[:localA] #YM: A et B --> depart et arrivée
     local_b = params[:localB]
 
     if validate(local_a) && validate(local_b)
@@ -32,6 +32,7 @@ class Api::V1::PathController < ApplicationController
         response = HTTParty.get("#{PATHFINDER_API_URL}?localA=#{local_a}&localB=#{local_b}")
         render json: response, status: 200
       rescue Errno::ECONNREFUSED
+        #YM: Externaliser les messages d'erreurs
         render json: { error: "Server could not fulfilled the request, path finding is unavailable. Try it later." }, status: 503
       end
 
