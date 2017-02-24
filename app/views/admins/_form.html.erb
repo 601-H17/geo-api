@@ -2,15 +2,15 @@
 
 <%= form_for(@admin) do |f| %>
     <div class="field form-group">
-      <%= f.label :username %><br>
+      <%= f.label ("Nom d'utilisateur") %><br>
       <%= f.text_field :username, class: 'form-control' %>
     </div>
     <div class="field form-group">
-      <%= f.label :email %><br>
+      <%= f.label :courriel %><br>
       <%= f.text_field :email, class: 'form-control' %>
     </div>
     <div class="field form-group">
-      <%= f.label :master_admin %><br>
+      <%= f.label :maître_administration %><br>
       <%= f.check_box :master_admin, class: 'form-check' %>
     </div>
     <div class="actions form-group">

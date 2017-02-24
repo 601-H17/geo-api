@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170222182752) do
+ActiveRecord::Schema.define(version: 20170224193442) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "username"
@@ -42,10 +42,10 @@ ActiveRecord::Schema.define(version: 20170222182752) do
 
   create_table "maps", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "map"
-    t.boolean  "currentMap"
+    t.boolean  "currentMap", default: false
     t.integer  "floor"
   end
 

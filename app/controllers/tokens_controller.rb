@@ -13,7 +13,7 @@ class TokensController < ApplicationController
   def create
     @token = ApiKey.new(token_params)
     if @token.save
-      flash[:success] = "Token was successfully generated: #{@token.access_token}"
+      flash[:success] = "Le jeton a bien été créé: #{@token.access_token}."
       redirect_to tokens_path
     else
       render 'new'
@@ -24,7 +24,7 @@ class TokensController < ApplicationController
 
   def update
     if @token.update(token_params)
-      flash[:success] = "Token was successfully updated"
+      flash[:success] = "Le jeton a bien été modifié."
       redirect_to tokens_path
     else
       render 'edit'
@@ -36,7 +36,7 @@ class TokensController < ApplicationController
   def destroy
     key_name = @token.name
     @token.destroy
-    flash[:danger] = "#{key_name} was successfully revoked"
+    flash[:danger] = "Le jeton #{key_name} a bien été revoqué."
     redirect_to tokens_path
   end
 

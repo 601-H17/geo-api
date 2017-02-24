@@ -21,14 +21,14 @@ class ApplicationController < ActionController::Base
 
   def require_admin
     if !logged_in?
-      flash[:danger] = "You must be logged in to perform this action"
+      flash[:danger] = "Vous devez être connecté."
       redirect_to root_path
     end
   end
 
   def require_master_admin
     if current_admin and !current_admin.master_admin?
-      flash[:danger] = "You must be a master admin in to perform this action"
+      flash[:danger] = "Vous devez être connecté en tant que maître administrateur."
       redirect_to admins_path
     end
   end
