@@ -39,4 +39,6 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  ENV['PATHFINDER_URL'] = 'https://pathfinder-csf-geo-app.herokuapp.com/api/pathfinder'
+  ENV['SWAGGER_URL'] = 'https://csf-geo-app.herokuapp.com/'
 end

@@ -1,9 +1,22 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  id: 1
+  name: MyString1
   description: MyString
+  floor: 1
+  point: points(:one)
 
 two:
-  name: MyString
+  id: 2
+  name: MyString2
   description: MyString
+  floor: 1
+  point: points(:two)
+
+three:
+  id: 3
+  name: String3
+  description: MyString
+  floor: 1
+  point: points(:two)

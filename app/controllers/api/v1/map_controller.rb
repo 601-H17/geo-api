@@ -1,13 +1,16 @@
 class Api::V1::MapController < ApplicationController
-  before_filter :restrict_access
+
+  before_action :restrict_access
+
   respond_to :json
 
   swagger_controller :map, 'Map'
 
   swagger_api :index do
     summary "Fetch the map infos"
+    param :header, 'Authorization', :string, :required
     response :ok, "Success", :Map
-    response :unauthorized
+    response :unauthorized, '(Unauthorized) Token is not present or token is invalid.'
   end
 
   def index

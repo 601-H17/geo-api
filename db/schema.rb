@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170222182752) do
+=======
+ActiveRecord::Schema.define(version: 20170217182945) do
+>>>>>>> master
 
   create_table "admins", force: :cascade do |t|
     t.string   "username"
@@ -34,8 +38,11 @@ ActiveRecord::Schema.define(version: 20170222182752) do
     t.string   "description", default: ""
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.integer  "floor"
+    t.integer  "point_id"
   end
 
+<<<<<<< HEAD
   create_table "maps", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -45,4 +52,25 @@ ActiveRecord::Schema.define(version: 20170222182752) do
     t.integer  "floor"
   end
 
+=======
+  add_index "classrooms", ["point_id"], name: "index_classrooms_on_point_id"
+
+  create_table "points", force: :cascade do |t|
+    t.decimal  "lat",        default: 0.0
+    t.decimal  "lng",        default: 0.0
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "stairs", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "floor"
+    t.integer  "point_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "stairs", ["point_id"], name: "index_stairs_on_point_id"
+
+>>>>>>> master
 end

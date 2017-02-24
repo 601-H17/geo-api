@@ -1,15 +1,17 @@
 language: ruby
+sudo: false
 cache:
   bundler: true
   skip_bundle_clean: true
   directories:
-    - vendor/bundle
+    - vendor/cache
 rvm:
   - 2.2
 install:
+  - bundle package
   - bundle install --without production 
 script:
-  - rake test test/models/admin_test.rb
+  - rake test
   - rake cucumber
 notifications:
   slack: 601-h17-eq2:IHWU1zoJHu7FadwBnn4BIetn

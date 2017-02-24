@@ -23,11 +23,12 @@ Rails.application.routes.draw do
 
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
 
-      resources :map, only: [:index]
+      resources :map, only: [:index, :create]
       get 'map2', to: 'map#map2'
 
       resources :classrooms, only: [:index, :show]
       get '/classroom/:name', to: 'classrooms#show_by_name'
+      get '/classroom_search/:query', to: 'classrooms#search_by_name'
 
       resources :corridors, only: :index
 

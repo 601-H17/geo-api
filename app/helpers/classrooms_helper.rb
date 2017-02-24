@@ -1,7 +1,11 @@
 module ClassroomsHelper
 
   def validate(name)
-    Classroom.new(name: name, description: "Random description").valid?
+    name =~ /[A-Z]-[0-9]{3}/
+  end
+
+  def update_db
+
   end
 
 end

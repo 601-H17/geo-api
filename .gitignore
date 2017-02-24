@@ -48,6 +48,14 @@ fabric.properties
 ## macOS users files:
 
 # End of https://www.gitignore.io/api/rubymine
+
 .DS_Store
 .idea/
 .byebug_history
+coverage/
+
+# Swagger docs
+
+public/api/v1
+public/api-docs.json
+vendor/cache
