@@ -32,6 +32,9 @@ Rails.application.routes.draw do
 
       get :path, to: 'path#find'
 
+      # Docs
+      get :docs, to: 'docs#index'
+
     end
 
   end
