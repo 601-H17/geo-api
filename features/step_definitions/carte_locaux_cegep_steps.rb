@@ -3,7 +3,7 @@ Given /^Administrateur connecté$/ do
   visit login_path
   fill_in("logins_email", :with => @admin.email)
   fill_in("logins_password", :with => @admin.password)
-  click_button("Log in")
+  click_button("Connexion")
 end
 
 When(/^Les locaux sur affichés$/) do
@@ -11,5 +11,5 @@ When(/^Les locaux sur affichés$/) do
 end
 
 Then(/^Valide la carte$/) do
-  expect(page).to have_content("map")
+  expect(page).to have_content("Choisissez un étage :")
 end
