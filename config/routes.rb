@@ -12,10 +12,12 @@ Rails.application.routes.draw do
 
   get 'map', to: 'map#display'
 
-  get 'upload', to: 'upload#upload'
-  post 'upload', to: 'upload#upload'
-
   resources :tokens, except: :show
+
+  resources :upload, except: :show
+
+  get '/upload/:id', to: 'upload#make_current_map'
+
 
   namespace :api, defaults: {format: :json} do
 

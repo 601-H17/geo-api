@@ -1,19 +1,19 @@
 <%= render 'shared/errors', obj: @admin %>
 
 <%= form_for(@admin) do |f| %>
-  <div class="field">
-    <%= f.label :username %><br>
-    <%= f.text_field :username %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :master_admin %><br>
-    <%= f.check_box :master_admin %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="field form-group">
+      <%= f.label :username %><br>
+      <%= f.text_field :username, class: 'form-control' %>
+    </div>
+    <div class="field form-group">
+      <%= f.label :email %><br>
+      <%= f.text_field :email, class: 'form-control' %>
+    </div>
+    <div class="field form-group">
+      <%= f.label :master_admin %><br>
+      <%= f.check_box :master_admin, class: 'form-check' %>
+    </div>
+    <div class="actions form-group">
+      <%= f.submit class: 'btn btn-primary' %>
+    </div>
 <% end %>
