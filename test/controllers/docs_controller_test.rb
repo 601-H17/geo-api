@@ -1,5 +1,5 @@
-require 'rails_helper'
+require 'test_helper'
 
-RSpec.describe DocsController, type: :controller do
+class Api::V1::DocsControllerTest < ActionController::TestCase
 
 end
