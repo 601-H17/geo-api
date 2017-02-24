@@ -6,7 +6,7 @@ Swagger::Docs::Config.register_apis({
         # the output location where your .json files are written to
         :api_file_path => "public/",
         # the URL base path to your API
-        :base_path => "https://csf-geo-app.herokuapp.com/", #(Rails.env.production? ? "https://csf-geo-app.herokuapp.com/" : "http://localhost:3000/"),
+        :base_path => (Rails.env.production? ? "https://csf-geo-app.herokuapp.com/" : "http://localhost:3000/"),
         # if you want to delete all .json files at each generation
         :clean_directory => true,
         # add custom attributes to api-docs
