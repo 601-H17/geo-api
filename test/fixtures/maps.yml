@@ -1,0 +1,13 @@
+one:
+  id: 1
+  name: floor1
+  map: map.json
+  currentMap: true
+  floor: 1
+
+two:
+  id: 2
+  name: floor2
+  map: map2.json
+  currentMap: true
+  floor: 2

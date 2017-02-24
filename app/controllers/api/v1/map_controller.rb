@@ -14,14 +14,16 @@ class Api::V1::MapController < ApplicationController
   end
 
   def index
-    file = File.read('json_files/map.json')
-    hash = JSON.parse file
+    m1 = Map.where(floor: 1, currentMap: true)
+    floor_1 = m1.where(floor: 1).first
+    hash = parse("public" + floor_1.map.url)
     render json: hash, status: 200
   end
 
   def map2
-    file = File.read('json_files/map2.json')
-    hash = JSON.parse file
+    m2 = Map.where(floor: 2, currentMap: true)
+    floor_2 = m2.where(floor: 2).first
+    hash = parse("public" + floor_2.map.url)
     render json: hash, status: 200
   end
 
