@@ -484,7 +484,7 @@
             "type":"Feature",
             "properties":{
                 "entrance":"yes",
-                "ref":"GE-202",
+                "ref":"GE-203",
                 "type":"stairs"
             },
             "geometry":{
