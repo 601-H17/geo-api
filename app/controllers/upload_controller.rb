@@ -54,9 +54,9 @@ class UploadController < ApplicationController
 
   def make_current_map
     if @map.currentMap
-      # map_url = @map.map.url
-      # map_json = parse('public' + map_url)
-      # feed_db(map_json)
+      map_url = @map.map.url
+      map_json = parse('public' + map_url)
+      feed_db(map_json)
       @map.update({currentMap: false})
       flash[:success] = "La carte #{@map.name} a été désactivé pour l'étage #{@map.floor}."
       redirect_to upload_index_path

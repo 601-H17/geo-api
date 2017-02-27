@@ -20,13 +20,17 @@ module ApplicationHelper
     point = Point.create(lat: lat, lng: lng)
 
     classroom = Classroom.where(name: name).first
+    point_lat = point.lat #test
     if classroom.present?
-      puts "#{classroom.name} is present. Updated from floor #{classroom.floor} to #{floor} and from point (#{classroom.point.lat}, #{classroom.point.lng}) to (#{point.lat}, #{point.lng})"
+
+      classroom_lat = classroom.point.lat # test
+
+      puts "#{classroom.name} is present. Updated from floor #{classroom.floor} to #{floor} and from point (#{classroom_lat}, #{classroom.point.lng}) to (#{point_lat}, #{point.lng})"
       classroom.update(floor: floor.to_i, point: point)
     else
       classroom = Classroom.new(name: name, floor: floor.to_i, point: point)
       if classroom.valid?
-        puts "#{name} is not present. floor #{floor} and point (#{point.lat}, #{point.lng})"
+        puts "#{name} is not present. floor #{floor} and point (#{point_lat}, #{point.lng})"
         classroom.save
       end
     end
