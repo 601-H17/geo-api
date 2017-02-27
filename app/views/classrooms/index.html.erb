@@ -1,0 +1,54 @@
+<div class="container">
+  <h1 class="page-header view-header">Locaux</h1>
+
+  <div  class="col-xs-12 col-sm-4 col-md-4 col-lg-3 tokens-actions">
+    <%= link_to 'Créer un local', classrooms_path, class: 'btn btn-primary col-xs-12' %>
+  </div>
+
+  <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-xs-10 text-left"><h4 class="tokens-table-header">Locaux</h4></div>
+          <div class="col-xs-2 text-right"><span class="badge"><%= @classrooms.count %></span></div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <p>Voici la liste de tous les locaux.</p>
+      </div>
+
+      <table class="table tokens-table">
+        <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nom</th>
+          <th>Date de création</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% @classrooms.each do |classroom| %>
+            <tr class="token-data token-row">
+              <td><%= classroom.id %></td>
+              <td><%= classroom.name %></td>
+              <td><%= classroom.created_at %></td>
+              <td width="30%">
+                <div class="row">
+                  <button type="button" class="btn btn-primary btn-xs token-action">Afficher</button>
+                  <%= button_tag(:type => 'button', class: 'btn btn-xs btn-success token-action') do %>
+                      <% link_to 'Mettre à jour', classrooms_path, class: 'link-no-style' %>
+                  <% end %>
+                  <%= button_tag(:type => 'button', class: 'btn btn-xs btn-danger token-action') do %>
+                      <% link_to 'Révoquer', classrooms_path, method: :delete, data: {confirm: 'Voulez-vous vraiment supprimer ce jeton?'}, class: 'link-no-style' %>
+                  <% end %>
+                </div>
+              </td>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
