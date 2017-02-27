@@ -36,7 +36,7 @@ class UploadController < ApplicationController
   def destroy
     key_name = @map.name
     @map.destroy
-    flash[:danger] = "#{key_name} a bien été détruite."
+    flash[:danger] = "#{key_name} a bien été supprimer."
     redirect_to upload_index_path
   end
 
@@ -55,19 +55,20 @@ class UploadController < ApplicationController
   def make_current_map
     if @map.currentMap
       map_url = @map.map.url
-      map_json = parse(map_url)
+      map_json = parse('public' + map_url)
       feed_db(map_json)
-      flash[:warning] = "La carte #{@map.name} est déjà utilisée pour l'étage #{@map.floor}."
+      @map.update({currentMap: false})
+      flash[:success] = "La carte #{@map.name} a été désactivé pour l'étage #{@map.floor}."
       redirect_to upload_index_path
     elsif @map.update({currentMap: true})
-      flash[:success] = "La carte #{@map.name} a bien été mise la carte actuelle pour l'étage #{@map.floor}."
+      flash[:success] = "La carte #{@map.name} a bien été activé pour l'étage #{@map.floor}."
       redirect_to upload_index_path
     end
   end
 
   private
   def map_params
-    params.require(:map).permit(:map, :name, :floor, :currentMap)
+    params.require(:map).permit(:map, :name, :floor)
   end
 
   def get_map

@@ -1,14 +1,14 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
 
-  <h1>Admins</h1>
+  <h1>Administrateur</h1>
   <hr>
   <table class="table">
     <thead>
     <tr>
-      <th>Username</th>
-      <th>Email</th>
-      <th>Master admin</th>
+      <th>Nom d'utilisateur</th>
+      <th>Adresse courriel</th>
+      <th>Maître administration</th>
       <th colspan="3">Actions</th>
     </tr>
     </thead>
@@ -19,12 +19,12 @@
           <td><%= admin.username %></td>
           <td><%= admin.email %></td>
           <td><%= admin.master_admin %></td>
-          <td><%= link_to 'Show', admin %></td>
+          <td><%= link_to 'Afficher', admin %></td>
           <% if current_admin && current_admin.master_admin? || admin == current_admin %>
-              <td><%= link_to 'Edit', edit_admin_path(admin) %></td>
+              <td><%= link_to 'Modifier', edit_admin_path(admin) %></td>
           <% end %>
           <% if current_admin && current_admin.master_admin? %>
-              <td><%= link_to 'Destroy', admin, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+              <td><%= link_to 'Détruire', admin, method: :delete, data: {confirm: 'Êtes vous certain'} %></td>
           <% end %>
         </tr>
     <% end %>
@@ -34,6 +34,6 @@
   <br>
 
   <% if current_admin && current_admin.master_admin? %>
-      <%= link_to 'New Admin', new_admin_path %>
+      <%= link_to 'Nouveau', new_admin_path %>
   <% end %>
 </div>
