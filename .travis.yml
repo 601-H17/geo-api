@@ -11,6 +11,7 @@ install:
   - bundle package
   - bundle install --without production 
 script:
+  - rake db:migrate
   - rake test
   - rake cucumber
 notifications:
