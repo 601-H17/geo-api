@@ -1,4 +1,4 @@
-class StairsController < ApplicationController
+class Api::V1::StairsController < ApplicationController
 
   before_action :restrict_access
 
