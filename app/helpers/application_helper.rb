@@ -11,7 +11,7 @@ module ApplicationHelper
       properties = feature['properties']
       geometry = feature['geometry']
       if properties['type'] == 'doors'
-        # update_or_insert_classroom(feature['properties']['ref'], geometry['coordinates'][0], geometry['coordinates'][1])
+        update_or_insert_classroom(feature['properties']['ref'], geometry['coordinates'][0], geometry['coordinates'][1])
       elsif properties['type'] == 'stairs'
         update_or_insert_stair(feature['properties']['ref'], geometry['coordinates'][0], geometry['coordinates'][1])
       end
