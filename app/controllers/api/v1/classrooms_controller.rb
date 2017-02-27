@@ -85,7 +85,7 @@ class Api::V1::ClassroomsController < ApplicationController
     end
 
     if classrooms_found.any?
-      render json: classrooms_found, status: 200
+      render json: classrooms_found.to_json(include: { point: {only: [:lat, :lng]} }, except: :point_id), status: 200
     else
       render json: { error: "Classroom(s) #{query} not found"}, status: 404
     end
