@@ -37,7 +37,7 @@
               <td width="30%">
                 <div class="row">
                   <%= button_tag(:type => 'button', class: 'btn btn-primary btn-xs token-action') do %>
-                      <% link_to 'Carte actuelle', upload_path(map), class: 'link-no-style' %>
+                      <% link_to (map.currentMap ? 'Désactiver' : 'Activer'), upload_path(map), class: 'link-no-style' %>
                   <% end %>
                   <%= button_tag(:type => 'button', class: 'btn btn-xs btn-success token-action') do %>
                       <% link_to 'Modifier', edit_upload_path(map), class: 'link-no-style' %>
