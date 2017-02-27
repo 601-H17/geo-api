@@ -45,6 +45,12 @@
                 <li><%= link_to 'Déconnexion', logout_path, method: :delete %></li>
               </ul>
             </li>
+
+            <% if Rails.env.production? %>
+                <li><a><%= 'PROD' %></a></li>
+            <% elsif Rails.env.development? %>
+                <li><a><%= 'DEV' %></a></li>
+            <% end %>
           </ul>
       <% end %>
     </div><!-- /.navbar-collapse -->
