@@ -11,6 +11,7 @@ install:
   - bundle package
   - bundle install --without production
 before_script:
+  - rake db:migrate
   - rake db:reset
   - rake db:migrate
 script:
