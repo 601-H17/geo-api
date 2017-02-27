@@ -36,7 +36,7 @@ class UploadController < ApplicationController
   def destroy
     key_name = @map.name
     @map.destroy
-    flash[:danger] = "#{key_name} a bien été détruite."
+    flash[:danger] = "#{key_name} a bien été supprimer."
     redirect_to upload_index_path
   end
 
