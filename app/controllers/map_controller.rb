@@ -6,9 +6,8 @@ class MapController < ApplicationController
     gon.map_floor_1 = []
     gon.map_floor_2 = []
 
-    #YM:éviter la répétition
-    m1 = Map.where(floor: 1, currentMap: true)
-    m2 = Map.where(floor: 2, currentMap: true)
+    m1 = get_current_map_by_floor(1)
+    m2 = get_current_map_by_floor(2)
 
     if !m1.empty?
       floor_1 = m1.where(floor: 1).first
@@ -32,6 +31,10 @@ class MapController < ApplicationController
     rescue => ex
       logger.error ex.message
     end
+  end
+
+  def get_current_map_by_floor(floor)
+    Map.where(floor: floor, currentMap: true)
   end
 
 end

@@ -13,19 +13,25 @@ class Api::V1::MapController < ApplicationController
     response :unauthorized, '(Unauthorized) Token is not present or token is invalid.'
   end
 
-  #YM: éviter la répétition.. 
   def index
-    m1 = Map.where(floor: 1, currentMap: true)
-    floor_1 = m1.where(floor: 1).first
-    hash = parse("public" + floor_1.map.url)
-    render json: hash, status: 200
+    floor_1 = get_current_map_by_floor(1)
+    render_map(floor_1)
   end
 
   def map2
-    m2 = Map.where(floor: 2, currentMap: true)
-    floor_2 = m2.where(floor: 2).first
-    hash = parse("public" + floor_2.map.url)
+    floor_2 = get_current_map_by_floor(2)
+    render_map(floor_2)
+  end
+
+  private
+  def render_map(floor)
+    hash = parse("public" + floor.map.url)
     render json: hash, status: 200
+  end
+
+  def get_current_map_by_floor(floor)
+    m1 = Map.where(floor: floor, currentMap: true)
+    m1.where(floor: floor).first
   end
 
 end
