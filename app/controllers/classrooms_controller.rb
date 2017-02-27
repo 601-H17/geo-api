@@ -4,7 +4,7 @@ class ClassroomsController < ApplicationController
   before_action :get_classroom, only: [:edit, :update, :destroy]
 
   def index
-    @classrooms = Classroom.all
+    @classrooms = Classroom.all.order(:name)
   end
 
 end

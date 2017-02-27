@@ -21,8 +21,8 @@
       <table class="table tokens-table">
         <thead>
         <tr>
-          <th>Id</th>
           <th>Nom</th>
+          <th>Étage</th>
           <th>Date de création</th>
           <th>Actions</th>
         </tr>
@@ -31,8 +31,8 @@
         <tbody>
         <% @classrooms.each do |classroom| %>
             <tr class="token-data token-row">
-              <td><%= classroom.id %></td>
               <td><%= classroom.name %></td>
+              <td><%= classroom.floor %></td>
               <td><%= classroom.created_at %></td>
               <td width="30%">
                 <div class="row">
