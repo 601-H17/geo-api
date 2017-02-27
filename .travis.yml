@@ -9,9 +9,11 @@ rvm:
   - 2.2
 install:
   - bundle package
-  - bundle install --without production 
-script:
+  - bundle install --without production
+before_script:
+  - rake db:reset
   - rake db:migrate
+script:
   - rake test
   - rake cucumber
 notifications:
