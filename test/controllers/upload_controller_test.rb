@@ -17,9 +17,9 @@ class UploadControllerTest < ActionController::TestCase
   end
 
   test "should upload map" do
-    map_name = "floor 1"
+    map_name = 'floor'
     assert_difference('Map.count') do
-      post :create, map: {name: map_name}
+      post :create, map: {name: map_name, floor: 1}
     end
 
     assert_response :redirect
@@ -37,7 +37,7 @@ class UploadControllerTest < ActionController::TestCase
   end
 
   test "should delete map" do
-    new_map = Map.create!(name: "floor 1")
+    new_map = Map.create!(name: "floor 1", floor: 2)
 
     assert_difference('Map.count', -1) do
       delete :destroy, id: new_map, map: new_map
