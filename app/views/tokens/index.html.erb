@@ -3,7 +3,6 @@
   <table>
     <thead>
     <tr>
-      <th>Id</th>
       <th>Nom</th>
       <th>Date de création</th>
       <th>Actions</th>
@@ -12,7 +11,6 @@
     <tbody>
     <% @tokens.each do |token| %>
         <tr>
-          <td><%= token.id %></td>
           <td><%= token.name %></td>
           <td><%= token.created_at %></td>
           <td>
@@ -25,6 +23,7 @@
     <% end %>
     </tbody>
   </table>
+  <hr>
   <br>
   <%= link_to 'Générer une nouvelle clé', new_token_path, class: 'btn' %>
 </div>
