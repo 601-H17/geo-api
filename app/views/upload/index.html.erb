@@ -42,7 +42,7 @@
                     <% link_to 'Modifier', edit_upload_path(map), class: '' %>
                 <% end %>
                 <%= button_tag(:type => 'button', class: '') do %>
-                    <% link_to 'Effacer', upload_path(map), method: :delete, data: {confirm: 'Voulez-vous vraiment supprimer cette carte?'}, class: '' %>
+                    <% link_to 'Supprimer', upload_path(map), method: :delete, data: {confirm: 'Voulez-vous vraiment supprimer cette carte?'}, class: '' %>
                 <% end %>
               </div>
             </td>
