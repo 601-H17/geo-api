@@ -2,7 +2,7 @@
 
 one:
   id: 1
-  name: MyString1
+  name: F-100
   description: MyString
   floor: 1
   wing: G
@@ -10,7 +10,7 @@ one:
 
 two:
   id: 2
-  name: MyString2
+  name: F-110
   description: MyString
   floor: 1
   wing: G
@@ -18,7 +18,7 @@ two:
 
 three:
   id: 3
-  name: String3
+  name: F-120
   description: MyString
   floor: 1
   wing: G
