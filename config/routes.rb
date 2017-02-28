@@ -34,6 +34,7 @@ Rails.application.routes.draw do
       resources :corridors, only: :index
 
       resources :stairs, only: :index
+      get '/stair/:name', to: 'stairs#show_by_name'
 
       get :path, to: 'path#find'
 
