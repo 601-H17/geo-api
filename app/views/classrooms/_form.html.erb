@@ -18,7 +18,7 @@
             <%= f.label :description %>
           </div>
           <div class="col-sm-8">
-            <%= f.text_area :description, class: 'form-control', placeholder: 'Entrer une description...', autofocus: true %>
+            <%= f.text_area :description, class: 'form-control', placeholder: 'Entrer une description...' %>
           </div>
         </div>
 
@@ -27,9 +27,31 @@
             <%= f.label :Étage %>
           </div>
           <div class="col-sm-8">
-            <%= f.text_field :floor, class: 'form-control', placeholder: 'Étage', autofocus: true %>
+            <%= f.text_field :floor, class: 'form-control', placeholder: 'Étage' %>
           </div>
         </div>
+
+        <%= f.fields_for(:points, :html => {class: 'form-horizontal', role: 'form'}) do |b| %>
+
+          <div class="form-group">
+            <div class="control-label col-sm-2">
+              <%= b.label :lat, 'Lattitude' %>
+            </div>
+            <div class="col-sm-8">
+              <%= b.text_field :lat, class: 'form-control', placeholder: 'Entrer une lattitude' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="control-label col-sm-2">
+              <%= b.label :lng, 'Longitude' %>
+            </div>
+            <div class="col-sm-8">
+              <%= b.text_field :lng, class: 'form-control', placeholder: 'Entrer une longitude' %>
+            </div>
+          </div>
+
+        <% end %>
 
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">

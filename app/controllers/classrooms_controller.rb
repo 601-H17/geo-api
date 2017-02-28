@@ -7,13 +7,13 @@ class ClassroomsController < ApplicationController
 
   def index
     @classrooms = Classroom.all.order(:name)
-    @classroom = Classroom.new
   end
 
   # GET /classrooms/new
 
   def new
     @classroom = Classroom.new
+    @classroom.point = Point.new
   end
 
 end

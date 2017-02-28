@@ -10,5 +10,6 @@ class Classroom < ActiveRecord::Base
   validates :point, presence: true
 
   belongs_to :point
+  accepts_nested_attributes_for :point, allow_destroy: true
 
 end
