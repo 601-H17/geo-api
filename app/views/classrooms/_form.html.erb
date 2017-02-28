@@ -1,0 +1,43 @@
+<%= render 'shared/errors', obj: @classroom %>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= form_for(@classroom, url: classrooms_path(@classroom), :html => {class: 'form-horizontal', role: 'form'}) do |f| %>
+
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :nom %>
+          </div>
+          <div class="col-sm-8">
+            <%= f.text_field :name, class: 'form-control', placeholder: 'Entrer le nom du local', autofocus: true %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :description %>
+          </div>
+          <div class="col-sm-8">
+            <%= f.text_area :description, class: 'form-control', placeholder: 'Entrer une description...', autofocus: true %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :Étage %>
+          </div>
+          <div class="col-sm-8">
+            <%= f.text_field :floor, class: 'form-control', placeholder: 'Étage', autofocus: true %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <%= link_to 'Annuler', classrooms_path, class: 'btn btn-danger btn-sm', 'data-dismiss' => 'modal' %>
+            <%= f.submit 'Créer', class: 'btn btn-primary btn-sm', 'data-dismiss' => 'modal' %>
+          </div>
+        </div>
+
+    <% end %>
+  </div>
+</div>

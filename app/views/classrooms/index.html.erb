@@ -3,6 +3,8 @@
 
   <div  class="col-xs-12 col-sm-4 col-md-4 col-lg-3 tokens-actions">
     <%= link_to 'Créer un local', new_classroom_path, class: 'btn btn-primary col-xs-12' %>
+    <!-- Button trigger modal -->
+    <%= link_to 'Créer (modal)', new_classroom_path, {:remote => true, class: 'btn btn-primary col-xs-12', 'data-toggle' =>  "modal", 'data-target' => "#myModal"}  %>
   </div>
 
   <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
@@ -41,7 +43,7 @@
                       <% link_to 'Mettre à jour', classrooms_path, class: 'link-no-style' %>
                   <% end %>
                   <%= button_tag(:type => 'button', class: 'btn btn-xs btn-danger token-action') do %>
-                      <% link_to 'Révoquer', classrooms_path, method: :delete, data: {confirm: 'Voulez-vous vraiment supprimer ce jeton?'}, class: 'link-no-style' %>
+                      <% link_to 'Supprimer', classrooms_path, method: :delete, data: {confirm: 'Voulez-vous vraiment supprimer ce jeton?'}, class: 'link-no-style' %>
                   <% end %>
                 </div>
               </td>
@@ -51,4 +53,20 @@
     </div>
 
   </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        </div>
+        <div class="modal-body">
+          <%= render 'form' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
