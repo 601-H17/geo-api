@@ -6,8 +6,9 @@ class Classroom < ActiveRecord::Base
   validates :description, length: {maximum: 300}
 
   # TODO: ! To test ! #
-  validates :floor, presence: true
-  validates :point, presence: true
+  # validates :floor, presence: true
+  # validates :point, presence: true
+  # validates :wing, presence: true, length: {minimum: 1, maximum: 1}
 
   belongs_to :point
 

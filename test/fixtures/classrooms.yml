@@ -5,6 +5,7 @@ one:
   name: MyString1
   description: MyString
   floor: 1
+  wing: G
   point: points(:one)
 
 two:
@@ -12,6 +13,7 @@ two:
   name: MyString2
   description: MyString
   floor: 1
+  wing: G
   point: points(:two)
 
 three:
@@ -19,4 +21,5 @@ three:
   name: String3
   description: MyString
   floor: 1
+  wing: G
   point: points(:two)
