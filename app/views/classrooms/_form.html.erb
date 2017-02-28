@@ -31,7 +31,16 @@
           </div>
         </div>
 
-        <%= f.fields_for(:points, :html => {class: 'form-horizontal', role: 'form'}) do |b| %>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :aile %>
+          </div>
+          <div class="col-sm-8">
+            <%= f.text_field :wing, class: 'form-control', placeholder: 'Étage' %>
+          </div>
+        </div>
+
+        <%= f.fields_for(:point, :html => {class: 'form-horizontal', role: 'form'}) do |b| %>
 
           <div class="form-group">
             <div class="control-label col-sm-2">

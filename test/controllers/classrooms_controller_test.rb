@@ -28,6 +28,30 @@ class ClassroomsControllerTest < ActionController::TestCase
     assert_match @classroom2.name, @response.body
   end
 
+  # Create (POST)
+
+  test "should create classroom with name, floor, wing and point" do
+    name, floor, wing, lat, lng = "A-001", 1, "A", 2.0, 1.0
+
+    assert_difference('Classroom.count') do
+      post :create, classroom: { name: name, floor: floor, wing: wing, point_attributes: { lat: lat, lng: lng } }
+    end
+
+    assert_response :redirect
+    assert_redirected_to classrooms_path
+    assert_not_nil Classroom.find_by_name(name)
+  end
+
+  test "should not create with invalid params" do
+    name, floor, wing, lat, lng = "A-", 1, "A", 1, 1
+
+    assert_no_difference('Classroom.count') do
+      post :create, classroom: { name: name, floor: floor, wing: wing, point_attributes: { lat: lat, lng: lng } }
+    end
+
+    assert_template :new
+  end
+
   # New (GET)
 
   test "get classrooms new" do
