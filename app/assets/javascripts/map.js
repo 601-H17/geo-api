@@ -12,7 +12,7 @@ function loadMap(map_json) {
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
-        center: [-71.28739276585, 46.78642133499],
+        center: [-71.28739276585, 46.78611111111],
         zoom: 18,
         maxBounds: bounds
     });
