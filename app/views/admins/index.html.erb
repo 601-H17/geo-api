@@ -24,7 +24,7 @@
               <td><%= link_to 'Modifier', edit_admin_path(admin) %></td>
           <% end %>
           <% if current_admin && current_admin.master_admin? %>
-              <td><%= link_to 'Détruire', admin, method: :delete, data: {confirm: 'Êtes vous certain'} %></td>
+              <td><%= link_to 'Supprimer', admin, method: :delete, data: {confirm: 'Êtes vous certain'} %></td>
           <% end %>
         </tr>
     <% end %>
