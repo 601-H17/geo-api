@@ -20,8 +20,7 @@
       <label for="master-admin">Administrateur principal</label>
     </div>
 
-    <div class="row">
-      <%= f.submit ('Créer'), class: 'waves-effect waves-light btn' %>
-    </div>
+    <%= link_to 'Revenir', admins_path, class: 'btn' %>
+    <%= f.submit ('Créer'), class: 'btn' %>
 
 <% end %>

@@ -1,54 +1,30 @@
 <div class="container">
-  <h1>Carte</h1>
+  <h1>Cartes</h1>
 
-  <div>
-    <%= link_to 'Téléverser une nouvelle carte', new_upload_path, class: '' %>
-  </div>
+  <table>
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Étage</th>
+      <th>Carte actuelle</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
 
-  <div>
-
-    <div>
-      <div class="row">
-        <div><h4>Liste des cartes</h4></div>
-        <div><span><%= @maps.count %></span></div>
-      </div>
-    </div>
-    <div>
-      <p>Voici la liste de tout les cartes disponibles.</p>
-    </div>
-
-    <table>
-      <thead>
-      <tr>
-        <th>Nom</th>
-        <th>Étage</th>
-        <th>Carte actuelle</th>
-        <th>Actions</th>
-      </tr>
-      </thead>
-
-      <tbody>
-      <% @maps.each do |map| %>
-          <tr>
-            <td><%= map.name %></td>
-            <td><%= map.floor %></td>
-            <td><%= map.currentMap ? 'Oui' : 'Non' %></td>
-            <td>
-              <div class="row">
-                <%= button_tag(:type => 'button', class: '') do %>
-                    <% link_to (map.currentMap ? 'Désactiver' : 'Activer'), upload_path(map), class: '' %>
-                <% end %>
-                <%= button_tag(:type => 'button', class: '') do %>
-                    <% link_to 'Modifier', edit_upload_path(map), class: '' %>
-                <% end %>
-                <%= button_tag(:type => 'button', class: '') do %>
-                    <% link_to 'Supprimer', upload_path(map), method: :delete, data: {confirm: 'Voulez-vous vraiment supprimer cette carte?'}, class: '' %>
-                <% end %>
-              </div>
-            </td>
-      <% end %>
-      </tbody>
-    </table>
-
-  </div>
+    <tbody>
+    <% @maps.each do |map| %>
+        <tr>
+          <td><%= map.name %></td>
+          <td><%= map.floor %></td>
+          <td><%= map.currentMap ? 'Oui' : 'Non' %></td>
+          <td>
+            <%= link_to (map.currentMap ? 'Désactiver' : 'Activer'), upload_path(map), class: 'btn' %>
+            <%= link_to 'Modifier', edit_upload_path(map), class: 'btn' %>
+            <%= link_to 'Supprimer', upload_path(map), method: :delete, data: {confirm: 'Voulez-vous vraiment supprimer cette carte?'}, class: 'btn' %>
+          </td>
+    <% end %>
+    </tbody>
+  </table>
+  <br>
+  <%= link_to 'Téléverser une nouvelle carte', new_upload_path, class: 'btn' %>
 </div>

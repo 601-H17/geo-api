@@ -18,12 +18,12 @@
           <td><%= admin.username %></td>
           <td><%= admin.email %></td>
           <td><%= admin.master_admin ? 'Oui' : 'Non' %></td>
-          <td><%= link_to 'Afficher', admin %></td>
+          <td><%= link_to 'Afficher', admin, class: 'btn' %></td>
           <% if current_admin && current_admin.master_admin? || admin == current_admin %>
-              <td><%= link_to 'Modifier', edit_admin_path(admin) %></td>
+              <td><%= link_to 'Modifier', edit_admin_path(admin), class: 'btn' %></td>
           <% end %>
           <% if current_admin && current_admin.master_admin? %>
-              <td><%= link_to 'Supprimer', admin, method: :delete, data: {confirm: 'Êtes vous certain'} %></td>
+              <td><%= link_to 'Supprimer', admin, method: :delete, data: {confirm: 'Êtes vous certain de vouloir supprimer cette administrateur ?'}, class: 'btn' %></td>
           <% end %>
         </tr>
     <% end %>
@@ -33,6 +33,6 @@
   <br>
 
   <% if current_admin && current_admin.master_admin? %>
-      <%= link_to 'Nouveau', new_admin_path %>
+      <%= link_to 'Nouveau', new_admin_path, class: 'btn' %>
   <% end %>
 </div>

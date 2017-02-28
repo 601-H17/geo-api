@@ -1,54 +1,31 @@
 <div class="container">
   <h1>Jetons</h1>
-
-  <div>
-    <%= link_to 'Générer une nouvelle clé', new_token_path, class: 'btn' %>
-  </div>
-
-  <div>
-
-    <div>
-      <div>
-        <div class="row">
-          <div><h4>Jetons de l'API</h4></div>
-          <div><span class="badge"><%= @tokens.count %></span></div>
-        </div>
-      </div>
-      <div>
-        <p>Voici la liste de tous les jetons de l'API.</p>
-      </div>
-
-      <table>
-        <thead>
+  <table>
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nom</th>
+      <th>Date de création</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @tokens.each do |token| %>
         <tr>
-          <th>Id</th>
-          <th>Nom</th>
-          <th>Date de création</th>
-          <th>Actions</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <% @tokens.each do |token| %>
-            <tr>
-              <td><%= token.id %></td>
-              <td><%= token.name %></td>
-              <td><%= token.created_at %></td>
-              <td>
-                <div class="row">
-                  <button type="button" onclick="alert('<%= token.access_token %>')">Afficher</button>
-                  <%= button_tag(:type => 'button', class: '') do %>
-                      <% link_to 'Modifier', edit_token_path(token), class: '' %>
-                  <% end %>
-                  <%= button_tag(:type => 'button', class: '') do %>
-                      <% link_to 'Révoquer', token_path(token), method: :delete, data: {confirm: 'Voulez-vous vraiment supprimer ce jeton?'}, class: '' %>
-                  <% end %>
-                </div>
-              </td>
-        <% end %>
-        </tbody>
-      </table>
-    </div>
-
-  </div>
+          <td><%= token.id %></td>
+          <td><%= token.name %></td>
+          <td><%= token.created_at %></td>
+          <td>
+            <div class="row">
+              <button class="btn" type="button" onclick="alert('<%= token.access_token %>')">Afficher</button>
+              <%= link_to 'Modifier', edit_token_path(token), class: 'btn' %>
+              <%= link_to 'Révoquer', token_path(token), method: :delete, data: {confirm: 'Voulez-vous vraiment supprimer ce jeton?'}, class: 'btn' %>
+            </div>
+          </td>
+    <% end %>
+    </tbody>
+  </table>
+  <br>
+  <%= link_to 'Générer une nouvelle clé', new_token_path, class: 'btn' %>
 </div>
+
