@@ -1,15 +1,14 @@
 <div class="container">
-  <p id="notice"><%= notice %></p>
 
-  <h1>Administrateur</h1>
-  <hr>
-  <table class="table">
+  <h1>Administrateurs</h1>
+
+  <table>
     <thead>
     <tr>
       <th>Nom d'utilisateur</th>
       <th>Adresse courriel</th>
-      <th>Maître administration</th>
-      <th colspan="3">Actions</th>
+      <th>Administrateur principal</th>
+      <th>Actions</th>
     </tr>
     </thead>
 
@@ -18,7 +17,7 @@
         <tr>
           <td><%= admin.username %></td>
           <td><%= admin.email %></td>
-          <td><%= admin.master_admin %></td>
+          <td><%= admin.master_admin ? 'Oui' : 'Non' %></td>
           <td><%= link_to 'Afficher', admin %></td>
           <% if current_admin && current_admin.master_admin? || admin == current_admin %>
               <td><%= link_to 'Modifier', edit_admin_path(admin) %></td>

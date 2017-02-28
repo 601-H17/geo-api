@@ -7,18 +7,20 @@
 
     <div class="row">
       <div class="group input-field col s12">
-        <%= f.label :courriel %>
         <%= f.email_field :email, class: 'validate' %>
+        <label>Courriel</label>
+
       </div>
     </div>
 
     <div class="row">
       <div class="group input-field col s12">
-        <%= f.label :mot_de_passe %>
         <%= f.password_field :password, class: 'validate', autocomplete: 'off' %>
+        <label>Mot de passe</label>
       </div>
     </div>
 
-    <%= f.submit 'Connexion', class: 'waves-effect waves-light btn' %>
-
+    <div class="row">
+      <%= f.submit 'Connexion', class: 'waves-effect waves-light btn' %>
+    </div>
 <% end %>

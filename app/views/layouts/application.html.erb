@@ -2,25 +2,20 @@
 <html>
 <head>
   <title>GeoApi</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <% if logged_in? %>
+<% if logged_in? %>
     <%= render 'layouts/navigation' %>
-  <% end %>
+<% end %>
 
-  <%= render 'layouts/messages' %>
+<%= render 'layouts/messages' %>
 
-  <%= yield %>
+<%= yield %>
 
-  <% if Rails.env.production? %>
-    <%= 'PROD' %>
-  <% elsif Rails.env.development? %>
-    <%= 'DEV' %>
-  <% end %>
 
 </body>
 </html>
