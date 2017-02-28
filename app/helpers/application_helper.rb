@@ -29,7 +29,7 @@ module ApplicationHelper
 
       classroom_lat = classroom.point.lat # test
 
-      classroom.update(floor: floor.to_i, point: point)
+      classroom.update(floor: floor.to_i, point: point, wing: wing)
       puts "#{classroom.name} is present. Updated from floor #{classroom.floor} to #{floor}, wing #{floor} to #{classroom.wing} and from point (#{classroom_lat}, #{classroom.point.lng}) to (#{point_lat}, #{point.lng})"
     else
       classroom = Classroom.new(name: name, floor: floor.to_i, wing: wing, point: point)
@@ -53,7 +53,7 @@ module ApplicationHelper
       floor_min = stair.floor_min > floor ? floor : stair.floor_min
       floor_max = stair.floor_max < floor ? floor : stair.floor_max
       puts "Stair #{stair.name} is present. Updated from floor #{stair.floor_min}-#{stair.floor_max} to #{floor_min}-#{floor_max} and from point (#{stair.point.lat}, #{stair.point.lng}) to (#{point_lat}, #{point.lng})"
-      stair.update(floor_min: floor_min, floor_max: floor_max, point: point)
+      stair.update(floor_min: floor_min, floor_max: floor_max, point: point, wing: wing)
       puts "Stair #{stair.name}, floor #{stair.floor_min}-#{stair.floor_max} to #{floor_min}-#{floor_max}, wing #{stair.wing} and from point (#{stair.point.lat}, #{stair.point.lng}) to (#{point_lat}, #{point.lng})"
     else
       stair = Stair.new(name: stair_name, wing: wing, floor_min: floor.to_i, floor_max: floor.to_i, point: point)
