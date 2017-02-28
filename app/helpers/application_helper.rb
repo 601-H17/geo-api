@@ -41,6 +41,7 @@ module ApplicationHelper
 
   def update_or_insert_stair(name, lat, lng)
     stair_name = "#{name[0..-5]}-#{name[4..-1]}"
+    wing = name[0]
     floor = name[3..-3].to_i
     point = Point.create(lat: lat, lng: lng)
 
@@ -53,7 +54,7 @@ module ApplicationHelper
       stair.update(floor_min: floor_min, floor_max: floor_max, point: point)
       puts "Stair #{stair.name}, floor #{stair.floor_min}-#{stair.floor_max} to #{floor_min}-#{floor_max} and from point (#{stair.point.lat}, #{stair.point.lng}) to (#{point_lat}, #{point.lng})"
     else
-      stair = Stair.new(name: stair_name, floor_min: floor.to_i, floor_max: floor.to_i, point: point)
+      stair = Stair.new(name: stair_name, wing: wing, floor_min: floor.to_i, floor_max: floor.to_i, point: point)
       if stair.valid?
         puts "#{stair_name} is not present. floor #{floor} and point (#{point_lat}, #{point.lng})"
         stair.save

@@ -2,12 +2,14 @@ require 'test_helper'
 
 class StairTest < ActiveSupport::TestCase
 
+  DEFAULT_FLOOR = 0
+
   setup do
     @point = points(:one)
   end
 
-  test "stair should have a name, a wing and a point" do
-    stair = Stair.new(name: "GE-3", wing: "G", point: @point)
+  test "stair should have a name, a wing, floors and a point" do
+    stair = Stair.new(name: "GE-3", wing: "G", floor_min: 1, floor_max: 2, point: @point)
 
     assert stair.valid?, stair.errors.full_messages
   end
@@ -94,6 +96,24 @@ class StairTest < ActiveSupport::TestCase
 
     assert_not stair.valid?, stair.errors.full_messages
     assert_match "Wing is invalid", stair.errors.full_messages[0]
+  end
+
+  # Floors validation
+
+  test "stair should be valid with no floors" do
+    stair = Stair.new(name: "GE-3", wing: "G", point: @point)
+
+    assert stair.valid?, stair.errors.full_messages
+    assert_equal stair.floor_min, DEFAULT_FLOOR
+    assert_equal stair.floor_max, DEFAULT_FLOOR
+  end
+
+  test "stair should be invalid with letter for floors" do
+    stair = Stair.new(name: "GE-3", wing: "G", floor_min: "q", floor_max: "q", point: @point)
+
+    assert_not stair.valid?, stair.errors.full_messages
+    assert_match "Floor min is not a number", stair.errors.full_messages[0]
+    assert_match "Floor max is not a number", stair.errors.full_messages[1]
   end
 
   # Point validation
