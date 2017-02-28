@@ -2,6 +2,7 @@ require 'test_helper'
 
 class ApplicationHelperTest < ActionView::TestCase
 
+=begin
   test 'should feed db with all entries in the json file' do
     filepath = 'public/uploads/api/map/map.json'
     file = File.read filepath
@@ -14,5 +15,6 @@ class ApplicationHelperTest < ActionView::TestCase
     feed_db(json)
     feed_db(json2)
   end
+=end
 
 end

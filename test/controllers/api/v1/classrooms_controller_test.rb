@@ -50,7 +50,7 @@ class Api::V1::ClassroomsControllerTest < ActionController::TestCase
   # Show by name (GET by name)
 
   test "should get classroom by name with token" do
-    get :show_by_name, name: "MyString1"
+    get :show_by_name, name: "F-100"
 
     assert_response :success
     assert_includes request.headers["Authorization"], @token.access_token
@@ -70,21 +70,21 @@ class Api::V1::ClassroomsControllerTest < ActionController::TestCase
   # Search by name (GET from a substring)
 
   test "should get classrooms from query by name (uppercase) with token" do
-    get :search_by_name, query: "M"
+    get :search_by_name, query: "F"
 
     classrooms = JSON.parse @response.body
     assert_response :success
     assert_includes request.headers["Authorization"], @token.access_token
-    assert_equal 2, classrooms.count
+    assert_equal 3, classrooms.count
   end
 
   test "should get classrooms from query by name (downcase) with token" do
-    get :search_by_name, query: "m"
+    get :search_by_name, query: "f"
 
     classrooms = JSON.parse @response.body
     assert_response :success
     assert_includes request.headers["Authorization"], @token.access_token
-    assert_equal 2, classrooms.count
+    assert_equal 3, classrooms.count
   end
 
   test "should not get classrooms from query, get error 404 with token and unknown name" do
