@@ -20,6 +20,7 @@ module ApplicationHelper
 
   def update_or_insert_classroom(name, lat, lng)
     floor = name[2..-3]
+    wing = name[0]
     point = Point.create(lat: lat, lng: lng)
 
     classroom = Classroom.where(name: name).first
@@ -28,13 +29,14 @@ module ApplicationHelper
 
       classroom_lat = classroom.point.lat # test
 
-      puts "#{classroom.name} is present. Updated from floor #{classroom.floor} to #{floor} and from point (#{classroom_lat}, #{classroom.point.lng}) to (#{point_lat}, #{point.lng})"
       classroom.update(floor: floor.to_i, point: point)
+      puts "#{classroom.name} is present. Updated from floor #{classroom.floor} to #{floor}, wing #{floor} to #{classroom.wing} and from point (#{classroom_lat}, #{classroom.point.lng}) to (#{point_lat}, #{point.lng})"
     else
-      classroom = Classroom.new(name: name, floor: floor.to_i, point: point)
+      classroom = Classroom.new(name: name, floor: floor.to_i, wing: wing, point: point)
       if classroom.valid?
-        puts "#{name} is not present. floor #{floor} and point (#{point_lat}, #{point.lng})"
+        puts "#{name} is not present. floor #{floor}, wing #{wing} and point (#{point_lat}, #{point.lng})"
         classroom.save
+        puts "#{classroom.name}, floor #{classroom.floor}, wing #{classroom.wing} and point (#{classroom.point.lat}, #{classroom.point.lng})\n\n"
       end
     end
   end
@@ -52,13 +54,13 @@ module ApplicationHelper
       floor_max = stair.floor_max < floor ? floor : stair.floor_max
       puts "Stair #{stair.name} is present. Updated from floor #{stair.floor_min}-#{stair.floor_max} to #{floor_min}-#{floor_max} and from point (#{stair.point.lat}, #{stair.point.lng}) to (#{point_lat}, #{point.lng})"
       stair.update(floor_min: floor_min, floor_max: floor_max, point: point)
-      puts "Stair #{stair.name}, floor #{stair.floor_min}-#{stair.floor_max} to #{floor_min}-#{floor_max} and from point (#{stair.point.lat}, #{stair.point.lng}) to (#{point_lat}, #{point.lng})"
+      puts "Stair #{stair.name}, floor #{stair.floor_min}-#{stair.floor_max} to #{floor_min}-#{floor_max}, wing #{stair.wing} and from point (#{stair.point.lat}, #{stair.point.lng}) to (#{point_lat}, #{point.lng})"
     else
       stair = Stair.new(name: stair_name, wing: wing, floor_min: floor.to_i, floor_max: floor.to_i, point: point)
       if stair.valid?
-        puts "#{stair_name} is not present. floor #{floor} and point (#{point_lat}, #{point.lng})"
+        puts "#{stair_name} is not present. floor #{floor}, wing #{wing} and point (#{point_lat}, #{point.lng})"
         stair.save
-        puts "#{stair.name}, floor #{stair.floor_min}-#{stair.floor_max} and point (#{point_lat}, #{point.lng})"
+        puts "#{stair.name}, floor #{stair.floor_min}-#{stair.floor_max}, wing #{stair.wing} and point (#{point_lat}, #{point.lng})\n\n"
       else
         puts "Errors: #{stair.errors.full_messages}"
       end
