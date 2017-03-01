@@ -17,7 +17,6 @@ class ClassroomsController < ApplicationController
     if @point.save
       @classroom.point = @point
       if @classroom.save
-        debugger
         flash[:success] = "Le local #{@classroom.name} a été créé"
         redirect_to classrooms_path
       else
@@ -25,6 +24,20 @@ class ClassroomsController < ApplicationController
       end
     else
       render 'new'
+    end
+  end
+
+  # PUT-PATCH /classrooms/:id
+
+  def update
+    if @classroom.point.update(point_params)
+      if @classroom.update(classroom_params)
+        redirect_to classrooms_path
+      else
+        render 'edit'
+      end
+    else
+      render 'edit'
     end
   end
 
@@ -43,7 +56,7 @@ class ClassroomsController < ApplicationController
 
   private
     def classroom_params
-      params.require(:classroom).permit(:name, :description, :floor, :wing)
+      params.require(:classroom).permit(:name, :description, :floor, :wing, :point_attributes)
     end
 
     def point_params

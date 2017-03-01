@@ -50,6 +50,33 @@ class ClassroomsControllerTest < ActionController::TestCase
     end
 
     assert_template :new
+    assert_nil Classroom.find_by_name(name)
+  end
+
+  # Update (PUT PATCH)
+
+  test "should update classroom name" do
+    point = Point.create(lat: 0, lng: 0)
+    classroom = Classroom.create(name: "A-001", wing: "A", floor: 1, point: point)
+    new_classroom_name, new_lat = "A-101", 120
+
+    put :update , id: classroom, classroom: { name: new_classroom_name, point_attributes: { lat: new_lat } }
+
+    classroom1 = Classroom.find(classroom.id)
+    assert_response :redirect
+    assert_redirected_to classrooms_path
+    assert_equal new_classroom_name, classroom1.name
+    assert_equal Point.new(lat: new_lat).lat, classroom1.point.lat
+  end
+
+  test "should not update classroom name" do
+    point = Point.create(lat: 0, lng: 0)
+    classroom = Classroom.create(name: "A-001", wing: "A", floor: 1, point: point)
+    new_classroom_name, new_lat = "Classroom update not so valid", 120
+
+    put :update , id: classroom, classroom: { name: new_classroom_name, point_attributes: { lat: new_lat } }
+
+    assert_template :edit
   end
 
   # New (GET)
