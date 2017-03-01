@@ -4,6 +4,10 @@
   <li><%= link_to 'Options', upload_index_path %></li>
 </ul>
 
+<ul id="dropdown-account" class="dropdown-content">
+  <li><%= link_to 'Déconnexion', logout_path, method: :delete %></li>
+</ul>
+
 <nav class="teal">
   <div class="nav-wrapper">
 
@@ -11,7 +15,7 @@
 
     <% if current_admin %>
         <ul id="nav-mobile" class="right hide-on-small-and-down">
-          <li><%= link_to 'Déconnexion', logout_path, method: :delete %></li>
+          <a class="dropdown-button" href="#" data-activates="dropdown-account"><%= current_admin.username %></a>
         </ul>
     <% end %>
 
