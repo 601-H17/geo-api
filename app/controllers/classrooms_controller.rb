@@ -35,6 +35,12 @@ class ClassroomsController < ApplicationController
     @classroom.point = Point.new
   end
 
+  # GET /classrooms/edit
+
+  def edit
+
+  end
+
   private
     def classroom_params
       params.require(:classroom).permit(:name, :description, :floor, :wing)
@@ -42,6 +48,10 @@ class ClassroomsController < ApplicationController
 
     def point_params
       params.require(:classroom).require(:point_attributes).permit(:lat, :lng)
+    end
+
+    def get_classroom
+      @classroom = Classroom.find(params[:id])
     end
 
 end

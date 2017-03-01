@@ -28,23 +28,23 @@
         </thead>
 
         <tbody>
-        <% @classrooms.each do |classroom| %>
+          <% @classrooms.each do |classroom| %>
             <tr class="token-data token-row">
               <td><%= classroom.name %></td>
               <td><%= classroom.floor %></td>
               <td><%= classroom.created_at %></td>
               <td width="30%">
                 <div class="row">
-                  <button type="button" class="btn btn-primary btn-xs token-action">Afficher</button>
                   <%= button_tag(:type => 'button', class: 'btn btn-xs btn-success token-action') do %>
-                      <% link_to 'Mettre à jour', classrooms_path, class: 'link-no-style' %>
+                    <% link_to 'Modifier', edit_classroom_path(classroom), class: 'link-no-style' %>
                   <% end %>
                   <%= button_tag(:type => 'button', class: 'btn btn-xs btn-danger token-action') do %>
-                      <% link_to 'Supprimer', classrooms_path, method: :delete, data: {confirm: 'Voulez-vous vraiment supprimer ce jeton?'}, class: 'link-no-style' %>
+                    <% link_to 'Supprimer', classrooms_path, method: :delete, data: {confirm: 'Voulez-vous vraiment supprimer ce jeton?'}, class: 'link-no-style' %>
                   <% end %>
                 </div>
               </td>
-        <% end %>
+            </tr>
+          <% end %>
         </tbody>
       </table>
     </div>

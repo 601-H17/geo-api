@@ -60,4 +60,14 @@ class ClassroomsControllerTest < ActionController::TestCase
     assert_template :new
   end
 
+  # Edit (GET)
+
+  test "get classrooms edit" do
+    get :edit, id: @classroom1.id
+
+    assert_response :success
+    assert_template :edit
+    assert_match @classroom1.name, @response.body
+  end
+
 end
