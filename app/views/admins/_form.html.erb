@@ -21,6 +21,6 @@
     </div>
 
     <%= link_to 'Revenir', admins_path, class: 'btn' %>
-    <%= f.submit ('Créer'), class: 'btn' %>
+    <%= f.submit (@admin.new_record? ? 'Créer' : 'Modifier'), class: 'btn' %>
 
 <% end %>
