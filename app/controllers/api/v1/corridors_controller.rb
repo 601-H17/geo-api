@@ -21,6 +21,14 @@ class Api::V1::CorridorsController < ApplicationController
     render json: json, status: status
   end
 
+  def corridors2
+    file = File.read('json_files/corridors2.json')
+    json = JSON.parse file
+    status = 200
+
+    render json: json, status: status
+  end
+
   def create
     hash = parse('json_files/corridors.json')
   end
