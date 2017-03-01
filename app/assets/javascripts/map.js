@@ -29,6 +29,12 @@ function loadMap(map_json) {
                 "source": {
                     "type": "geojson",
                     "data": map_json[i]
+                }, "layout": {
+                    "line-join": "round"
+                },
+                "paint": {
+                    "line-color": "#009688",
+                    "line-width": 1
                 }
             });
 
@@ -53,7 +59,7 @@ function loadMap(map_json) {
                 "source": j.toString(),
                 "paint": {
                     "circle-radius": 3,
-                    "circle-color": "#B42222"
+                    "circle-color": "#009688"
                 },
                 "filter": ["==", "type", "doors"]
             });
