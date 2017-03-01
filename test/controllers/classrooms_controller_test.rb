@@ -79,6 +79,23 @@ class ClassroomsControllerTest < ActionController::TestCase
     assert_template :edit
   end
 
+  # Destroy (DELETE)
+
+  test "should destroy classroom" do
+    point = Point.create(lat: 0, lng: 0)
+    new_classroom = Classroom.create(name: "A-001", wing: "A", floor: 1, point: point)
+
+    assert_difference('Classroom.count', -1) do
+      delete :destroy, id: new_classroom, classroom: new_classroom
+    end
+
+    assert_response :redirect
+    assert_redirected_to classrooms_path
+    assert_raises ActiveRecord::RecordNotFound do
+      Classroom.find(new_classroom.id)
+    end
+  end
+
   # New (GET)
 
   test "get classrooms new" do

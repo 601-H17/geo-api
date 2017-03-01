@@ -39,7 +39,7 @@
                     <% link_to 'Modifier', edit_classroom_path(classroom), class: 'link-no-style' %>
                   <% end %>
                   <%= button_tag(:type => 'button', class: 'btn btn-xs btn-danger token-action') do %>
-                    <% link_to 'Supprimer', classrooms_path, method: :delete, data: {confirm: 'Voulez-vous vraiment supprimer ce jeton?'}, class: 'link-no-style' %>
+                    <% link_to 'Supprimer', classroom_path(classroom), method: :delete, data: {confirm: 'Voulez-vous vraiment supprimer ce local ?'}, class: 'link-no-style' %>
                   <% end %>
                 </div>
               </td>

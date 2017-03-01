@@ -41,6 +41,15 @@ class ClassroomsController < ApplicationController
     end
   end
 
+  # DELETE /classrooms/:id
+
+  def destroy
+    classroom_name = @classroom.name
+    @classroom.destroy
+    flash[:danger] = "Le local #{classroom_name} a bien été supprimé."
+    redirect_to classrooms_path
+  end
+
   # GET /classrooms/new
 
   def new
