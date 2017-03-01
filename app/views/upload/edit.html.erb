@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="page-header view-header">Mettre à jour la carte</h1>
+  <h1 class="page-header view-header">Modifier la carte</h1>
 
   <%= render 'shared/errors', obj: @map %>
 
@@ -7,35 +7,29 @@
     <div class="col-md-12">
       <%= form_for(@map, url: upload_path(@map), method: :patch, :html => {class: 'form-horizontal', role: 'form'}) do |f| %>
 
-          <div class="form-group">
-            <div class="control-label col-sm-2">
-              <%= f.label :nom %>
-            </div>
-            <div class="col-sm-8">
-              <%= f.text_field :name, class: 'form-control', placeholder: 'Map name', autofocus: true %>
+          <div class="row">
+            <div class="group input-field col s12">
+              <%= f.text_field :name, class: 'validate', autofocus: true %>
+              <label>Nom</label>
             </div>
           </div>
 
-          <div class="form-group">
-            <div class="control-label col-sm-2">
-              <%= f.label :Étage %>
-            </div>
-            <div class="col-sm-8">
-              <%= f.number_field :floor, class: 'form-control', placeholder: 'étage' %>
+          <div class="row">
+            <div class="group input-field col s12">
+              <%= f.number_field :floor, class: 'validate' %>
+              <label>Étage</label>
             </div>
           </div>
 
-          <div class="form-group">
-            <div class="control-label col-sm-2">
-              <%= f.label :carte_actuelle %>
-            </div>
-            <div class="col-sm-8">
-              <%= f.check_box :currentMap %>
+          <div class="row">
+            <div class="group input-field col s12">
+              <%= f.check_box :currentMap, id: 'current-map' %>
+              <label for="current-map">Carte actuelle</label>
             </div>
           </div>
 
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
+          <div class="row">
+            <div>
               <%= link_to 'Annuler', upload_index_path, class: 'btn btn-danger btn-sm' %>
               <%= f.submit ('Mettre à jour'), class: 'btn btn-primary btn-sm' %>
             </div>

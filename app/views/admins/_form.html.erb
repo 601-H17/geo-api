@@ -1,19 +1,26 @@
 <%= render 'shared/errors', obj: @admin %>
 
 <%= form_for(@admin) do |f| %>
-    <div class="field form-group">
-      <%= f.label ("Nom d'utilisateur") %><br>
-      <%= f.text_field :username, class: 'form-control' %>
+    <div class="row">
+      <div class="group input-field col s12">
+        <%= f.text_field :username, class: 'validate' %>
+        <label>Nom d'utilisateur</label>
+      </div>
     </div>
-    <div class="field form-group">
-      <%= f.label :courriel %><br>
-      <%= f.text_field :email, class: 'form-control' %>
+    <div class="row">
+      <div class="group input-field col s12">
+        <%= f.text_field :email, class: 'validate' %>
+        <label>Courriel</label>
+
+      </div>
     </div>
-    <div class="field form-group">
-      <%= f.label :maître_administration %><br>
-      <%= f.check_box :master_admin, class: 'form-check' %>
+
+    <div class="row">
+      <%= f.check_box :master_admin, id: 'master-admin' %>
+      <label for="master-admin">Administrateur principal</label>
     </div>
-    <div class="actions form-group">
-      <%= f.submit class: 'btn btn-primary' %>
-    </div>
+
+    <%= link_to 'Revenir', admins_path, class: 'btn' %>
+    <%= f.submit ('Créer'), class: 'btn' %>
+
 <% end %>

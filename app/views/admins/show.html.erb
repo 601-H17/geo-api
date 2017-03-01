@@ -1,23 +1,23 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
 
-  <p>
-    <strong>Nom d'utilisateur:</strong>
-    <%= @admin.username %>
-  </p>
+  <div class="row">
+    <h1><%= @admin.username %></h1>
+  </div>
 
-  <p>
+  <div class="row">
     <strong>Adresse courriel:</strong>
     <%= @admin.email %>
-  </p>
+  </div>
 
-  <p>
-    <strong>Maître administrateur:</strong>
-    <%= @admin.master_admin %>
-  </p>
-
-  <% if current_admin.master_admin? || @admin.id == current_admin.id %>
-      <%= link_to 'Modifier', edit_admin_path(@admin) %> |
-  <% end %>
-  <%= link_to 'Revenir', admins_path %>
+  <div class="row">
+    <strong>Administrateur principal:</strong>
+    <%= @admin.master_admin ? 'Oui' : 'Non' %>
+  </div>
+  <div class="row">
+    <%= link_to 'Revenir', admins_path, class: 'btn' %>
+    <% if current_admin.master_admin? || @admin.id == current_admin.id %>
+        <%= link_to 'Modifier', edit_admin_path(@admin), class: 'btn' %>
+    <% end %>
+  </div>
 </div>

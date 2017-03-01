@@ -1,54 +1,30 @@
 <div class="container">
-  <h1 class="page-header view-header">Jetons</h1>
-
-  <div  class="col-xs-12 col-sm-4 col-md-4 col-lg-3 tokens-actions">
-    <%= link_to 'Générer une nouvelle clé', new_token_path, class: 'btn btn-primary col-xs-12' %>
-  </div>
-
-  <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
-
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <div class="row">
-          <div class="col-xs-10 text-left"><h4 class="tokens-table-header">Jetons de l'API</h4></div>
-          <div class="col-xs-2 text-right"><span class="badge"><%= @tokens.count %></span></div>
-        </div>
-      </div>
-      <div class="panel-body">
-        <p>Voici la liste de tous les jetons de l'API.</p>
-      </div>
-
-      <table class="table tokens-table">
-        <thead>
+  <h1>Jetons</h1>
+  <table>
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Date de création</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @tokens.each do |token| %>
         <tr>
-          <th>Id</th>
-          <th>Nom</th>
-          <th>Date de création</th>
-          <th>Actions</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <% @tokens.each do |token| %>
-            <tr class="token-data token-row">
-              <td><%= token.id %></td>
-              <td><%= token.name %></td>
-              <td><%= token.created_at %></td>
-              <td width="30%">
-                <div class="row">
-                  <button type="button" class="btn btn-primary btn-xs token-action" onclick="alert('<%= token.access_token %>')">Afficher</button>
-                  <%= button_tag(:type => 'button', class: 'btn btn-xs btn-success token-action') do %>
-                      <% link_to 'Mettre à jour', edit_token_path(token), class: 'link-no-style' %>
-                  <% end %>
-                  <%= button_tag(:type => 'button', class: 'btn btn-xs btn-danger token-action') do %>
-                      <% link_to 'Révoquer', token_path(token), method: :delete, data: {confirm: 'Voulez-vous vraiment supprimer ce jeton?'}, class: 'link-no-style' %>
-                  <% end %>
-                </div>
-              </td>
-        <% end %>
-        </tbody>
-      </table>
-    </div>
-
-  </div>
+          <td><%= token.name %></td>
+          <td><%= token.created_at %></td>
+          <td>
+            <div class="row">
+              <button class="btn" type="button" onclick="alert('<%= token.access_token %>')">Afficher</button>
+              <%= link_to 'Modifier', edit_token_path(token), class: 'btn' %>
+              <%= link_to 'Révoquer', token_path(token), method: :delete, data: {confirm: 'Voulez-vous vraiment supprimer ce jeton?'}, class: 'btn' %>
+            </div>
+          </td>
+    <% end %>
+    </tbody>
+  </table>
+  <hr>
+  <br>
+  <%= link_to 'Générer une nouvelle clé', new_token_path, class: 'btn' %>
 </div>
+
