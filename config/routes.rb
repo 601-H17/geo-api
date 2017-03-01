@@ -31,7 +31,7 @@ Rails.application.routes.draw do
       get '/classroom_search/:query', to: 'classrooms#search_by_name'
 
       resources :corridors, only: :index
-      get '/corridors', to: 'corridors#corridors2'
+      get '/corridors2', to: 'corridors#corridors2'
       resources :stairs, only: :index
       get '/stair/:name', to: 'stairs#show_by_name'
 
