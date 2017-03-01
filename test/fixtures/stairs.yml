@@ -1,5 +1,11 @@
 one:
   name: GE-1
+  wing: G
+  floor_min: 1
+  floor_max: 2
 
 two:
   name: GE-2
+  wing: G
+  floor_min: 1
+  floor_max: 2

@@ -2,82 +2,130 @@ require 'test_helper'
 
 class ClassroomTest < ActiveSupport::TestCase
 
+  DEFAULT_FLOOR = 1
+
   setup do
     @point = points(:one)
   end
 
   test "classroom should have name and description" do
-    classroom = Classroom.new(name: "G-164", description: "A description", floor: 1, point: @point)
+    classroom = Classroom.new(name: "G-164", description: "A description", wing: "G", floor: 1, point: @point)
     assert classroom.valid?, classroom.errors.full_messages
   end
 
   # name validations
 
   test "classroom should be invalid with name not present" do
-    classroom = Classroom.new(name: "", description: "A description", floor: 1, point: @point)
+    classroom = Classroom.new(name: "", description: "A description", wing: "G", floor: 1, point: @point)
 
     assert_not classroom.valid?, classroom.errors.full_messages
     assert_match "Name can't be blank", classroom.errors.full_messages[0]
   end
 
-  #test "admin should be invalid with username not unique (case sensitive)" do
-  #  already_registered_admin = Admin.new(username: "anAdmin", email: "admin@admin.com", password: "password")
-  #  already_registered_admin.save
+  test "classroom should be invalid with name not unique (case sensitive)" do
+    classroom1 = classrooms(:one)
+    classroom1.point = @point
 
-  #  first_admin = Admin.new(username: "anAdmin", email: "first.admin@admin.com", password: "password")
-  #  second_admin = Admin.new(username: "anadmin", email: "second.admin@admin.com", password: "password")
+    classroom2 = Classroom.new(name: classroom1.name, description: "A description", floor: 1, wing: "G", point: @point)
 
-  #  assert_not first_admin.valid?, first_admin.errors.full_messages
-  #  assert_match "Username has already been taken", first_admin.errors.full_messages[0]
-  #  assert_not second_admin.valid?, second_admin.errors.full_messages
-  #  assert_match "Username has already been taken", second_admin.errors.full_messages[0]
-  #end
+    assert classroom1.valid?, classroom1.errors.full_messages
+    assert_not classroom2.valid?, classroom2.errors.full_messages
+    assert_match "Name has already been taken", classroom2.errors.full_messages[0]
+  end
 
-  #test "admin should be invalid with username too short (less than 3)" do
-  #  admin = Admin.new(username: "aa", email: "admin@admin.com", password: "password")
+  test "classroom should be invalid with a name less than 5 characters " do
+    classroom = Classroom.new(name: "G-16", floor: 1, wing: "G", point: @point)
 
-  #  assert_not admin.valid?, admin.errors.full_messages
-  #  assert_match "Username is too short (minimum is 3 characters)", admin.errors.full_messages[0]
-  #end
+    assert_not classroom.valid?, classroom.errors.full_messages
+    assert_match "Name is too short (minimum is 5 characters)", classroom.errors.full_messages[0]
+  end
 
-  #test "admin should be invalid with username too long (more than 30)" do
-  #  admin = Admin.new(username: "a" * 31, email: "admin@admin.com", password: "password")
+  test "classroom should be valid with a name with 5 characters " do
+    classroom = Classroom.new(name: "G-164", floor: 1, wing: "G", point: @point)
 
-  #  assert_not admin.valid?, admin.errors.full_messages
-  #  assert_match "Username is too long (maximum is 30 characters)", admin.errors.full_messages[0]
-  #end
+    assert classroom.valid?, classroom.errors.full_messages
+  end
 
-  ## email validations
+  test "classroom should be invalid with a name more than 5 characters " do
+    classroom = Classroom.new(name: "GE-1644", floor: 1, wing: "G", point: @point)
 
-  #test "admin should be invalid with email not present" do
-  #  admin = Admin.new(username: "an admin", email: "", password: "password")
+    assert_not classroom.valid?, classroom.errors.full_messages
+    assert_match "Name is too long (maximum is 5 characters)", classroom.errors.full_messages[0]
+  end
 
-  #  assert_not admin.valid?, admin.errors.full_messages
-  #  assert_match "Email can't be blank", admin.errors.full_messages[0]
-  #end
+  test "classroom should be invalid without proper format" do
+    classroom = Classroom.new(name: "12345", floor: 1, wing: "G", point: @point)
+    classroom2 = Classroom.new(name: "45-GE", floor: 1, wing: "G", point: @point)
+    classroom3 = Classroom.new(name: "GE123", floor: 1, wing: "G", point: @point)
 
-  #test "admin should be invalid with email not unique (case sensitive)" do
-  #  already_registered_admin = Admin.new(username: "anAdmin", email: "admin@admin.com", password: "password")
-  #  already_registered_admin.save
+    assert_not classroom.valid?, classroom.errors.full_messages
+    assert_not classroom2.valid?, classroom.errors.full_messages
+    assert_not classroom3.valid?, classroom.errors.full_messages
+    assert_match "Name is invalid", classroom.errors.full_messages[0]
+    assert_match "Name is invalid", classroom2.errors.full_messages[0]
+    assert_match "Name is invalid", classroom3.errors.full_messages[0]
+  end
 
-  #  admin = Admin.new(username: "firstAdmin", email: "admin@admin.com", password: "password")
 
-  #  assert_not admin.valid?, admin.errors.full_messages
-  #  assert_match "Email has already been taken", admin.errors.full_messages[0]
-  #end
 
-  #test "admin should be invalid with email too long (more than 200)" do
-  #  admin = Admin.new(username: "Admin", email: "#{"a" * 191}@admin.com", password: "password")
+  # Wing validation
 
-  #  assert_not admin.valid?, admin.errors.full_messages
-  #  assert_match "Email is too long (maximum is 200 characters)", admin.errors.full_messages[0]
-  #end
+  test "classroom should be invalid with no wing" do
+    classroom = Classroom.new(name: "G-164", floor: 1, wing: "", point: @point)
 
-  ## password validations
+    assert_not classroom.valid?, classroom.errors.full_messages
+    assert_match "Wing can't be blank", classroom.errors.full_messages[0]
+  end
 
-  #test "admin should be invalid with password not present" do
-  #  admin = Admin.new(username: "an admin", email: "admin@admin.com", password: "")
-  #  assert_not admin.valid?, admin.errors.full_messages
-  #end
+  test "classroom should be valid with 1 letter wing" do
+    classroom = Classroom.new(name: "G-164", floor: 1, wing: "G", point: @point)
+
+    assert classroom.valid?, classroom.errors.full_messages
+  end
+
+  test "classroom should be invalid with 2 letter wing" do
+    classroom = Classroom.new(name: "G-164", floor: 1, wing: "GG", point: @point)
+
+    assert_not classroom.valid?, classroom.errors.full_messages
+    assert_match "Wing is too long (maximum is 1 character)", classroom.errors.full_messages[0]
+  end
+
+  test "classroom should be invalid with a number wing" do
+    classroom = Classroom.new(name: "G-164", floor: 1, wing: "2", point: @point)
+
+    assert_not classroom.valid?, classroom.errors.full_messages
+    assert_match "Wing is invalid", classroom.errors.full_messages[0]
+  end
+
+  # Floors validation
+
+  test "classroom should be valid with no floor" do
+    classroom = Classroom.new(name: "G-164", floor: 1, wing: "G", point: @point)
+
+    assert classroom.valid?, classroom.errors.full_messages
+    assert_equal classroom.floor, DEFAULT_FLOOR
+  end
+
+  test "classroom should be invalid with letter for floors" do
+    classroom = Classroom.new(name: "G-164", floor: "G", wing: "G", point: @point)
+
+    assert_not classroom.valid?, classroom.errors.full_messages
+    assert_match "Floor is not a number", classroom.errors.full_messages[0]
+  end
+
+  # Point validation
+
+  test "classroom should be valid with a point" do
+    classroom = Classroom.new(name: "G-164", floor: 1, wing: "G", point: @point)
+
+    assert classroom.valid?, classroom.errors.full_messages
+  end
+
+  test "classroom should be invalid with no point" do
+    classroom = Classroom.new(name: "G-164", floor: 1, wing: "G")
+
+    assert_not classroom.valid?, classroom.errors.full_messages
+    assert_match "Point can't be blank", classroom.errors.full_messages[0]
+  end
 
 end
