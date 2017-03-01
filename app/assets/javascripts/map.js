@@ -31,24 +31,33 @@ function loadMap(map_json) {
                     "data": map_json[i]
                 }
             });
+
             map.addLayer({
                 "id": j.toString(),
                 "type": "symbol",
                 "source": {
                     "type": "geojson",
                     "data": map_json[i]
-                }
+                },
+                "layout": {
+                    "text-field": "{ref}",
+                    "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+                    "text-offset": [0, 0.6]
+                },
+                "filter": ["==", "type", "image"]
             });
+
             map.addLayer({
                 "id": z.toString(),
                 "type": "circle",
                 "source": j.toString(),
                 "paint": {
-                    "circle-radius": 6,
+                    "circle-radius": 3,
                     "circle-color": "#B42222"
                 },
-                "filter": ["==", "$type", "Point"]
+                "filter": ["==", "type", "doors"]
             });
+
             j++;
             z++;
         }
