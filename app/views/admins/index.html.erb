@@ -1,15 +1,14 @@
 <div class="container">
-  <p id="notice"><%= notice %></p>
 
-  <h1>Administrateur</h1>
-  <hr>
-  <table class="table">
+  <h1>Administrateurs</h1>
+
+  <table>
     <thead>
     <tr>
       <th>Nom d'utilisateur</th>
       <th>Adresse courriel</th>
-      <th>Maître administration</th>
-      <th colspan="3">Actions</th>
+      <th>Administrateur principal</th>
+      <th>Actions</th>
     </tr>
     </thead>
 
@@ -18,22 +17,23 @@
         <tr>
           <td><%= admin.username %></td>
           <td><%= admin.email %></td>
-          <td><%= admin.master_admin %></td>
-          <td><%= link_to 'Afficher', admin %></td>
+          <td><%= admin.master_admin ? 'Oui' : 'Non' %></td>
+          <td><%= link_to 'Afficher', admin, class: 'btn' %></td>
           <% if current_admin && current_admin.master_admin? || admin == current_admin %>
-              <td><%= link_to 'Modifier', edit_admin_path(admin) %></td>
+              <td><%= link_to 'Modifier', edit_admin_path(admin), class: 'btn' %></td>
           <% end %>
           <% if current_admin && current_admin.master_admin? %>
-              <td><%= link_to 'Détruire', admin, method: :delete, data: {confirm: 'Êtes vous certain'} %></td>
+              <td><%= link_to 'Supprimer', admin, method: :delete, data: {confirm: 'Êtes vous certain de vouloir supprimer cette administrateur ?'}, class: 'btn' %></td>
           <% end %>
         </tr>
     <% end %>
     </tbody>
   </table>
 
+  <hr>
   <br>
 
   <% if current_admin && current_admin.master_admin? %>
-      <%= link_to 'Nouveau', new_admin_path %>
+      <%= link_to 'Nouveau', new_admin_path, class: 'btn' %>
   <% end %>
 </div>

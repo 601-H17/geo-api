@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   get '/upload/:id', to: 'upload#make_current_map'
 
-  resources :classrooms, except: :show
+  resources :classrooms
 
   namespace :api, defaults: {format: :json} do
 
@@ -32,7 +32,7 @@ Rails.application.routes.draw do
       get '/classroom_search/:query', to: 'classrooms#search_by_name'
 
       resources :corridors, only: :index
-
+      get '/corridors2', to: 'corridors#corridors2'
       resources :stairs, only: :index
       get '/stair/:name', to: 'stairs#show_by_name'
 

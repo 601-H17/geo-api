@@ -12,7 +12,7 @@ function loadMap(map_json) {
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
-        center: [-71.28739276585, 46.78642133499],
+        center: [-71.28739276585, 46.78611111111],
         zoom: 18,
         maxBounds: bounds
     });
@@ -29,26 +29,41 @@ function loadMap(map_json) {
                 "source": {
                     "type": "geojson",
                     "data": map_json[i]
+                }, "layout": {
+                    "line-join": "round"
+                },
+                "paint": {
+                    "line-color": "#009688",
+                    "line-width": 1
                 }
             });
+
             map.addLayer({
                 "id": j.toString(),
                 "type": "symbol",
                 "source": {
                     "type": "geojson",
                     "data": map_json[i]
-                }
+                },
+                "layout": {
+                    "text-field": "{ref}",
+                    "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+                    "text-offset": [0, 0.6]
+                },
+                "filter": ["==", "type", "image"]
             });
+
             map.addLayer({
                 "id": z.toString(),
                 "type": "circle",
                 "source": j.toString(),
                 "paint": {
-                    "circle-radius": 6,
-                    "circle-color": "#B42222"
+                    "circle-radius": 3,
+                    "circle-color": "#009688"
                 },
-                "filter": ["==", "$type", "Point"]
+                "filter": ["==", "type", "doors"]
             });
+
             j++;
             z++;
         }
