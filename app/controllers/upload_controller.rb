@@ -60,10 +60,18 @@ class UploadController < ApplicationController
       @map.update({currentMap: false})
       flash[:success] = "La carte #{@map.name} a été désactivé pour l'étage #{@map.floor}."
       redirect_to upload_index_path
-    elsif @map.update({currentMap: true})
+    elsif @map.corridor.present?
+      @map.update({currentMap: true})
       flash[:success] = "La carte #{@map.name} a bien été activé pour l'étage #{@map.floor}."
       redirect_to upload_index_path
+    else
+      flash[:danger] = "La carte #{@map.name} ne peut être activé sans la carte des corridors."
+      redirect_to upload_index_path
     end
+  end
+
+  def upload_corridor
+    redirect_to upload_index_path
   end
 
   private

@@ -15,9 +15,8 @@ Rails.application.routes.draw do
   resources :tokens, except: :show
 
   resources :upload, except: :show
-
-  get '/upload/:id', to: 'upload#make_current_map'
-
+  get '/upload/make_current_map/:id' => 'upload#make_current_map', as: :make_current_map
+  get '/upload/corridor/:id' => 'upload#upload_corridor', as: :upload_corridor
 
   namespace :api, defaults: {format: :json} do
 
