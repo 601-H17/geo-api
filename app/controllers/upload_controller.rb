@@ -1,6 +1,6 @@
 class UploadController < ApplicationController
   before_action :require_admin
-  before_action :get_map, only: [:edit, :update, :destroy, :make_current_map]
+  before_action :get_map, only: [:edit, :update, :destroy, :make_current_map, :upload_corridor]
 
   # GET /upload
 
@@ -71,7 +71,8 @@ class UploadController < ApplicationController
   end
 
   def upload_corridor
-    redirect_to upload_index_path
+    @map.update({corridor: params[:corridor]})
+    # redirect_to upload_index_path
   end
 
   private
