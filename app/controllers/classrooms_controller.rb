@@ -1,7 +1,7 @@
 class ClassroomsController < ApplicationController
 
   before_action :require_admin
-  before_action :get_classroom, only: [:edit, :update, :destroy]
+  before_action :get_classroom, only: [:show, :edit, :update, :destroy]
 
   # GET /classrooms
 
@@ -25,6 +25,11 @@ class ClassroomsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  # GET /classrooms/:id
+
+  def show
   end
 
   # PUT-PATCH /classrooms/:id
