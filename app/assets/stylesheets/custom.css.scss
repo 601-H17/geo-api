@@ -88,6 +88,10 @@ form.login {
 
 /* Table */
 
+.no-padding table {
+  padding: 0;
+}
+
 .table-action a {
   display: none;
 }

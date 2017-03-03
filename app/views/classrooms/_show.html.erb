@@ -3,16 +3,12 @@
     <span class="card-title"><%= classroom.name %></span>
   </div>
   <div class="card-content">
-    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-    <%= classroom.floor %>
-
-    <%= classroom.wing %>
-
-    <%= classroom.created_at %>
-
-    <%= classroom.updated_at %>
+    <p><label>Créer le </label><%= classroom.created_at %>
+    <p><label>Mise à jour le </label><%= classroom.updated_at %>
+    <p><label>Étage: </label><%= classroom.floor %>
+    <p><label>Aile: </label><%= classroom.wing %>
   </div>
   <div class="card-content bottom-content">
-    <span>Clique</span>
+    <span>Cliquer à l'extérieur pour fermer</span>
   </div>
 </div>
