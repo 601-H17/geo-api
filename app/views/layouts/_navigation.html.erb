@@ -23,6 +23,7 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li class="<%= 'active' if current_page?(admins_path) %>"><%= link_to 'Administration', admins_path %></li>
         <li class="<%= 'active' if current_page?(tokens_path) %>"><%= link_to 'Jetons', tokens_path %></li>
+        <li class="<%= 'active' if current_page?(classrooms_path) %>"><%= link_to 'Locaux', classrooms_path %></li>
 
         <li class="dropdown <%= 'active' if current_page?(map_path) || current_page?(upload_index_path) %>">
           <a class="dropdown-button" href="#" data-activates="dropdown-carte">Carte</a>
