@@ -53,19 +53,6 @@ class ClassroomsControllerTest < ActionController::TestCase
     assert_nil Classroom.find_by_name(name)
   end
 
-  # Show (GET)
-
-  test "should show classroom" do
-    point = Point.create(lat: 0, lng: 0)
-    classroom = Classroom.create(name: "A-001", wing: "A", floor: 1, point: point)
-
-    get :show, id: classroom
-
-    assert_response :success
-    assert_template :show
-    assert_match classroom.name, @response.body
-  end
-
   # Update (PUT PATCH)
 
   test "should update classroom name" do
