@@ -51,14 +51,8 @@
                 </td>
               </tr>
               <!-- Modal Structure -->
-              <div id="modal<%= classroom.id %>" class="modal">
-                <div class="modal-content">
-                  <h4>Modal Header</h4>
-                  <%= render 'classrooms/show', classroom: classroom %>
-                </div>
-                <div class="modal-footer">
-                  <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-                </div>
+              <div id="modal<%= classroom.id %>" class="modal small">
+                <%= render 'classrooms/show', classroom: classroom %>
               </div>
           <% end %>
           </tbody>

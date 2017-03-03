@@ -1,28 +1,18 @@
-<div class="container">
-  <p id="notice"><%= notice %></p>
-
-  <div class="row">
-    <h1><%= classroom.name %></h1>
+<div class="card card-modal">
+  <div class="card-content">
+    <span class="card-title"><%= classroom.name %></span>
   </div>
-
-  <div class="row">
+  <div class="card-content">
+    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
     <%= classroom.floor %>
-  </div>
 
-  <div class="row">
     <%= classroom.wing %>
-  </div>
 
-  <div class="row">
     <%= classroom.created_at %>
-  </div>
 
-  <div class="row">
     <%= classroom.updated_at %>
   </div>
-
-  <div class="row">
-    <%= link_to 'Revenir', classrooms_path, class: 'btn' %>
-    <%= link_to 'Modifier', edit_classroom_path(classroom), class: 'btn' %>
+  <div class="card-content bottom-content">
+    <span>Clique</span>
   </div>
 </div>

@@ -117,3 +117,27 @@ form.login {
   position: fixed;
   height: 100%;
 }
+
+/* Modal */
+
+.bottom-content {
+  width:100%;
+  text-align: center;
+}
+
+.bottom-content span {
+  color: grey;
+}
+
+.modal-content-style {
+  margin: 0;
+  padding: 10px;
+}
+
+.modal.small {
+  width: 400px;
+}
+
+.card-modal {
+  margin: 0;
+}
