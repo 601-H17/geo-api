@@ -1,7 +1,6 @@
 class MapController < ApplicationController
   before_action :require_admin
 
-# if works at first, change the current map value to false, continue to enter the if
   def display
     gon.map_floor_1 = []
     gon.map_floor_2 = []
@@ -10,13 +9,12 @@ class MapController < ApplicationController
 
     if !m1.empty?
       floor_1 = m1.where(floor: 1).first
-      gon.map_floor_1 = get_json_features_from_map("public" + floor_1.map.url)
+      gon.map_floor_1 = get_json_features_from_map("public" + floor_1.map.url) + get_json_features_from_map("public" + floor_1.corridor.url)
     end
 
     if !m2.empty?
       floor_2 = m2.where(floor: 2).first
-      gon.map_floor_2 = get_json_features_from_map("public" + floor_2.map.url)
-
+      gon.map_floor_2 = get_json_features_from_map("public" + floor_2.map.url) + get_json_features_from_map("public" + floor_2.corridor.url)
     end
   end
 
