@@ -74,9 +74,7 @@ class UploadController < ApplicationController
   end
 
   def upload_corridor
-    # @map.corridor = params[:corridor]
-    puts 'PARAMS'
-    puts params[:corridor]
+    @map.corridor = params[:map][:corridor]
     @map.save!
     redirect_to upload_index_path
   end
