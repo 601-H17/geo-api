@@ -5,7 +5,7 @@
 
   <div class="row">
     <div class="col-md-12">
-      <%= form_for(@map, url: upload_path(@map), method: :patch, :html => {class: 'form-horizontal', role: 'form'}) do |f| %>
+      <%= form_for(@map, url: upload_corridor_path(@map), :action => "upload_corridor", :html => {class: '', role: 'form'}) do |f| %>
 
           <div class="row file-field input-field">
             <div class="btn">

@@ -16,7 +16,8 @@ Rails.application.routes.draw do
 
   resources :upload, except: :show
   get '/upload/make_current_map/:id' => 'upload#make_current_map', as: :make_current_map
-  get '/upload/corridor/:id' => 'upload#upload_corridor', as: :upload_corridor
+  get '/upload/corridor/new/:id' => 'upload#new_corridor', as: :new_corridor
+  patch '/upload/corridor/:id' => 'upload#upload_corridor', as: :upload_corridor
 
   namespace :api, defaults: {format: :json} do
 

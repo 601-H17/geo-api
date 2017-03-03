@@ -23,7 +23,7 @@
             <%= link_to (map.currentMap ? 'Désactiver' : 'Activer'), make_current_map_path(map), class: 'btn' %>
             <%= link_to 'Modifier', edit_upload_path(map), class: 'btn' %>
             <%= link_to 'Supprimer', upload_path(map), method: :delete, data: {confirm: 'Voulez-vous vraiment supprimer cette carte?'}, class: 'btn' %>
-            <%= link_to 'Téléverser corridors', upload_corridor_path(map), class: 'btn' %>
+            <%= link_to 'Téléverser corridors', new_corridor_path(map), class: 'btn' %>
 
           </td>
     <% end %>
