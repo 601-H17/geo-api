@@ -4,14 +4,9 @@
 // tags
 
 body {
-  font-family: "Helvetica Neue";
+  padding: 0;
   background: #eee;
   -webkit-font-smoothing: antialiased;
-}
-
-hgroup {
-  text-align: center;
-  margin-top: 4em;
 }
 
 h3, h6 {
@@ -44,6 +39,23 @@ h6 {
   width: 100%;
 }
 
+/* Navbar */
+
+.fixed-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 50px;
+  background-color: #00a087;
+}
+
+.push-navbar {
+  padding-top: 4em;
+}
+
 // classes
 
 form.login {
@@ -72,4 +84,64 @@ form.login {
 
 .toast-danger {
   background-color: #e53935;
+}
+
+/* Table */
+
+.no-padding table {
+  padding: 0;
+}
+
+.table-action a {
+  display: none;
+}
+
+.table-action:hover a {
+  display: inline-block;
+}
+
+.table-row:hover {
+  background-color: #b2dfdb;
+}
+
+/* Card */
+
+.card-top {
+  margin-top: 1em;
+}
+
+/* Scroll */
+
+.scroll {
+  height: 500px;
+  overflow: scroll;
+}
+
+.fixed-control {
+  position: fixed;
+  height: 100%;
+}
+
+/* Modal */
+
+.bottom-content {
+  width:100%;
+  text-align: center;
+}
+
+.bottom-content span {
+  color: grey;
+}
+
+.modal-content-style {
+  margin: 0;
+  padding: 10px;
+}
+
+.modal.small {
+  width: 400px;
+}
+
+.card-modal {
+  margin: 0;
 }

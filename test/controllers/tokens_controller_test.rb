@@ -10,7 +10,7 @@ class TokensControllerTest < ActionController::TestCase
     session[:admin_id] = @admin.id
   end
 
-  test "admin not sign in access" do
+  test "should redirect to root when admin is not sign in" do
     session[:admin_id] = nil
 
     get :index

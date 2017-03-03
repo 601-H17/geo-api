@@ -96,7 +96,7 @@ class Api::V1::ClassroomsController < ApplicationController
 
   private
     def classrooms_params
-      params.require(:classroom).permit(:name, :description, :floor, :point)
+      params.require(:classroom).permit(:name, :description, :floor, :wing, :point)
     end
 
 end
