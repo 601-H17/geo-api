@@ -7,6 +7,16 @@ class ClassroomsController < ApplicationController
 
   def index
     @classrooms = Classroom.all.order(:name)
+    if params[:search]
+      classrooms = []
+      @classrooms.each do |classroom|
+        if classroom.name.start_with?(params[:search])
+          classrooms.push(classroom)
+        end
+      end
+      @classrooms = classrooms
+    else
+    end
   end
 
   # POST /classrooms

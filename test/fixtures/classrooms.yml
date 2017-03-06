@@ -18,8 +18,8 @@ two:
 
 three:
   id: 3
-  name: F-120
+  name: B-120
   description: MyString
   floor: 1
-  wing: G
+  wing: B
   point: 2

@@ -6,6 +6,7 @@ class ClassroomsControllerTest < ActionController::TestCase
     @admin = admins(:one)
     @classroom1 = classrooms(:one)
     @classroom2 = classrooms(:two)
+    @classroom3 = classrooms(:three)
     session[:admin_id] = @admin.id
   end
 
@@ -26,6 +27,17 @@ class ClassroomsControllerTest < ActionController::TestCase
     assert_template :index
     assert_match @classroom1.name, @response.body
     assert_match @classroom2.name, @response.body
+    assert_match @classroom3.name, @response.body
+  end
+
+  test "get classrooms index with search params" do
+    get :index, search: "F"
+
+    assert_response :success
+    assert_template :index
+    assert_match @classroom1.name, @response.body
+    assert_match @classroom2.name, @response.body
+    assert_no_match @classroom3.name, @response.body
   end
 
   # Create (POST)

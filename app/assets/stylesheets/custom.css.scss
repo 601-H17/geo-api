@@ -110,6 +110,18 @@ form.login {
   margin-top: 1em;
 }
 
+.card-modal {
+  margin: 0;
+}
+
+.card-search-field {
+  padding: 10px;
+}
+
+.card-panel.padding {
+  padding: 0.2em;
+}
+
 /* Scroll */
 
 .scroll {
@@ -142,6 +154,9 @@ form.login {
   width: 400px;
 }
 
-.card-modal {
-  margin: 0;
+/* Search */
+
+.no-result-tag {
+  text-align: center;
+  color: #7C7C7C;
 }
