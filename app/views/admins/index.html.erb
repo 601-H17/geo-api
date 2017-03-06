@@ -1,39 +1,63 @@
-<div class="container">
+<div class="row">
 
-  <h1>Administrateurs</h1>
+  <div class="col s12 m4 l3 fixed-control">
 
-  <table>
-    <thead>
-    <tr>
-      <th>Nom d'utilisateur</th>
-      <th>Adresse courriel</th>
-      <th>Administrateur principal</th>
-      <th>Actions</th>
-    </tr>
-    </thead>
+    <div class="card card-top">
+      <div class="card-content">
+        <span class="card-title thin">Administrateurs</span>
+        <p>Voici tous les administrateurs. On peut les modifier ou les supprimer.</p>
+      </div>
+      <div class="card-action">
+        <% if current_admin && current_admin.master_admin? %>
+            <%= link_to raw('<i class="material-icons right">add</i>Nouvel administrateur'), new_admin_path, class: 'btn waves-effect waves-light' %>
+        <% end %>
 
-    <tbody>
-    <% @admins.each do |admin| %>
-        <tr>
-          <td><%= admin.username %></td>
-          <td><%= admin.email %></td>
-          <td><%= admin.master_admin ? 'Oui' : 'Non' %></td>
-          <td><%= link_to 'Afficher', admin, class: 'btn' %></td>
-          <% if current_admin && current_admin.master_admin? || admin == current_admin %>
-              <td><%= link_to 'Modifier', edit_admin_path(admin), class: 'btn' %></td>
+      </div>
+    </div>
+
+    <div class="side-card">
+      <ul class="collapsible" data-collapsible="expandable">
+        <li>
+          <div class="collapsible-header">
+            <span class="badge"><%= @admins.count %></span><i class="material-icons">place</i>Administrateurs
+          </div>
+          <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col s12 m8 l9 offset-m4 offset-l3">
+    <div class="card card-top">
+      <div class="card-content no-padding">
+        <table class="centered">
+          <thead>
+          <tr>
+            <th>Nom d'utilisateur</th>
+            <th>Adresse courriel</th>
+            <th>Administrateur principal</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <% @admins.each do |admin| %>
+              <tr class="table-action table-row">
+                <td><%= admin.username %></td>
+                <td><%= admin.email %></td>
+                <td><%= admin.master_admin ? 'Oui' : 'Non' %></td>
+                <td><%= link_to 'Afficher', admin, class: 'btn' %></td>
+                <% if current_admin && current_admin.master_admin? || admin == current_admin %>
+                    <td><%= link_to 'Modifier', edit_admin_path(admin), class: 'btn' %></td>
+                <% end %>
+                <% if current_admin && current_admin.master_admin? %>
+                    <td><%= link_to 'Supprimer', admin, method: :delete, data: {confirm: 'Êtes vous certain de vouloir supprimer cette administrateur ?'}, class: 'btn' %></td>
+                <% end %>
+              </tr>
           <% end %>
-          <% if current_admin && current_admin.master_admin? %>
-              <td><%= link_to 'Supprimer', admin, method: :delete, data: {confirm: 'Êtes vous certain de vouloir supprimer cette administrateur ?'}, class: 'btn' %></td>
-          <% end %>
-        </tr>
-    <% end %>
-    </tbody>
-  </table>
+          </tbody>
+        </table>
 
-  <hr>
-  <br>
-
-  <% if current_admin && current_admin.master_admin? %>
-      <%= link_to 'Nouveau', new_admin_path, class: 'btn' %>
-  <% end %>
+      </div>
+    </div>
+  </div>
 </div>
