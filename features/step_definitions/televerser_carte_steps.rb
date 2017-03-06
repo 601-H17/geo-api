@@ -1,4 +1,4 @@
-# Given /^Administrateur connecté$/ do
+# Given /^Utilisateur connecté$/ do
 #   @admin = Admin.create(email: "admin@admin.com", password: "admin", username: "admin")
 #   visit login_path
 #   fill_in("logins_email", :with => @admin.email)
@@ -6,10 +6,10 @@
 #   click_button("Connexion")
 # end
 #
-# When(/^Les locaux sur affichés$/) do
-#   visit map_path
+# When(/^Dans le formulaire de téléversement$/) do
+#   visit new_upload_path
 # end
 #
-# Then(/^Valide la carte$/) do
-#   expect(page).to have_content("Choisissez un étage :")
+# Then(/^Une carte est téléverser$/) do
+#   expect(page).to have_content("Téléverser une carte")
 # end
