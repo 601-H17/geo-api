@@ -7,6 +7,7 @@ class ClassroomsController < ApplicationController
 
   def index
     @classrooms = Classroom.all.order(:name)
+    @classrooms_count = @classrooms.count
     if params[:search]
       classrooms = []
       @classrooms.each do |classroom|
