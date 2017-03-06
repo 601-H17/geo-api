@@ -14,23 +14,17 @@ class Api::V1::CorridorsController < ApplicationController
   end
 
   def index
-    file = File.read('json_files/corridors.json')
-    json = JSON.parse file
-    status = 200
-
-    render json: json, status: status
+    m1 = Map.where(floor: 1, currentMap: true)
+    floor_1 = m1.where(floor: 1).first
+    hash = parse("public" + floor_1.corridor.url)
+    render json: hash, status: 200
   end
 
   def corridors2
-    file = File.read('json_files/corridors2.json')
-    json = JSON.parse file
-    status = 200
-
-    render json: json, status: status
-  end
-
-  def create
-    hash = parse('json_files/corridors.json')
+    m2 = Map.where(floor: 2, currentMap: true)
+    floor_2 = m2.where(floor: 2).first
+    hash = parse("public" + floor_2.corridor.url)
+    render json: hash, status: 200
   end
 
 end

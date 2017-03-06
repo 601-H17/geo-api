@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Cartes des locaux</h1>
+  <h1>Gestion des cartes</h1>
 
   <table>
     <thead>
@@ -7,6 +7,7 @@
       <th>Nom</th>
       <th>Étage</th>
       <th>Carte actuelle</th>
+      <th>Corridor téléverser</th>
       <th>Actions</th>
     </tr>
     </thead>
@@ -17,10 +18,13 @@
           <td><%= map.name %></td>
           <td><%= map.floor %></td>
           <td><%= map.currentMap ? 'Oui' : 'Non' %></td>
+          <td><%= map.corridor.present? ? 'Oui' : 'Non' %></td>
           <td>
-            <%= link_to (map.currentMap ? 'Désactiver' : 'Activer'), upload_path(map), class: 'btn' %>
+            <%= link_to (map.currentMap ? 'Désactiver' : 'Activer'), make_current_map_path(map), class: 'btn' %>
             <%= link_to 'Modifier', edit_upload_path(map), class: 'btn' %>
             <%= link_to 'Supprimer', upload_path(map), method: :delete, data: {confirm: 'Voulez-vous vraiment supprimer cette carte?'}, class: 'btn' %>
+            <%= link_to 'Téléverser corridors', new_corridor_path(map), class: 'btn' %>
+
           </td>
     <% end %>
     </tbody>

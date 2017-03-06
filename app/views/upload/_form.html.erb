@@ -18,14 +18,27 @@
           </div>
         </div>
 
-        <div class="row">
-          <div class="">
-            <label>Carte : </label>
+        <div class="row file-field input-field">
+          <div class="btn">
+            <span>Fichier des locaux</span>
             <%= f.file_field :map %>
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
           </div>
         </div>
 
-        <div>
+        <div class="row file-field input-field">
+          <div class="btn">
+            <span>Fichier des corridors</span>
+            <%= f.file_field :corridor %>
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
+          </div>
+        </div>
+
+        <div class="row">
           <div>
             <%= link_to 'Annuler', upload_index_path, class: 'btn btn-danger btn-sm' %>
             <%= f.submit ('Téléverser'), class: 'btn btn-primary btn-sm' %>

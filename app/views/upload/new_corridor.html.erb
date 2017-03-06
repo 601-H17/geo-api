@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>Téléverser une carte des corridors</h1>
+
+  <%= render 'shared/errors', obj: @map %>
+
+  <div class="row">
+    <div class="col-md-12">
+      <%= form_for(@map, url: upload_corridor_path(@map), :action => "upload_corridor", :html => {class: '', role: 'form'}) do |f| %>
+
+          <div class="row file-field input-field">
+            <div class="btn">
+              <span>Fichier des corridors</span>
+              <%= f.file_field :corridor %>
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text">
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <%= link_to 'Annuler', upload_index_path, class: 'btn btn-danger btn-sm' %>
+              <%= f.submit ('Téléverser'), class: 'btn btn-primary btn-sm' %>
+            </div>
+          </div>
+
+      <% end %>
+    </div>
+  </div>
+
+</div>

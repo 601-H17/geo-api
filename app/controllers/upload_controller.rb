@@ -1,6 +1,6 @@
 class UploadController < ApplicationController
   before_action :require_admin
-  before_action :get_map, only: [:edit, :update, :destroy, :make_current_map]
+  before_action :get_map, only: [:edit, :update, :destroy, :make_current_map, :upload_corridor, :new_corridor]
 
   # GET /upload
 
@@ -60,10 +60,23 @@ class UploadController < ApplicationController
       @map.update({currentMap: false})
       flash[:success] = "La carte #{@map.name} a été désactivé pour l'étage #{@map.floor}."
       redirect_to upload_index_path
-    elsif @map.update({currentMap: true})
+    elsif @map.corridor.present?
+      @map.update({currentMap: true})
       flash[:success] = "La carte #{@map.name} a bien été activé pour l'étage #{@map.floor}."
       redirect_to upload_index_path
+    else
+      flash[:danger] = "La carte #{@map.name} ne peut être activé sans la carte des corridors."
+      redirect_to upload_index_path
     end
+  end
+
+  def new_corridor
+  end
+
+  def upload_corridor
+    @map.corridor = params[:map][:corridor]
+    @map.save!
+    redirect_to upload_index_path
   end
 
   private
