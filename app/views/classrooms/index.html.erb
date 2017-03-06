@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col s12 m4 l3 fixed-control">
 
-    <div class="card card-top">
+    <div class="card card-top hoverable">
       <div class="card-content">
         <span class="card-title thin">Locaux</span>
         <p>Voici tous les locaux répertoriés dans les cartes du bâtiment. On peut les modifier ou les supprimer.</p>
@@ -12,7 +12,7 @@
     </div>
 
     <div class="row">
-      <div class="card-panel">
+      <div class="card-panel hoverable">
         <%= form_tag(classrooms_path, :method => "get", id: "search-form") do %>
             <div class="row">
               <div class="input-field">
@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <div class="side-card">
+    <div class="side-card hoverable">
       <ul class="collapsible" data-collapsible="expandable">
         <li>
           <div class="collapsible-header"><span class="badge"><%= @classrooms_count %></span><i class="material-icons">place</i>Locaux</div>
@@ -44,7 +44,7 @@
 
   <div class="col s12 m8 l9 offset-m4 offset-l3">
     <% if @classrooms.present? %>
-      <div class="card card-top">
+      <div class="card card-top hoverable">
         <div class="card-content no-padding">
           <table class="centered">
             <thead>
