@@ -14,17 +14,21 @@ class Api::V1::CorridorsController < ApplicationController
   end
 
   def index
-    m1 = Map.where(floor: 1, currentMap: true)
-    floor_1 = m1.where(floor: 1).first
+    floor_1 = get_json(1)
     hash = parse("public" + floor_1.corridor.url)
     render json: hash, status: 200
   end
 
   def corridors2
-    m2 = Map.where(floor: 2, currentMap: true)
-    floor_2 = m2.where(floor: 2).first
+    floor_2 = get_json(2)
     hash = parse("public" + floor_2.corridor.url)
     render json: hash, status: 200
+  end
+
+  private
+  def get_json(floor)
+    m = Map.where(floor: floor, currentMap: true)
+    m.where(floor: floor).first
   end
 
 end
