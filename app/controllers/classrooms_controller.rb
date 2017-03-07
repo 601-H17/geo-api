@@ -17,7 +17,7 @@ class ClassroomsController < ApplicationController
     if @point.save
       @classroom.point = @point
       if @classroom.save
-        flash[:success] = "Le local #{@classroom.name} a été créé"
+        flash[:success] = "Le local #{@classroom.name} a été créé."
         redirect_to classrooms_path
       else
         render 'new'
