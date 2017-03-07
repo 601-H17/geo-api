@@ -5,7 +5,7 @@ one:
   name: F-100
   description: MyString
   floor: 1
-  wing: G
+  wing: F
   point: 1
 
 two:
@@ -13,7 +13,7 @@ two:
   name: F-110
   description: MyString
   floor: 1
-  wing: G
+  wing: F
   point: 2
 
 three:
