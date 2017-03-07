@@ -1,30 +1,58 @@
-<div class="container">
-  <h1>Jetons</h1>
-  <table>
-    <thead>
-    <tr>
-      <th>Nom</th>
-      <th>Date de création</th>
-      <th>Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-    <% @tokens.each do |token| %>
-        <tr>
-          <td><%= token.name %></td>
-          <td><%= token.created_at %></td>
-          <td>
-            <div class="row">
-              <button class="btn" type="button" onclick="alert('<%= token.access_token %>')">Afficher</button>
-              <%= link_to 'Modifier', edit_token_path(token), class: 'btn' %>
-              <%= link_to 'Révoquer', token_path(token), method: :delete, data: {confirm: 'Voulez-vous vraiment supprimer ce jeton?'}, class: 'btn' %>
-            </div>
-          </td>
-    <% end %>
-    </tbody>
-  </table>
-  <hr>
-  <br>
-  <%= link_to 'Générer une nouvelle clé', new_token_path, class: 'btn' %>
+<div class="row">
+  <div class="col s12 m4 l3 fixed-control">
+
+    <div class="card card-top">
+      <div class="card-content">
+        <span class="card-title thin">Jetons</span>
+        <p>Voici tous les jetons répertoriés On peut les modifier ou les supprimer.</p>
+      </div>
+      <div class="card-action">
+        <%= link_to raw('<i class="material-icons right">add</i>Générer une nouvelle clé'), new_token_path, class: 'btn waves-effect waves-light' %>
+      </div>
+    </div>
+
+    <div class="side-card">
+      <ul class="collapsible" data-collapsible="expandable">
+        <li>
+          <div class="collapsible-header">
+            <span class="badge"><%= @tokens.count %></span><i class="material-icons">place</i>Jetons
+          </div>
+          <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col s12 m8 l9 offset-m4 offset-l3">
+    <div class="card card-top">
+      <div class="card-content no-padding">
+        <table class="centered">
+          <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Date de création</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @tokens.each do |token| %>
+              <tr class="table-action table-row">
+                <td><%= token.name %></td>
+                <td><%= token.created_at %></td>
+                <td>
+                  <div class="row">
+                    <button class="btn" type="button" onclick="alert('<%= token.access_token %>')">Afficher</button>
+                    <%= link_to 'Modifier', edit_token_path(token), class: 'btn' %>
+                    <%= link_to 'Révoquer', token_path(token), method: :delete, data: {confirm: 'Voulez-vous vraiment supprimer ce jeton?'}, class: 'btn' %>
+                  </div>
+                </td>
+          <% end %>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+
 </div>
 
