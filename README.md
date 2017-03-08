@@ -82,10 +82,6 @@ Or to run a specific test unit file:
 ```bash
 $ rake test test/path/to/file.rb
 ```
-To run integration tests:
-```bash
-$ cucumber
-```
 
 #### **Unit and integration tests for docker users**
 
