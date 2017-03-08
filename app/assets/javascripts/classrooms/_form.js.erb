@@ -14,17 +14,32 @@ $(function($) {
     );
 });
 $(function() {
-
-    $('.chips-placeholder').material_chip({
-        placeholder: 'Enter a tag',
-        secondaryPlaceholder: '+ Tag'
-    });
-
     $('.chips').on('chip.add', function(e, chip){
         datas.push(chip);
+        $.post("/api/tags/" + classroom_id,
+            { tags: datas },
+            function (result) {
+                Materialize.toast('Étiquettes sauvegardées !', 4000, 'toast-success');
+            }
+        ).fail(function (error){
+            Materialize.toast('Une erreur est survenue', 4000, 'toast-danger');
+        });
     });
 
     $('.chips').on('chip.delete', function(e, chip){
+        var i = datas.indexOf(chip);
+        $.ajax({
+            url: "/api/tags/" + classroom_id,
+            type: 'DELETE',
+            data: { tag: chip.tag },
+            success: function (result) {
+                Materialize.toast('Étiquette ' + chip.tag + ' retirée', 4000, 'toast-danger');
+                datas.splice(i, 1);
+            },
+            failure: function (error){
+                Materialize.toast('Une erreur est survenue', 4000, 'toast-danger');
+            }
+        });
     });
 });
 

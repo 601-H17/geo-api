@@ -1,7 +1,7 @@
 class Api::V1::TagsController < ApplicationController
 
   before_action :require_admin
-  before_action :get_classroom, only: :get_tags
+  before_action :get_classroom, only: [:get_tags, :delete_tag]
 
   def get_tags
     render json: @classroom.tags, status: 200
@@ -10,10 +10,7 @@ class Api::V1::TagsController < ApplicationController
   def save_for_classroom
     classroom = Classroom.find(params[:id])
     tags = params[:tags]
-    puts tags
     tags.each do |i, t|
-      puts "index #{i} for tag #{t}"
-      # debugger
       tag = nil
       begin
         tag = Tag.find_by_name!(t[:tag])
@@ -34,7 +31,10 @@ class Api::V1::TagsController < ApplicationController
   end
 
   def delete_tag
-
+    tag_name = params[:tag]
+    tag = Tag.find_by_name!(tag_name)
+    @classroom.tags.delete(tag)
+    render json: { msg: "Success" }, status: 201
   end
 
   private
