@@ -45,9 +45,9 @@
                 <td><%= map.corridor.present? ? 'Oui' : 'Non' %></td>
                 <td>
                   <%= link_to (map.currentMap ? 'Désactiver' : 'Activer'), make_current_map_path(map), class: 'btn' %>
-                  <%= link_to raw('<i class="material-icons">edit</i>'), edit_upload_path(map), class: 'btn btn-floating btn-large waves-effect waves-light waves-circle blue' %>
-                  <%= link_to raw('<i class="material-icons">delete</i>'), upload_path(map), method: :delete, data: {confirm: 'Voulez-vous vraiment supprimer cette carte?'}, class: 'btn-floating btn-large waves-effect waves-light red' %>
-                  <%= link_to raw('<i class="material-icons">publish</i>'), new_corridor_path(map), class: 'btn-floating btn-large waves-effect waves-light green' %>
+                  <%= link_to raw('<i class="material-icons">edit</i>'), edit_upload_path(map), class: 'btn btn-floating waves-effect waves-light waves-circle blue' %>
+                  <%= link_to raw('<i class="material-icons">delete</i>'), upload_path(map), method: :delete, data: {confirm: 'Voulez-vous vraiment supprimer cette carte?'}, class: 'btn btn-floating waves-effect waves-light red' %>
+                  <%= link_to raw('<i class="material-icons">publish</i>'), new_corridor_path(map), class: 'btn btn-floating waves-effect waves-light green' %>
 
                 </td>
           <% end %>

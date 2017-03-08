@@ -45,13 +45,14 @@
                 <td><%= admin.username %></td>
                 <td><%= admin.email %></td>
                 <td><%= admin.master_admin ? 'Oui' : 'Non' %></td>
-                <td><%= link_to raw('<i class="material-icons">info_outline</i>'), admin, class: 'btn btn-floating btn-large waves-effect waves-light waves-circle green' %></td>
-                <% if current_admin && current_admin.master_admin? || admin == current_admin %>
-                    <td><%= link_to raw('<i class="material-icons">edit</i>'), edit_admin_path(admin), class: 'btn btn-floating btn-large waves-effect waves-light waves-circle blue' %></td>
-                <% end %>
-                <% if current_admin && current_admin.master_admin? %>
-                    <td><%= link_to raw('<i class="material-icons">delete</i>'), admin, method: :delete, data: {confirm: 'Êtes vous certain de vouloir supprimer cette administrateur ?'}, class: 'btn-floating btn-large waves-effect waves-light red' %></td>
-                <% end %>
+                <td><%= link_to raw('<i class="material-icons">info_outline</i>'), admin, class: 'btn btn-floating waves-effect waves-light waves-circle green' %>
+                  <% if current_admin && current_admin.master_admin? || admin == current_admin %>
+                      <%= link_to raw('<i class="material-icons">edit</i>'), edit_admin_path(admin), class: 'btn btn-floating waves-effect waves-light waves-circle blue' %>
+                  <% end %>
+                  <% if current_admin && current_admin.master_admin? %>
+                      <%= link_to raw('<i class="material-icons">delete</i>'), admin, method: :delete, data: {confirm: 'Êtes vous certain de vouloir supprimer cette administrateur ?'}, class: 'btn btn-floating waves-effect waves-light red' %>
+                  <% end %>
+                </td>
               </tr>
           <% end %>
           </tbody>
