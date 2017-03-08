@@ -4,7 +4,7 @@ class LoginsController < ApplicationController
 
   def new
     if logged_in?
-      redirect_to admins_path
+      redirect_to map_path
     end
   end
 
@@ -15,7 +15,7 @@ class LoginsController < ApplicationController
     if admin && admin.authenticate(params[:logins][:password])
       session[:admin_id] = admin.id
       flash[:success] = "Connecté avec succès."
-      redirect_to admin_path(admin)
+      redirect_to map_path
     else
       flash.now[:danger] = "Une erreur est survenue."
       render 'new'
