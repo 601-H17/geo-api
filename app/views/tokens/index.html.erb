@@ -40,11 +40,9 @@
                 <td><%= token.name %></td>
                 <td><%= token.created_at %></td>
                 <td>
-                  <div class="row">
-                    <button class="btn" type="button" onclick="alert('<%= token.access_token %>')">Afficher</button>
-                    <%= link_to 'Modifier', edit_token_path(token), class: 'btn' %>
-                    <%= link_to 'Révoquer', token_path(token), method: :delete, data: {confirm: 'Voulez-vous vraiment supprimer ce jeton?'}, class: 'btn' %>
-                  </div>
+                  <%= link_to raw('<i class="material-icons">info_outline</i>'), tokens_path, data: {confirm: token.access_token}, class: 'btn btn-floating btn-large waves-effect waves-light waves-circle green' %>
+                  <%= link_to raw('<i class="material-icons">edit</i>'), edit_token_path(token), class: 'btn btn-floating btn-large waves-effect waves-light waves-circle blue' %>
+                  <%= link_to raw('<i class="material-icons">delete</i>'), token_path(token), method: :delete, data: {confirm: 'Voulez-vous vraiment supprimer ce jeton?'}, class: 'btn-floating btn-large waves-effect waves-light red' %>
                 </td>
           <% end %>
           </tbody>
