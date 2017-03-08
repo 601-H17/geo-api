@@ -115,3 +115,8 @@ Or:
 ```bash
 $ rails c
 ```
+
+### Schema of continuous integration of this project
+<p align="center">
+  <img src="https://cloud.githubusercontent.com/assets/5929986/23718964/8364df76-0407-11e7-981d-4f8d73b4da53.png" />
+</p>
