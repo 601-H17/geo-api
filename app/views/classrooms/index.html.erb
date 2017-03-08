@@ -66,7 +66,7 @@
                   <td width="30%"><%= classroom.created_at %></td>
                   <td width="20%">
                     <%= link_to(raw('<i class="material-icons">info_outline</i>'), "#modal#{classroom.id}", remote: true, class: 'btn btn-floating waves-effect waves-light waves-circle modal-trigger green') %>
-                    <%= link_to(raw('<i class="material-icons">edit</i>'), edit_classroom_path(classroom), class: 'btn btn-floating waves-effect waves-light waves-circle blue') %>
+                    <%= link_to(raw('<i class="material-icons">edit</i>'), edit_classroom_path(classroom), class: 'btn btn-floating waves-effect waves-light waves-circle blue', 'data-turbolinks' => "false") %>
                     <%= link_to(raw('<i class="material-icons">delete</i>'), classroom_path(classroom), method: :delete, class: 'btn-floating waves-effect waves-light red', data: {confirm: 'Voulez-vous vraiment supprimer ce local ?'}) %>
                   </td>
                 </tr>

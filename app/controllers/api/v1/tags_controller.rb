@@ -1,6 +1,11 @@
 class Api::V1::TagsController < ApplicationController
 
   before_action :require_admin
+  before_action :get_classroom, only: :get_tags
+
+  def get_tags
+    render json: @classroom.tags, status: 200
+  end
 
   def save_for_classroom
     classroom = Classroom.find(params[:id])
@@ -25,11 +30,16 @@ class Api::V1::TagsController < ApplicationController
 
     end
 
-    render json: { msg: "Success" }, status: 200
+    render json: { msg: "Success" }, status: 201
   end
 
   def delete_tag
 
   end
+
+  private
+    def get_classroom
+      @classroom = Classroom.find(params[:id])
+    end
 
 end

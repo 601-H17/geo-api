@@ -1,15 +1,23 @@
 var datas = [];
 
-
+$(function($) {
+    $.get('/api/tags/' + classroom_id,
+        function (result) {
+            result.forEach(function (t) {
+                datas.push({ tag: t.name });
+            });
+            console.log(datas);
+            $('.chips-initial').material_chip({
+                data: datas
+            });
+        }
+    );
+});
 $(function() {
+
     $('.chips-placeholder').material_chip({
         placeholder: 'Enter a tag',
-        secondaryPlaceholder: '+Tag',
-    });
-
-    $('.chips').material_chip({
-        placeholder: 'Enter a tag',
-        secondaryPlaceholder: '+Tag',
+        secondaryPlaceholder: '+ Tag'
     });
 
     $('.chips').on('chip.add', function(e, chip){
@@ -17,7 +25,6 @@ $(function() {
     });
 
     $('.chips').on('chip.delete', function(e, chip){
-        // you have the deleted chip here
     });
 });
 
@@ -26,7 +33,7 @@ function saveTags() {
     $.post("/api/tags/" + classroom_id,
         { tags: datas },
         function (result) {
-            window.alert("Success " + result.msg);
+            Materialize.toast('Étiquettes sauvegardées !', 4000, 'toast-success');
         }
     ).fail(function (error){
             window.alert("Something wrong " + error);
