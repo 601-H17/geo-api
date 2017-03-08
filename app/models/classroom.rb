@@ -13,4 +13,6 @@ class Classroom < ActiveRecord::Base
   accepts_nested_attributes_for :point, allow_destroy: true
   attr_accessor :point_attributes
 
+  has_and_belongs_to_many :tags
+
 end

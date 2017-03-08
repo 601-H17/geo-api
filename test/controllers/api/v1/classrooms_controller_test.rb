@@ -75,7 +75,7 @@ class Api::V1::ClassroomsControllerTest < ActionController::TestCase
     classrooms = JSON.parse @response.body
     assert_response :success
     assert_includes request.headers["Authorization"], @token.access_token
-    assert_equal 3, classrooms.count
+    assert_equal 2, classrooms.count
   end
 
   test "should get classrooms from query by name (downcase) with token" do
@@ -84,7 +84,7 @@ class Api::V1::ClassroomsControllerTest < ActionController::TestCase
     classrooms = JSON.parse @response.body
     assert_response :success
     assert_includes request.headers["Authorization"], @token.access_token
-    assert_equal 3, classrooms.count
+    assert_equal 2, classrooms.count
   end
 
   test "should not get classrooms from query, get error 404 with token and unknown name" do

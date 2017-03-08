@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col s12 m4 l3 fixed-control">
 
-    <div class="card card-top">
+    <div class="card card-top hoverable">
       <div class="card-content">
         <span class="card-title thin">Locaux</span>
         <p>Voici tous les locaux répertoriés dans les cartes du bâtiment. On peut les modifier ou les supprimer.</p>
@@ -11,12 +11,30 @@
       </div>
     </div>
 
-    <div class="side-card">
+    <div class="row">
+      <div class="card-panel hoverable">
+        <%= form_tag(classrooms_path, :method => "get", id: "search-form") do %>
+            <div class="row">
+              <div class="input-field">
+                <%= text_field_tag :search, params[:search], placeholder: "Chercher un local...", class: 'col s10' %>
+              </div>
+              <%= button_tag 'Search', class: 'btn col s2', type: 'submit' do %>
+                  <i class="material-icons">search</i>
+              <% end %>
+            </div>
+        <% end %>
+        <ul class="collapsible" data-collapsible="expandable">
+          <li>
+            <div class="collapsible-header"><span class="badge"><%= @classrooms.count %></span><i class="material-icons">place</i>Locaux affichés</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="side-card hoverable">
       <ul class="collapsible" data-collapsible="expandable">
         <li>
-          <div class="collapsible-header">
-            <span class="badge"><%= @classrooms.count %></span><i class="material-icons">place</i>Locaux
-          </div>
+          <div class="collapsible-header"><span class="badge"><%= @classrooms_count %></span><i class="material-icons">place</i>Locaux</div>
           <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
         </li>
       </ul>
@@ -25,41 +43,43 @@
   </div>
 
   <div class="col s12 m8 l9 offset-m4 offset-l3">
-    <div class="card card-top">
-      <div class="card-content no-padding">
-        <table class="centered">
-          <thead>
-          <tr>
-            <th>Nom</th>
-            <th>Étage</th>
-            <th>Aile</th>
-            <th>Date de création</th>
-            <th>Actions</th>
-          </tr>
-          </thead>
+    <% if @classrooms.present? %>
+      <div class="card card-top hoverable">
+        <div class="card-content no-padding">
+          <table class="centered">
+            <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Étage</th>
+              <th>Aile</th>
+              <th>Date de création</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
 
-          <tbody>
-          <% @classrooms.each do |classroom| %>
-              <tr class="table-action table-row">
-                <td><%= classroom.name %></td>
-                <td><%= classroom.floor %></td>
-                <td><%= classroom.wing %></td>
-                <td width="30%"><%= classroom.created_at %></td>
-                <td width="20%">
-                  <%= link_to(raw('<i class="material-icons">info_outline</i>'), "#modal#{classroom.id}", remote: true, class: 'btn btn-floating btn-large waves-effect waves-light waves-circle modal-trigger green') %>
-                  <%= link_to(raw('<i class="material-icons">edit</i>'), edit_classroom_path(classroom), class: 'btn btn-floating btn-large waves-effect waves-light waves-circle blue') %>
-                  <%= link_to(raw('<i class="material-icons">delete</i>'), classroom_path(classroom), method: :delete, class: 'btn-floating btn-large waves-effect waves-light red', data: {confirm: 'Voulez-vous vraiment supprimer ce local ?'}) %>
-                </td>
-              </tr>
-              <!-- Modal Structure -->
-              <div id="modal<%= classroom.id %>" class="modal small">
+            <tbody>
+            <% @classrooms.each do |classroom| %>
+                <tr class="table-action table-row">
+                  <td><%= classroom.name %></td>
+                  <td><%= classroom.floor %></td>
+                  <td><%= classroom.wing %></td>
+                  <td width="30%"><%= classroom.created_at %></td>
+                  <td width="20%">
+                    <%= link_to(raw('<i class="material-icons">info_outline</i>'), "#modal#{classroom.id}", remote: true, class: 'btn btn-floating waves-effect waves-light waves-circle modal-trigger green') %>
+                    <%= link_to(raw('<i class="material-icons">edit</i>'), edit_classroom_path(classroom), class: 'btn btn-floating waves-effect waves-light waves-circle blue', 'data-turbolinks' => "false") %>
+                    <%= link_to(raw('<i class="material-icons">delete</i>'), classroom_path(classroom), method: :delete, class: 'btn-floating waves-effect waves-light red', data: {confirm: 'Voulez-vous vraiment supprimer ce local ?'}) %>
+                  </td>
+                </tr>
+                <!-- Modal Structure -->
                 <%= render 'classrooms/show', classroom: classroom %>
-              </div>
-          <% end %>
-          </tbody>
-        </table>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
+    <% else %>
+      <p class="no-result-tag">Aucun locaux ne correspond à votre recherche "<%= params[:search] %>"</p>
+    <% end %>
   </div>
 
 </div>

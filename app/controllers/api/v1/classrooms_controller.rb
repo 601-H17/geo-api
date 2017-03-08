@@ -78,7 +78,6 @@ class Api::V1::ClassroomsController < ApplicationController
     name = params[:query].downcase
     classrooms_found = Array.new
     regexName = name.delete("^a-zA-Z0-9")
-    puts regexName
     Classroom.all.each do |classname|
       regexClassname = classname.name.delete("^a-zA-Z0-9")
       if regexClassname.downcase.start_with?(regexName)

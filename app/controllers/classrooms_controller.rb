@@ -7,6 +7,17 @@ class ClassroomsController < ApplicationController
 
   def index
     @classrooms = Classroom.all.order(:name)
+    @classrooms_count = @classrooms.count
+    if params[:search]
+      classrooms = []
+      @classrooms.each do |classroom|
+        if classroom.name.start_with?(params[:search])
+          classrooms.push(classroom)
+        end
+      end
+      @classrooms = classrooms
+    else
+    end
   end
 
   # POST /classrooms
@@ -65,7 +76,6 @@ class ClassroomsController < ApplicationController
   # GET /classrooms/edit
 
   def edit
-
   end
 
   private

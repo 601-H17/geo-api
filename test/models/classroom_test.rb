@@ -6,6 +6,7 @@ class ClassroomTest < ActiveSupport::TestCase
 
   setup do
     @point = points(:one)
+    @tag = Tag.new(name: "A tag")
   end
 
   test "classroom should have name and description" do
@@ -126,6 +127,15 @@ class ClassroomTest < ActiveSupport::TestCase
 
     assert_not classroom.valid?, classroom.errors.full_messages
     assert_match "Point can't be blank", classroom.errors.full_messages[0]
+  end
+
+  test "classroom should have a tag" do
+    classroom = Classroom.new(name: "G-164", description: "A description", wing: "G", floor: 1, point: @point)
+    classroom.tags << @tag
+
+    assert classroom.valid?, classroom.errors.full_messages
+    assert 1, classroom.tags.count
+    assert @tag.name, classroom.tags[0].name
   end
 
 end
