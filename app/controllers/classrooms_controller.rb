@@ -76,7 +76,6 @@ class ClassroomsController < ApplicationController
   # GET /classrooms/edit
 
   def edit
-    puts @classroom
   end
 
   private
