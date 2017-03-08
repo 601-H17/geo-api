@@ -21,13 +21,8 @@ class MapController < ApplicationController
   private
 
   def get_json_features_from_map(path_to_file)
-    begin
-      map_json = parse(path_to_file)
-      map_json = map_json['features']
-      return map_json
-    rescue => ex
-      logger.error ex.message
-    end
+    map_json = parse(path_to_file)
+    map_json['features']
   end
 
 end

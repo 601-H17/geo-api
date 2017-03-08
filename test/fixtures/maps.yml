@@ -4,6 +4,7 @@ one:
   map: map.json
   currentMap: true
   floor: 1
+  corridor: corridors.json
 
 two:
   id: 2
@@ -11,3 +12,4 @@ two:
   map: map2.json
   currentMap: true
   floor: 2
+  corridor: corridors2.json
