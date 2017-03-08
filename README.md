@@ -4,6 +4,16 @@
 
 `rails version : 4.2.0`
 
+### Summary
+
+* [Install Ruby on Rails locally](https://github.com/601-H17/geo-api#install-ruby-on-rails-locally-docker-installation-below)
+* [Running Rails on a docker container](https://github.com/601-H17/geo-api#running-rails-on-a-docker-container)
+* [View the server in action](https://github.com/601-H17/geo-api#view-the-server-in-action)
+* [Tests](https://github.com/601-H17/geo-api#tests)
+* [Routes](https://github.com/601-H17/geo-api#routes)
+* [Rails Console](https://github.com/601-H17/geo-api#schema-of-continuous-integration-of-this-project)
+* [Schema of continuous integration of this project](https://github.com/601-H17/geo-api#schema-of-continuous-integration-of-this-project)
+
 ### Install Ruby on Rails locally (Docker installation below)
 
 Follow this [guide](http://www.installrails.com). 
@@ -16,7 +26,7 @@ For Linux user, when installing `rvm` and `ruby`, write instead `rvm gemset use 
 ```bash
 $ cd the_project/
 ```
-njnjihl
+
 2. When you're in, restore all the dependencies:
 ```bash
 $ bundle install --without production
@@ -118,5 +128,5 @@ $ rails c
 
 ### Schema of continuous integration of this project
 <p align="center">
-  <img src="https://cloud.githubusercontent.com/assets/5929986/23718964/8364df76-0407-11e7-981d-4f8d73b4da53.png" />
+  <img src="https://cloud.githubusercontent.com/assets/5929986/23719910/0f8047ea-040b-11e7-9aa2-bb299fbef400.png" />
 </p>
