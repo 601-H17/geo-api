@@ -1,0 +1,34 @@
+var datas = [];
+
+
+$(function() {
+    $('.chips-placeholder').material_chip({
+        placeholder: 'Enter a tag',
+        secondaryPlaceholder: '+Tag',
+    });
+
+    $('.chips').material_chip({
+        placeholder: 'Enter a tag',
+        secondaryPlaceholder: '+Tag',
+    });
+
+    $('.chips').on('chip.add', function(e, chip){
+        datas.push(chip);
+    });
+
+    $('.chips').on('chip.delete', function(e, chip){
+        // you have the deleted chip here
+    });
+});
+
+function saveTags() {
+
+    $.post("/api/tags/" + classroom_id,
+        { tags: datas },
+        function (result) {
+            window.alert("Success " + result.msg);
+        }
+    ).fail(function (error){
+            window.alert("Something wrong " + error);
+    });
+}

@@ -1,14 +1,17 @@
-<div class="card card-modal">
-  <div class="card-content">
-    <span class="card-title"><%= classroom.name %></span>
-  </div>
-  <div class="card-content">
-    <p><label>Créer le </label><%= classroom.created_at %>
-    <p><label>Mise à jour le </label><%= classroom.updated_at %>
-    <p><label>Étage: </label><%= classroom.floor %>
-    <p><label>Aile: </label><%= classroom.wing %>
-  </div>
-  <div class="card-content bottom-content">
-    <span>Cliquer à l'extérieur pour fermer</span>
+
+<div id="modal<%= classroom.id %>" class="modal small">
+  <div class="card card-modal">
+    <div class="card-content">
+      <span class="card-title"><%= classroom.name %></span>
+    </div>
+    <div class="card-content">
+      <p><label>Créer le </label><%= classroom.created_at %>
+      <p><label>Mise à jour le </label><%= classroom.updated_at %>
+      <p><label>Étage: </label><%= classroom.floor %>
+      <p><label>Aile: </label><%= classroom.wing %>
+    </div>
+    <div class="card-content bottom-content">
+      <span>Cliquer à l'extérieur pour fermer</span>
+    </div>
   </div>
 </div>

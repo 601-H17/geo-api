@@ -31,6 +31,9 @@ Rails.application.routes.draw do
       get '/classroom/:name', to: 'classrooms#show_by_name'
       get '/classroom_search/:query', to: 'classrooms#search_by_name'
 
+      post '/tags/:id', to: 'tags#save_for_classroom'
+      delete '/tags/:id', to: 'tags#delete_tag'
+
       resources :corridors, only: :index
       get '/corridors2', to: 'corridors#corridors2'
       resources :stairs, only: :index
