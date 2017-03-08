@@ -14,7 +14,6 @@ before_script:
   - rake db:migrate
 script:
   - rake test
-  - rake cucumber
 notifications:
   slack: 601-h17-eq2:IHWU1zoJHu7FadwBnn4BIetn
 branches:
