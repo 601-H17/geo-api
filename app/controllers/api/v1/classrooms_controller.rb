@@ -17,7 +17,7 @@ class Api::V1::ClassroomsController < ApplicationController
 
   def index
     classrooms = Classroom.all
-    render json: classrooms.to_json(include: { point: {only: [:lat, :lng]} }, except: :point_id), status: 200
+    render json: filter_attr(classrooms), status: 200
   end
 
   # GET (by :id)
@@ -34,8 +34,8 @@ class Api::V1::ClassroomsController < ApplicationController
   def show
     id = params[:id]
     begin
-      classroom = Classroom.find(id).to_json(include: { point: {only: [:lat, :lng]} }, except: :point_id)
-      render json: classroom, status: 200
+      classroom = Classroom.find(id)
+      render json: filter_attr(classroom), status: 200
     rescue ActiveRecord::RecordNotFound
       render json: { error: "Classroom with id <#{id}> not found" }, status: 404
     end
@@ -55,8 +55,8 @@ class Api::V1::ClassroomsController < ApplicationController
   def show_by_name
     name = params[:name]
     begin
-      classroom = Classroom.find_by_name!(params[:name]).to_json(include: { point: {only: [:lat, :lng]} }, except: :point_id)
-      render json: classroom, status: 200
+      classroom = Classroom.find_by_name!(params[:name])
+      render json: filter_attr(classroom), status: 200
     rescue ActiveRecord::RecordNotFound
       render json: { error: "Classroom #{name} not found"}, status: 404
     end
@@ -86,7 +86,7 @@ class Api::V1::ClassroomsController < ApplicationController
     end
 
     if classrooms_found.any?
-      render json: classrooms_found.to_json(include: { point: {only: [:lat, :lng]} }, except: :point_id), status: 200
+      render json: filter_attr(classrooms_found), status: 200
     else
       render json: { error: "Classroom(s) #{query} not found"}, status: 404
     end
@@ -96,6 +96,10 @@ class Api::V1::ClassroomsController < ApplicationController
   private
     def classrooms_params
       params.require(:classroom).permit(:name, :description, :floor, :wing, :point)
+    end
+
+    def filter_attr(obj)
+      obj.to_json(include: { point: {only: [:lat, :lng]}, tags: {only: :name} }, except: [:point_id, :updated_at, :created_at])
     end
 
 end

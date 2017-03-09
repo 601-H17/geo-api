@@ -24,7 +24,7 @@ class Api::V1::ClassroomsControllerTest < ActionController::TestCase
 
     assert_response :success
     assert_includes request.headers["Authorization"], @token.access_token
-    assert_match @classroom.to_json(include: { point: {only: [:lat, :lng]} }, except: :point_id).to_s, @response.body.to_s
+    assert_match filter_attr(@classroom).to_s, @response.body.to_s
   end
 
   # Show (GET by id)
@@ -34,7 +34,7 @@ class Api::V1::ClassroomsControllerTest < ActionController::TestCase
 
     assert_response :success
     assert_includes request.headers["Authorization"], @token.access_token
-    assert_match @classroom.to_json(include: { point: {only: [:lat, :lng]} }, except: :point_id).to_s, @response.body.to_s
+    assert_match filter_attr(@classroom).to_s, @response.body.to_s
   end
 
   test "should not get classroom by id with invalid id" do
@@ -54,7 +54,7 @@ class Api::V1::ClassroomsControllerTest < ActionController::TestCase
 
     assert_response :success
     assert_includes request.headers["Authorization"], @token.access_token
-    assert_match @classroom.to_json(include: { point: {only: [:lat, :lng]} }, except: :point_id).to_s, @response.body.to_s
+    assert_match filter_attr(@classroom).to_s, @response.body.to_s
   end
 
   test "should not get classrooms, get error 404 with token and unknown name" do
@@ -96,5 +96,10 @@ class Api::V1::ClassroomsControllerTest < ActionController::TestCase
     assert_includes request.headers["Authorization"], @token.access_token
     assert_match "Classroom(s) #{query} not found", @response.body.to_s
   end
+
+  private
+    def filter_attr(obj)
+      obj.to_json(include: { point: {only: [:lat, :lng]}, tags: {only: :name} }, except: [:point_id, :updated_at, :created_at])
+    end
 
 end
