@@ -1,4 +1,4 @@
-# Geo-API [![Build Status](https://travis-ci.org/601-H17/geo-api.svg?branch=master)](https://travis-ci.org/601-H17/geo-api)
+# Geo-API [![Build Status][travis-image-api]][travis-url-api]
 
 `ruby version : 2.3.3`
 
@@ -6,17 +6,18 @@
 
 ### Summary
 
-* [Install Ruby on Rails locally](https://github.com/601-H17/geo-api#install-ruby-on-rails-locally-docker-installation-below)
-* [Running Rails on a docker container](https://github.com/601-H17/geo-api#running-rails-on-a-docker-container)
-* [View the server in action](https://github.com/601-H17/geo-api#view-the-server-in-action)
-* [Tests](https://github.com/601-H17/geo-api#tests)
-* [Routes](https://github.com/601-H17/geo-api#routes)
-* [Rails Console](https://github.com/601-H17/geo-api#schema-of-continuous-integration-of-this-project)
-* [Schema of continuous integration of this project](https://github.com/601-H17/geo-api#schema-of-continuous-integration-of-this-project)
+* [Install Ruby on Rails locally]
+* [Running Rails on a docker container]
+* [View the server in action]
+* [Tests]
+* [Routes]
+* [Rails Console]
+* [Schema of continuous integration of this project]
+___
 
 ### Install Ruby on Rails locally (Docker installation below)
 
-Follow this [guide](http://www.installrails.com). 
+Follow this [guide] . 
 
 For macOS user, on the 'Install RVM and Ruby' step when using `rvm use`, write instead `rvm use ruby-2.3.3@rails4.2.0 --install --default`.
 
@@ -53,7 +54,7 @@ $ rails s
 
 ### Running Rails on a docker container
 
-####Install [Docker](https://www.docker.com/products/docker) (for Linux and macOS) or [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
+####Install [Docker]  (for Linux and macOS) or [Docker Toolbox]
 Docker works also for Windows, but Hyper-V is required and not compatible with Virtual Box.
 
 1. In a terminal (Docker Toolbox terminal for Windows), go in the project folder 
@@ -77,8 +78,11 @@ $ docker run -it -p 3000:3000 --rm -v $PWD/:/app rails-node-api
 
 ## View the server in action
     
-In a browser window, go to [localhost:3000](http://localhost:3000) for the admin web app or [localhost:3000/api](http://localhost:3000/api) for the API. If your using Docker ToolBox, use the IP address that shows up when you open the toolbox.
-You can use [Postman](https://www.getpostman.com) too to call the API.
+In a browser window, go to [localhost:3000] for the admin web app or [localhost:3000/api] for the API. 
+
+If your using **Docker ToolBox** , use the IP address that shows up when you open the toolbox, it should be [192.168.99.100:3000]  (Admin) or [192.168.99.100:3000/api]  (API).
+
+You can use [Postman] too to call the API.
 
 ### Tests
 
@@ -107,13 +111,14 @@ $ docker run -it --rm -v $PWD/:/app rails-node-api-tests
 
 *Note: You do not need to re-build the docker if no changes to the dockerfile or any gems were updated.*
 
+> ***Note: You need to clone the project in a directory with no space when you use $PWD.*
+
 ### Routes
 
 To see all routes, enter:
 ```bash
 $ rake routes
 ```
-
 
 ### Rails Console
 
@@ -130,3 +135,25 @@ $ rails c
 <p align="center">
   <img src="https://cloud.githubusercontent.com/assets/5929986/23719910/0f8047ea-040b-11e7-9aa2-bb299fbef400.png" />
 </p>
+
+
+
+
+
+[travis-image-api]: https://travis-ci.org/601-H17/geo-api.svg?branch=master
+[travis-url-api]: https://travis-ci.org/601-H17/geo-api
+[Install Ruby on Rails locally]: https://github.com/601-H17/geo-api#install-ruby-on-rails-locally-docker-installation-below
+[Running Rails on a docker container]: https://github.com/601-H17/geo-api#running-rails-on-a-docker-container
+[View the server in action]: https://github.com/601-H17/geo-api#view-the-server-in-action
+[Tests]: https://github.com/601-H17/geo-api#tests
+[Routes]: https://github.com/601-H17/geo-api#routes
+[Rails Console]: https://github.com/601-H17/geo-api#schema-of-continuous-integration-of-this-project
+[Schema of continuous integration of this project]: https://github.com/601-H17/geo-api#schema-of-continuous-integration-of-this-project
+[guide]: http://www.installrails.com
+[Docker]: https://www.docker.com/products/docker
+[Docker Toolbox]: https://www.docker.com/products/docker-toolbox
+[localhost:3000]: http://localhost:3000
+[localhost:3000/api]: http://localhost:3000/api
+[192.168.99.100:3000]: http://192.168.99.100:3000
+[192.168.99.100:3000/api]: http://192.168.99.100:3000/api
+[Postman]: https://www.getpostman.com
