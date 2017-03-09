@@ -55,7 +55,7 @@ $ rails s
 
 ### Running Rails on a docker container
 
-####Install [Docker]  (for Linux and macOS) or [Docker Toolbox]
+####Install [Docker] for Linux and macOS or [Docker Toolbox]
 Docker works also for Windows, but Hyper-V is required and not compatible with Virtual Box.
 
 1. In a terminal (Docker Toolbox terminal for Windows), go in the project folder 
@@ -81,7 +81,7 @@ $ docker run -it -p 3000:3000 --rm -v $PWD/:/app rails-node-api
     
 In a browser window, go to [localhost:3000] for the admin web app or [localhost:3000/api] for the API. 
 
-If your using **Docker ToolBox** , use the IP address that shows up when you open the toolbox, it should be [192.168.99.100:3000]  (Admin) or [192.168.99.100:3000/api]  (API).
+If your using **Docker ToolBox** , use the IP address that shows up when you open the toolbox, it should be [192.168.99.100:3000] for the admin or [192.168.99.100:3000/api] for the API.
 
 You can use [Postman] too to call the API.
 
