@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root 'logins#new'
 
-  resources :admins
+  resources :admins, except: :show
 
   get 'login', to: 'logins#new'
   post 'login', to: 'logins#create'
