@@ -13,6 +13,7 @@
 * [Routes]
 * [Rails Console]
 * [Schema of continuous integration of this project]
+
 ___
 
 ### Install Ruby on Rails locally (Docker installation below)
@@ -147,7 +148,7 @@ $ rails c
 [View the server in action]: https://github.com/601-H17/geo-api#view-the-server-in-action
 [Tests]: https://github.com/601-H17/geo-api#tests
 [Routes]: https://github.com/601-H17/geo-api#routes
-[Rails Console]: https://github.com/601-H17/geo-api#schema-of-continuous-integration-of-this-project
+[Rails Console]: https://github.com/601-H17/geo-api#rails-console
 [Schema of continuous integration of this project]: https://github.com/601-H17/geo-api#schema-of-continuous-integration-of-this-project
 [guide]: http://www.installrails.com
 [Docker]: https://www.docker.com/products/docker
