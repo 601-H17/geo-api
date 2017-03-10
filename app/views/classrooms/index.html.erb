@@ -25,18 +25,13 @@
         <% end %>
         <ul class="collapsible" data-collapsible="expandable">
           <li>
-            <div class="collapsible-header"><span class="badge"><%= @classrooms.count %></span><i class="material-icons">place</i>Locaux affichés</div>
+            <div class="collapsible-header"><span class="badge"><%= @classrooms.count %>/<%= @classrooms_count %></span><i class="material-icons">place</i>Locaux</div>
           </li>
         </ul>
       </div>
     </div>
 
     <div class="side-card hoverable">
-      <ul class="collapsible" data-collapsible="expandable">
-        <li>
-          <div class="collapsible-header"><span class="badge"><%= @classrooms_count %></span><i class="material-icons">place</i>Locaux</div>
-        </li>
-      </ul>
     </div>
 
   </div>
