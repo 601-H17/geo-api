@@ -4,10 +4,10 @@
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.css' rel='stylesheet'/>
   <style>
     #map {
-      position: absolute;
       top: 8%;
       bottom: 0;
       width: 100%;
+      z-index: -1;
     }
 
     .header {
@@ -16,13 +16,21 @@
 
   </style>
 
-  <div id='map'>
-    <div class="header">
-      <h1>Choisissez un étage : </h1>
-      <button onclick="getFloorOne()" class="btn btn-default">Étage 1</button>
-      <button onclick="getFloorTwo()" class="btn btn-default">Étage 2</button>
+  <div class="row">
+    <div class="col s12 m4 l3 fixed-control">
+      <div class="card card-top hoverable">
+        <div class="card-content">
+          <span class="card-title thin">Carte</span>
+          <p>Voici la carte du cégep.</p>
+        </div>
+        <div class="card-action">
+          <button onclick="getFloorOne()" class="btn waves-effect waves-light">Étage 1</button>
+          <button onclick="getFloorTwo()" class="btn waves-effect waves-light">Étage 2</button>
+        </div>
+      </div>
     </div>
-    <br>
+
+    <div id='map'></div>
   </div>
 
   <script>

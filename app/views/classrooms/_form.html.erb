@@ -21,7 +21,7 @@
 
   <div class="row">
     <div class="col s12">
-      <%= form_for(@classroom, :html => {class: 'col s12', role: ''}) do |f| %>
+      <%= form_for(@classroom, :html => {class: 'col s12'}) do |f| %>
 
           <div class="row">
             <div class="input-field col s4">
@@ -47,24 +47,24 @@
             </div>
           </div>
 
-          <%= f.fields_for(:point, :html => {class: 'col s12', role: 'form'}) do |b| %>
+          <%# f.fields_for(:point, :html => {class: 'col s12', role: 'form'}) do |b| %>
 
-            <div class="row">
-              <div class="input-field col s6">
-                <%= b.text_field :lat %>
-                <%= b.label :lattitude %>
-              </div>
+            <!--<div class="row">-->
+              <!--<div class="input-field col s6">-->
+                <!--<%# b.text_field :lat %>-->
+                <!--<%# b.label :lattitude %>-->
+              <!--</div>-->
 
-              <div class="input-field col s6">
-                <%= b.text_field :lng %>
-                <%= b.label :longitude %>
-              </div>
-            </div>
+              <!--<div class="input-field col s6">-->
+                <!--<%# b.text_field :lng %>-->
+                <!--<%# b.label :longitude %>-->
+              <!--</div>-->
+            <!--</div>-->
 
-          <% end %>
+          <%# end %>
 
-          <%= link_to 'Annuler', classrooms_path, class: 'btn red', 'data-dismiss' => 'modal' %>
-          <%= f.submit (@classroom.new_record? ? 'Créer' : 'Mettre à jour'), class: 'btn', 'data-dismiss' => 'modal' %>
+          <%= link_to 'Annuler', classrooms_path, class: 'btn waves-effect waves-light red', 'data-dismiss' => 'modal' %>
+          <%= f.submit (@classroom.new_record? ? 'Créer' : 'Mettre à jour'), class: 'btn waves-effect waves-light', 'data-dismiss' => 'modal' %>
 
       <% end %>
     </div>

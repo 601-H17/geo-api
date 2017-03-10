@@ -16,7 +16,6 @@
           <div class="collapsible-header">
             <span class="badge"><%= @maps.count %></span><i class="material-icons">place</i>cartes
           </div>
-          <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
         </li>
       </ul>
     </div>
@@ -30,8 +29,9 @@
           <tr>
             <th>Nom</th>
             <th>Étage</th>
-            <th>Carte actuelle</th>
             <th>Corridor téléverser</th>
+            <th>Carte actuelle</th>
+            <th></th>
             <th>Actions</th>
           </tr>
           </thead>
@@ -40,11 +40,11 @@
           <% @maps.each do |map| %>
               <tr class="table-action table-row">
                 <td><%= map.name %></td>
-                <td><%= map.floor %></td>
-                <td><%= map.currentMap ? 'Oui' : 'Non' %></td>
-                <td><%= map.corridor.present? ? 'Oui' : 'Non' %></td>
-                <td>
-                  <%= link_to (map.currentMap ? 'Désactiver' : 'Activer'), make_current_map_path(map), class: 'btn' %>
+                <td width="10%"><%= map.floor %></td>
+                <td width="15%"><%= map.corridor.present? ? 'Oui' : 'Non' %></td>
+                <td width="15%"><%= map.currentMap ? 'Oui' : 'Non' %></td>
+                <td width="17%"><%= link_to (map.currentMap ? 'Désactiver' : 'Activer'), make_current_map_path(map), class: 'btn' %></td>
+                <td width="15%">
                   <%= link_to raw('<i class="material-icons">edit</i>'), edit_upload_path(map), class: 'btn btn-floating waves-effect waves-light waves-circle blue' %>
                   <%= link_to raw('<i class="material-icons">delete</i>'), upload_path(map), method: :delete, data: {confirm: 'Voulez-vous vraiment supprimer cette carte?'}, class: 'btn btn-floating waves-effect waves-light red' %>
                   <%= link_to raw('<i class="material-icons">publish</i>'), new_corridor_path(map), class: 'btn btn-floating waves-effect waves-light green' %>

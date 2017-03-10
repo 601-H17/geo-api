@@ -1,33 +1,45 @@
 <%= render 'shared/errors', obj: @admin %>
 
-<%= form_for(@admin) do |f| %>
-    <div class="row">
-      <div class="group input-field col s12">
-        <%= f.text_field :username, class: 'validate' %>
-        <label>Nom d'utilisateur</label>
-      </div>
+<div class="card-panel hoverable">
+  <div class="row">
+    <div class="col s12">
+
+      <%= form_for(@admin) do |f| %>
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <%= f.text_field :username, class: 'validate', autofocus: true %>
+              <label>Nom d'utilisateur</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <%= f.password_field :password, class: 'validate' %>
+              <label>Mot de passe</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <%= f.text_field :email, class: 'validate' %>
+              <label>Courriel</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s6 offset-s3">
+              <%= f.check_box :master_admin, id: 'master-admin' %>
+              <label for="master-admin">Administrateur maître</label>
+            </div>
+          </div>
+
+          <div class="col s6 offset-s3">
+            <%= link_to 'Revenir', admins_path, class: 'btn waves-effect waves-light red' %>
+            <%= f.submit (@admin.new_record? ? 'Créer' : 'Modifier'), class: 'btn waves-effect waves-light' %>
+          </div>
+
+      <% end %>
+
     </div>
-    <div class="row">
-      <div class="group input-field col s12">
-        <%= f.text_field :email, class: 'validate' %>
-        <label>Courriel</label>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="group input-field col s12">
-        <%= f.password_field :password, class: 'validate' %>
-        <label>Mot de passe</label>
-
-      </div>
-    </div>
-
-    <div class="row">
-      <%= f.check_box :master_admin, id: 'master-admin' %>
-      <label for="master-admin">Administrateur principal</label>
-    </div>
-
-    <%= link_to 'Revenir', admins_path, class: 'btn' %>
-    <%= f.submit (@admin.new_record? ? 'Créer' : 'Modifier'), class: 'btn' %>
-
-<% end %>
+  </div>
+</div>

@@ -34,8 +34,8 @@
           <tr>
             <th>Nom d'utilisateur</th>
             <th>Adresse courriel</th>
-            <th>Administrateur principal</th>
-            <th>Actions</th>
+            <th>Administrateur maître</th>
+            <th width="20%">Actions</th>
           </tr>
           </thead>
 
@@ -45,7 +45,7 @@
                 <td><%= admin.username %></td>
                 <td><%= admin.email %></td>
                 <td><%= admin.master_admin ? 'Oui' : 'Non' %></td>
-                <td><%= link_to raw('<i class="material-icons">info_outline</i>'), admin, class: 'btn btn-floating waves-effect waves-light waves-circle green' %>
+                <td>
                   <% if current_admin && current_admin.master_admin? || admin == current_admin %>
                       <%= link_to raw('<i class="material-icons">edit</i>'), edit_admin_path(admin), class: 'btn btn-floating waves-effect waves-light waves-circle blue' %>
                   <% end %>

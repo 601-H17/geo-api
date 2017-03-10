@@ -1,41 +1,37 @@
 <div class="container">
-  <h1 class="">Modifier la carte</h1>
+  <h1 class="center-align thin">Modifier la carte</h1>
 
   <%= render 'shared/errors', obj: @map %>
 
-  <div class="row">
-    <div class="col-md-12">
-      <%= form_for(@map, url: upload_path(@map), method: :patch, :html => {class: 'form-horizontal', role: 'form'}) do |f| %>
+  <div class="card-panel hoverable">
+    <div class="row">
+      <div class="col s12">
+        <%= form_for(@map, url: upload_path(@map), method: :patch, :html => {class: 'col s12'}) do |f| %>
 
-          <div class="row">
-            <div class="group input-field col s12">
-              <%= f.text_field :name, class: 'validate', autofocus: true %>
-              <label>Nom</label>
+            <div class="row">
+              <div class="input-field col s9">
+                <%= f.text_field :name, autofocus: true %>
+                <label>Nom</label>
+              </div>
+
+              <div class="input-field col s3">
+                <%= f.number_field :floor %>
+                <label>Étage</label>
+              </div>
             </div>
-          </div>
 
-          <div class="row">
-            <div class="group input-field col s12">
-              <%= f.number_field :floor, class: 'validate' %>
-              <label>Étage</label>
+            <div class="row">
+              <div class="input-field col s12">
+                <%= f.check_box :currentMap, id: 'current-map' %>
+                <label for="current-map">Carte actuelle</label>
+              </div>
             </div>
-          </div>
 
-          <div class="row">
-            <div class="group input-field col s12">
-              <%= f.check_box :currentMap, id: 'current-map' %>
-              <label for="current-map">Carte actuelle</label>
-            </div>
-          </div>
+            <%= link_to 'Annuler', upload_index_path, class: 'btn waves-effect waves-light red' %>
+            <%= f.submit ('Mettre à jour'), class: 'btn waves-effect waves-light' %>
 
-          <div class="row">
-            <div>
-              <%= link_to 'Annuler', upload_index_path, class: 'btn btn-danger btn-sm' %>
-              <%= f.submit ('Mettre à jour'), class: 'btn btn-primary btn-sm' %>
-            </div>
-          </div>
-
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 

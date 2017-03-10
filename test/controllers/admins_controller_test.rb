@@ -28,13 +28,6 @@ class AdminsControllerTest < ActionController::TestCase
     assert_redirected_to admins_path
   end
 
-  test "should show admin" do
-
-    get :show, id: @master_admin
-    assert_response :success
-    assert_template :show
-  end
-
   test "should get edit" do
     get :edit, id: @master_admin
     assert_response :success
