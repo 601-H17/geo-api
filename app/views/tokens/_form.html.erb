@@ -1,22 +1,24 @@
 <%= render 'shared/errors', obj: @token %>
 
-<div class="row">
-  <div class="col-md-12">
-    <%= form_for(@token, url: tokens_path(@token), :html => {class: '', role: 'form'}) do |f| %>
+<div class="card-panel hoverable">
+  <div class="row">
+    <div class="col s12">
+      <%= form_for(@token, url: tokens_path(@token), :html => {class: 'col s12'}) do |f| %>
 
-        <div class="row">
-          <div class="group input-field col s12">
-            <%= f.text_field :name, class: 'validate', autofocus: true %>
-            <label>Nom de la clé</label>
+          <div class="row">
+            <div class="input-field col s12">
+              <%= f.text_field :name, class: 'validate', autofocus: true %>
+              <label>Nom de la clé</label>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div>
-            <%= link_to 'Annuler', tokens_path, class: 'btn' %>
-            <%= f.submit ('Générer'), class: 'btn' %>
+          <div class="">
+            <div class="col s12">
+              <%= link_to 'Annuler', tokens_path, class: 'btn waves-effect waves-light red' %>
+              <%= f.submit 'Générer', class: 'btn waves-effect waves-light' %>
+            </div>
           </div>
-        </div>
 
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

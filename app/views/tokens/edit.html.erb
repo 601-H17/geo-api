@@ -1,26 +1,27 @@
 <div class="container">
-  <h1>Modifier</h1>
+  <h1 class="center-align thin">Modifier</h1>
 
   <%= render 'shared/errors', obj: @token %>
+  <div class="card-panel hoverable">
+    <div class="row">
+      <div class="col s12">
+        <%= form_for(@token, url: token_path(@token), method: :patch, :html => {class: 'form-horizontal'}) do |f| %>
 
-  <div class="row">
-    <div>
-      <%= form_for(@token, url: token_path(@token), method: :patch, :html => {class: 'form-horizontal', role: 'form'}) do |f| %>
-          <div class="row">
-            <div class="group input-field col s12">
-              <%= f.text_field :name, class: 'validate', autofocus: true %>
-              <label>Nom de la clé</label>
+            <div class="row">
+              <div class="input-field col s12">
+                <%= f.text_field :name, class: 'validate', autofocus: true %>
+                <label>Nom de la clé</label>
+              </div>
             </div>
-          </div>
-
-          <div class="row">
-            <div>
-              <%= link_to 'Annuler', tokens_path, class: 'btn' %>
-              <%= f.submit 'Modifier', class: 'btn' %>
+            <div class="">
+              <div class="col s12">
+                <%= link_to 'Annuler', tokens_path, class: 'btn waves-effect waves-light red' %>
+                <%= f.submit 'Modifier', class: 'btn waves-effect waves-light' %>
+              </div>
             </div>
-          </div>
 
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 

@@ -7,7 +7,7 @@
       <%= form_for(@admin) do |f| %>
           <div class="row">
             <div class="input-field col s6 offset-s3">
-              <%= f.text_field :username, class: 'validate' %>
+              <%= f.text_field :username, class: 'validate', autofocus: true %>
               <label>Nom d'utilisateur</label>
             </div>
           </div>
