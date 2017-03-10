@@ -47,21 +47,21 @@
             </div>
           </div>
 
-          <%= f.fields_for(:point, :html => {class: 'col s12', role: 'form'}) do |b| %>
+          <%# f.fields_for(:point, :html => {class: 'col s12', role: 'form'}) do |b| %>
 
-            <div class="row">
-              <div class="input-field col s6">
-                <%= b.text_field :lat %>
-                <%= b.label :lattitude %>
-              </div>
+            <!--<div class="row">-->
+              <!--<div class="input-field col s6">-->
+                <!--<%# b.text_field :lat %>-->
+                <!--<%# b.label :lattitude %>-->
+              <!--</div>-->
 
-              <div class="input-field col s6">
-                <%= b.text_field :lng %>
-                <%= b.label :longitude %>
-              </div>
-            </div>
+              <!--<div class="input-field col s6">-->
+                <!--<%# b.text_field :lng %>-->
+                <!--<%# b.label :longitude %>-->
+              <!--</div>-->
+            <!--</div>-->
 
-          <% end %>
+          <%# end %>
 
           <%= link_to 'Annuler', classrooms_path, class: 'btn waves-effect waves-light red', 'data-dismiss' => 'modal' %>
           <%= f.submit (@classroom.new_record? ? 'Créer' : 'Mettre à jour'), class: 'btn waves-effect waves-light', 'data-dismiss' => 'modal' %>
